@@ -214,14 +214,19 @@ input::-webkit-input-placeholder {
     overflow: hidden;
     z-index: 2; }
     .goodsprice .moneyunit .select-wrap .select-wo {
-      width: 4.8rem;
+      -webkit-appearance: listbox;
+      width: 4rem;
       height: 1.75rem;
       font-size: 0.6rem;
       text-indent: 0.1rem;
-      background-color: transparent;
+      background: transparent;
       border: none;
       color: #FFF;
       overflow: hidden; }
+      .goodsprice .moneyunit .select-wrap .select-wo option {
+        color: #FFF;
+        background: transparent;
+        opacity: 0; }
 
 .goods_P2 {
   border-bottom: none; }
