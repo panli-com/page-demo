@@ -256,16 +256,17 @@ $(function () {
     }
 
 
-    //dualDong();
+    dualDong();
     function dualDong() {
         var _dbox = $(".dual-october-wrap");
         if (_dbox.length < 1) {
             
             return;
         }
-        getTimeInfo(function (timeData) {            
-            count_down(duaEndTime, timeData);
-        })
+        // getTimeInfo(function (timeData) {            
+        //     count_down(duaEndTime, timeData);
+        // })
+        count_down(duaEndTime, new Date().getTime());
     };
 
 });
@@ -288,97 +289,19 @@ function getTimeInfo(callback){
 
 
 
-    $(function() {
-      var THAN = function() {
-          var TH = $('#dual-october-time'),
-              HM = $('#hammer-wrap');        
-          
-          TH
-          .animate({marginTop:  '50px'  }, 1000, 'easeOutBounce');
-          
-          
-         
-          
-          HM.transition({
-            marginTop: "0px" ,
-            duration: 1000,          
-            complete: function() { 
-                console.log("sss");           
-                clearAnmi();
-            }           
-            
-          });
-        //     setTimeout(function(){
-        //      HM.css({"transition":"0.3s","transform":"rotate(0)"});
-        //   },1500);
-        
-        //    .animate({marginLeft: '50px'  }, 1000, 'easeOutElastic')
-           
-        //    .animate({marginLeft: '-150px'}, 1000, 'easeOutQuad')
-        //   .animate({marginTop:  '-150px'}, 3000, 'easeInOutBack');
-        //    .animate({opacity:  '1'  }, 1000, 'swing')
-        //    .animate({marginTop:  '50px'  }, 1000, 'easeOutBounce');
-           
-           
-         
-      
-      };
-      var HMAN = function() {
-          var TH = $('#dual-october-time'),
-              HM = $('#hammer-wrap');
-          
-          
-            TH.css({"marginTop":"0px"}).fadeIn(1000)
-            .animate({opacity:  '1'  }, 1000, 'swing');
-            HM.fadeIn(1000)
-    //     .animate({height: '100px', marginTop: '0px',  width: '50px' }, 1000, 'easeOutElastic')
-    //     .animate({height: '50px' , marginTop: '25px', width: '50px' }, 1000, 'easeOutBounce')
-    //     .animate({height: '50px' , marginTop: '25px', width: '100px'}, 1000, 'easeOutQuad')
-    //     .animate({height:'100px' , marginTop: '0px',  width: '100px'}, 1000, 'easeInOutBack');
-         .animate({opacity:  '1'  }, 1000, 'swing')
-                .transition({
-            marginTop: "-50px",
-            duration: 500,          
-            complete: function() { 
-                
-                THAN();
-            }
-        });
-        //  .animate({ marginTop: '0px' }, 1000, 'easeInOutBack');
-        // .animate({"transition":"2s","transform":"rotate(0)"},1000,'easeOutBounce')
-        
-        //  setTimeout(function(){
-        //      HM.css({"transition":"1s","transform":"rotate(0)"});
-        //  },2500);
-         
-    //     .animate({height: '50px' , marginTop: '25px', width: '100px'}, 1000, 'easeOutQuad')
-    //     .animate({height:'100px' , marginTop: '0px',  width: '100px'}, 1000, 'easeInOutBack');
-      }
-      var clearAnmi = function(){
-           var TH = $('#dual-october-time'),
-              HM = $('#hammer-wrap');
-          
-          HM.fadeOut(1000).css({"marginTop":"-70px"});
-          TH.fadeOut(1000).css({"marginTop":"0px"});
-      }
-      //setInterval(THAN, 6000);
-      setInterval(HMAN, 6000);
-      setTimeout(function() {
-         //THAN();
-         HMAN();
-       }, 500);
-    
-    
-    
-     //new GIF
-     
-     var  LogoAnmin = {
-        init:function () {
-            
-        }  
-     };
+$(function() {
 
+
+
+    //new GIF
     
-    
-    
-    })
+    var  LogoAnmin = {
+    init:function () {
+        
+        }  
+    };
+
+
+
+
+})
