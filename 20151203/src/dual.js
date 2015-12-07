@@ -281,8 +281,7 @@ function getTimeInfo(callback){
         timeout: 10000,
         error: function () { },
         success: function (data) {
-            callback(parseInt(data.d * 1000));
-           
+            callback(parseInt(data.d * 1000));           
         }
     });
   };
