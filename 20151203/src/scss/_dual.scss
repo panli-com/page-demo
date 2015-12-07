@@ -3,6 +3,7 @@
     display: inline-block;
     position: relative;
     height: 50px;
+    overflow: hidden;
 }
 .dual-october-wrap a{
   display:block;
@@ -78,7 +79,7 @@
   
   margin-top: -70px;
   transition:2s;
-  transform:rotate(7deg);
+  transform:rotate(-7deg);
   /*-ms-transform:rotate(7deg); 	
   -moz-transform:rotate(7deg); 
   -webkit-transform:rotate(7deg); 

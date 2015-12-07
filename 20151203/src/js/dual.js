@@ -226,26 +226,35 @@ $(function(){
     var THAN = function() {     
           
           TH
-          .animate({marginTop:  '50px'  }, 1000, 'easeOutBounce');
+          .animate({marginTop:  '50px'  }, 1000, 'swing');
           if(window.attachEvent){
               
               HM.animate({marginTop:  '0'  }, 1000, 'easeOutBounce');
               
           }else{
-              HM.transition({
+              
+              
+              HM
+              //.transition({ opacity: 0.1, scale: 0.3 }, 500, 'in', function() {..})
+              .transition({
                 marginTop: "0" ,
                 rotate: '0',
-                duration: 1000,          
+                duration: 1000,         
                 complete: function() { 
                     console.log("sss");           
                 // clearAnmi();
                 
+                 
+                
+                HM.addClass('animated bounceIn');
                     setTimeout(function(){
                         clearAnmi();
                     },500);
-                }           
-                
-            });         
+                    }
+                });         
+              
+              
+             
               
           }
            
@@ -254,26 +263,33 @@ $(function(){
       
       };
       var HMAN = function() {        
-            HM.css({"marginTop":"-70px",rotate: '7deg'});
+            HM.css({"marginTop":"-70px",rotate: '-7deg'});
             TH.css({"marginTop":"0px"}).fadeIn(1000).animate({opacity:  '1'  }, 1000, 'swing');
             HM.fadeIn(1000)
 
-         .animate({opacity:  '1'  }, 1000, 'swing')
-         .animate({marginTop:  '-50px'  }, 500, 'elasinout');
-        //  .transition({
-        //         marginTop: "-50px",
-        //         duration: 500,          
-        //         complete: function() {                     
-        //             THAN();
-        //         }
-        //}); 
-        setTimeout(function (params) {
-             THAN();
-        },3000);
+         .animate({opacity:  '1'  }, 1000, 'swing');
+         
+         if(window.attachEvent){
+             HM.animate({marginTop:  '-50px'  }, 500, 'elasinout');
+              setTimeout(function (params) {
+                    THAN();
+               },3200);
+         }else{
+             HM.transition({
+                        marginTop: "-50px",
+                        duration: 500,          
+                        complete: function() {                     
+                            THAN();
+                        }
+                }); 
+         }
+        
+        //  .
+       
 
       }
       var clearAnmi = function(){             
-          HM.fadeOut(1000);
+          HM.fadeOut(1000).removeClass('animated bounceIn');;
           TH.fadeOut(1000);
       }
    
