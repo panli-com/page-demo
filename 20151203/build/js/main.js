@@ -190,7 +190,7 @@
 })(jQuery);
 
 function LogoV(){
-    return "0.0.3";
+    return "0.0.4";
 }
 
 
@@ -223,30 +223,25 @@ $(function(){
           
           TH
           .animate({marginTop:  '50px'  }, 500, 'swing');
-          if(window.attachEvent){
+          if(isIE()){
               
-              HM.animate({marginTop:  '0'  }, 500, 'easeOutBounce');
+              // HM.animate({marginTop:  '0'  }, 500, 'easeOutBounce');
               
           }else{
               
               
-              HM
-              //.transition({ opacity: 0.1, scale: 0.3 }, 500, 'in', function() {..})
+              HM             
               .transition({
                 marginTop: "0" ,
                 rotate: '0',
                 duration: 500,         
-                complete: function() { 
-                   
-                
-                
+                complete: function() {    
                  
                 
                 HM.addClass('animated bounceIn');
-                    setTimeout(function(){
-                        
+                    setTimeout(function(){                        
                         clearAnmi();
-                    },500);
+                        },1000);
                     }
                 });         
               
@@ -259,50 +254,63 @@ $(function(){
          
       
       };
-      var HMAN = function() {   
-          
-          setTimeout(function(){
-                    HM.css({"marginTop":"-70px",rotate: '-7deg'});
-                    TH.css({"marginTop":"0px"}).fadeIn(1000).animate({opacity:  '1'  }, 1000, 'swing').addClass("animated zoomInDown");
-                    HM.fadeIn(1000)
-        
-                .animate({opacity:  '1'  }, 1000, 'swing');
+      var HMAN = function() {         
+         
+                 HM.css({"marginTop":"-70px",rotate: '-7deg'}).removeClass('animated bounceIn');
+                 TH.css({"marginTop":"0px"}).addClass("animated zoomInDown");                  
                 
-                if(window.attachEvent){
-                    HM.animate({marginTop:  '-50px'  }, 500, 'elasinout');
-                    setTimeout(function (params) {
-                            THAN();
-                    },3200);
+                if(isIE()){
+                    // HM.animate({marginTop:  '-50px'  }, 500, 'elasinout');
+                    // setTimeout(function (params) {
+                    //         THAN();
+                    // },500);
+                   
                 }else{
-                    HM.transition({
-                                marginTop: "-50px",
-                                duration: 500,          
-                                complete: function() {                     
-                                    THAN();
-                                }
-                        }); 
-                }
-                
-              
-              
-          },1000)     
-            
-        //  .
-       
+                    setTimeout(function () {
+                         HMTop();
+                    },3000)
+                   
+                }       
 
-      }
+      };
+      
+      var HMTop =function (){
+          HM.transition({
+                marginTop: "-50px",
+                duration: 500,          
+                complete: function() {                     
+                    THAN();
+                }
+        }); 
+      };
+      
+      
       var clearAnmi = function(){             
-          HM.fadeOut(1000).removeClass('animated bounceIn');;
-          TH.fadeOut(1000).removeClass("animated zoomInDown");
+         
+          TH.removeClass("animated zoomInDown");
+          setTimeout(function () {
+                        HMAN();
+           },2500)
+         
       }
    
-      setInterval(HMAN, 4500);
+     
       setTimeout(function() {
          //THAN();
+         TH.show();
          HMAN();
        }, 500);
     
-   
+//    var ie = !-[1,]; 
+//     alert(ie); 
+    
+  
+      function isIE() { //ie?
+            if (!!window.ActiveXObject || "ActiveXObject" in window)
+                return true;
+            else
+                return false;
+       }
 });
 
     (function(){

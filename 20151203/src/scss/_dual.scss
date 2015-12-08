@@ -24,7 +24,9 @@
   left: 158px;  
 }
 #dual-october-time{
-    opacity:0;   
+    //
+    //opacity:0;   
+    display: none;
 }
 .dual-october-time-1{
   background: url(../images/day.png) no-repeat;
