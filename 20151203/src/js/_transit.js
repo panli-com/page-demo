@@ -19,7 +19,7 @@
     factory(root.jQuery);
   }
 
-}(this, function($) {
+}(this, function($) { 
 
   $.transit = {
     version: "0.9.12",

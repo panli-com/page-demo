@@ -1,7 +1,8 @@
-$(function () {
 
-    var duaEndTime = '2015-12-08 23:59:59';
-    function count_down(endTime, timeData) {
+
+    var duaEndTime = '2015-12-12 23:59:59';
+    
+    function countDown(endTime, timeData) {
 
         function p(s) { 
             return s < 10 ? '0' + s : s;
@@ -48,7 +49,7 @@ $(function () {
             $("#dual-text-time").html(timeHtml);
             setTimeout(function () {
                 timeData = timeData + 1000;
-                count_down(duaEndTime, timeData);
+                countDown(duaEndTime, timeData);
             }, 1000);
         } else {
             var _day = (Math.floor(timeDay) + 1).toString();
@@ -62,17 +63,25 @@ $(function () {
     }
 
 
-    dualDong();
-    function dualDong() {
+   
+    function dualDong(host) {
         var _dbox = $(".dual-october-wrap");
         if (_dbox.length < 1) {
             
             return;
         }
-        // getTimeInfo(function (timeData) {            
-        //     count_down(duaEndTime, timeData);
-        // })
-        count_down(duaEndTime, new Date().getTime());
+        if(host == "www"){
+            
+            getServerTimeStamp(function (timeData) {            
+             countDown(duaEndTime, timeData);
+            });
+            
+        }else{
+          var getTime = $("#GetDateTimeStamp").val();
+            countDown(duaEndTime, Number(getTime)*1000);  
+        }       
+        
+        
     };
 
-});
+

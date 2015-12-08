@@ -189,7 +189,9 @@
 });
 })(jQuery);
 
-
+function LogoV(){
+    return "0.0.3";
+}
 
 
 function getTimeInfo(callback){
@@ -207,13 +209,7 @@ function getTimeInfo(callback){
     });
   };
 
-    //new GIF
-    
-    var  LogoAnmin = {
-    init:function () {
-            
-        }  
-    };
+
 
 
 
@@ -241,13 +237,14 @@ $(function(){
                 rotate: '0',
                 duration: 500,         
                 complete: function() { 
-                    console.log("sss");           
-                // clearAnmi();
+                   
+                
                 
                  
                 
                 HM.addClass('animated bounceIn');
                     setTimeout(function(){
+                        
                         clearAnmi();
                     },500);
                     }
