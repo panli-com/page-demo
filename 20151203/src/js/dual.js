@@ -254,9 +254,9 @@ $(function(){
          
       
       };
-      var HMAN = function() {         
+      var HMAN = function() {          
          
-                 HM.css({"marginTop":"-70px",rotate: '-7deg'}).removeClass('animated bounceIn');
+                 HM.show().css({"marginTop":"-70px",rotate: '-7deg'}).removeClass('animated bounceIn');
                  TH.css({"marginTop":"0px"}).addClass("animated zoomInDown");                  
                 
                 if(isIE()){
@@ -289,14 +289,30 @@ $(function(){
          
           TH.removeClass("animated zoomInDown");
           setTimeout(function () {
-                        HMAN();
+              HMINit()
+                       // HMAN();
            },2500)
          
       }
    
+      var HMINit = function(){
+          HM.addClass("animated zoomOut");
+          
+           setTimeout(function () {             
+               HMINitT();
+           },500)
+      }
+      
+       var HMINitT = function(){
+          HM.removeClass("animated zoomOut").hide();
+          
+           setTimeout(function () {             
+               HMAN();
+           },500)
+      }
      
       setTimeout(function() {
-         //THAN();
+         //THAN(); 
          TH.show();
          HMAN();
        }, 500);
