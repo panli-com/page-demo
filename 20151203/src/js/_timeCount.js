@@ -52,7 +52,7 @@
                 countDown(duaEndTime, timeData);
             }, 1000);
         } else {
-            var _day = (Math.floor(timeDay) + 1).toString();
+            var _day = (Math.floor(timeDay) + 0).toString();
                
             _timeBox.addClass("dual-october-time-1");
             var htmDay = $('<div class="time-day"></div>').html(_day);

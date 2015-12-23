@@ -308,7 +308,7 @@ $(function(){
           
            setTimeout(function () {             
                HMAN();
-           },500)
+           },100)
       }
      
       setTimeout(function() {
