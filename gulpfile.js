@@ -111,6 +111,7 @@ gulp.task('dev', ['sass'], function() {
     });
 
     // 看守.scss 档
+    gulp.watch('./'+ day +'/src/scss/**/*.scss', ['sass']);
     gulp.watch('./'+ day +'/src/scss/*.scss', ['sass']);
     gulp.watch('./home/scss/*.scss', ['home']);
     // 看守所有.js档
