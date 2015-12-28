@@ -283,6 +283,9 @@
 			float: left;
 			text-decoration:none;
 			padding-left:5px;
+			&:hover{
+				text-decoration: underline;
+			}
 		}
 	}
 }
