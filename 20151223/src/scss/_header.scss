@@ -256,16 +256,17 @@
 	display:inline;
 	.search_text, .button {
 		border:solid 2px #ff6e6e;
-		padding:5px;
+		//padding:5px;
+		padding: 5px 10px;
 		height:20px;
-		width:552px;
+		width:548px;
 		display:inline;
 	}
 	.button {
 		background:#ff6e6e;
 		color:#fff;
 		display:block;
-		width:102px;
+		width:92px;
 		line-height:20px;
 		font-size:18px;
 		text-align:center;
@@ -275,7 +276,7 @@
 		color:#999;
 		font-size:12px;
 		line-height:25px;
-		padding-left:3px;
+		padding-left:12px;
 		clear:both;
 		overflow: hidden;
 		a {
