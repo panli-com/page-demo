@@ -36,6 +36,12 @@ abbr, acronym {
 input, a {
   outline: none; }
 
+.pw {
+  width: 1200px; }
+
+.m-auto {
+  margin: 0 auto; }
+
 .f12 {
   font-size: 12px; }
 
@@ -310,7 +316,7 @@ input, a {
   clear: both; }
 
 clearfix:after {
-  content: ".";
+  content: " ";
   display: block;
   height: 0;
   clear: both;
@@ -324,6 +330,9 @@ clearfix:after {
 
 .none {
   display: none; }
+
+.m-auto {
+  margin: 0 auto; }
 
 .header, .footer {
   min-width: 1200px; }

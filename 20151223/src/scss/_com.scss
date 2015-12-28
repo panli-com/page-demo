@@ -273,7 +273,7 @@
 }
 
 clearfix:after {
-	content:".";
+	content:" ";
 	display:block;
 	height:0;
 	clear:both;
@@ -289,4 +289,8 @@ clearfix:after {
 }
 .none {
 	display:none;
+}
+
+.m-auto{
+	margin: 0 auto;
 }
