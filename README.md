@@ -10,4 +10,4 @@ dist 生产环境
 
 ## Demo
 
-[demo](http://panli-com.github.io/page)
+[demo](http://panli.mu.gg/page-demo/)
