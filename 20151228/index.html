@@ -20,6 +20,7 @@
     <meta name="google-translate-customization" content="abd159107dba2713-91c58783ec64b085-g75588e1d1b433547-d" />
     <!-- panli.min 组件 -->
     <script type="text/javascript" src="http://sf.panli.com/Ued/Pc/common/js/panli.min.js?v=0.0.12"></script>
+    <link rel="stylesheet" href="./build/css/main.min.css?v=0.0.1">
 </head>
 
 <body>
@@ -152,7 +153,7 @@
             <div class="shortcut" id="nav_list">
                 <div class="w">
                     <ul class="nav clearfix">
-                        <li class="on" data-on="index"><a href="http://www.panli.com" class="nav_l">首页</a></li>
+                        <li class="" data-on="index"><a href="http://www.panli.com" class="nav_l">首页</a></li>
                         <li data-on="daigou"><a href="http://www.panli.com/daigou" class="nav_l">代购</a></li>
                         <li data-on="drop" class="nav_icon">
                             <a href="javascript:;" class="nav_l">特色购物<em class="icon_m icon_j"></em></a>
@@ -172,28 +173,28 @@
             </div>
         </header>
         <div class="r_l_nav">
-            <ul>
-                <li class="r_l_h85"><span class="icon_r_nav icon_r_navkf hover_b"></span><a href="http://www.panli.com/CustomerService/" target="_blank"
-                    class="hover_a" rel="nofollow">客服<br />中心</a></li>
-                <li class="r_l_h85" id="r_download">
-                    <span class="icon_r_nav icon_r_navapp hover_b"></span>
-                    <a href="http://www.panli.com/Mobile/Index.aspx" target="_blank" class="hover_a" rel="nofollow">下载<br />APP</a>
-                    <div class="icon_code_h">
-                        <div class="icon_code_p">
-                            <em class="r_l_line"></em>
-                        </div>
+            <ul class="online-ul">
+            <li class="online-li online-li-one"><span class="icon_r_nav icon_r_navkf hover_b"></span>
+                <a href="http://www.panli.com/CustomerService/" target="_blank" class="hover_a" rel="nofollow">客服<br />中心</a>
+            </li>
+            <li class="online-li" id="r_download">
+                <span class="icon_r_nav icon_r_navapp hover_b"></span>
+                <a href="http://www.panli.com/Mobile/Index.aspx" target="_blank" class="hover_a" rel="nofollow">下载<br />APP</a>
+                <div class="icon_code_h">
+                    <div class="icon_code_p">
+                        <em class="r_l_line"></em>
                     </div>
-                </li>
-                <li class="r_l_h85 none" id="black_Top">
-                    <span class="icon_r_nav  icon_r_navback hover_b"></span>
-                    <a href="javascript:;" onclick="$('html,body').animate({ scrollTop: 0 }, 800);" class="hover_a">返回<br />顶部</a>
-                </li>
-                <li class="r_l_h40 none" id="index_message">
-                    <span class="icon_r_nav icon_r_navjy hover_b"></span>
-                    <a class="icon_r_nav icon_r_navjy_h hover_a" href="javascript:;" onclick="suggest()"></a>
-                </li>
-            </ul>
-
+                </div>
+            </li>
+            <li class="online-li none" id="black_Top">
+                <span class="icon_r_nav  icon_r_navback hover_b"></span>
+                <a href="javascript:;" onclick="$('html,body').animate({ scrollTop: 0 }, 800);" class="hover_a">返回<br />顶部</a>
+            </li>
+            <li class="r_l_h40 none" id="index_message">
+                <span class="icon_r_nav icon_r_navjy hover_b"></span>
+                <a class="icon_r_nav icon_r_navjy_h hover_a" href="javascript:;" onclick="suggest()"></a>
+            </li>
+        </ul>
         </div>
 
         <div class="border-top"></div>
@@ -225,7 +226,46 @@
 
         <!-- main -->
         <div class="page-main">
-            
+            <!--banner 专题-总-->
+            <div class="pw m-auto banner-all-sp clear">
+                <!--主banner-->               
+                <div class="wrap-banner">
+                    <img src="./build/images/banner-sll.jpg" alt="">
+                </div>
+                 <!--主banner end-->
+                 <!--小banner-->
+                 <div class="wrap-banner-sml">
+                     <div class="sml-banner">
+                         <a href="#">
+                             <img src="./build/images/banner-s1.png" alt="">
+                         </a>
+                     </div>
+                     <div class="sml-banner">
+                         <a href="#">
+                             <img src="./build/images/banner-s1.png" alt="">
+                         </a>
+                     </div>
+                 </div>
+                 <!--小banner end-->
+            </div>
+            <!--banner 专题-总 end-->
+            <!--filter 筛选-->
+            <div class="pw m-auto wrap-filter-sp">
+                <h6 class="z-title">值得买</h6>
+                <div class="filter-main">
+                    <ul class="filter-ul clearfix">
+                        <li><a href="">全部</a><span class="line-r"></span></li>
+                        <li><a href="">销量</a><span class="line-r"></span></li>
+                        <li><a href="">新品</a><span class="line-r"></span></li>
+                        <li><a href="">价格</a><span class="line-r"></span></li>                        
+                    </ul>
+                    <div class="wrap-search-sp">
+                        <input type="text" class="filter-text">
+                        <button class="filter-btn">查看</button>
+                    </div>
+                </div>
+            </div>
+            <!--filter 筛选 end-->
         </div>
         <!-- main end-->
         <script type="text/javascript" src="http://sf.panli.com/FrontEnd/js20090801/NewIndex/banner.js"></script>
