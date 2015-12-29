@@ -434,3 +434,34 @@
     border: 1px solid #444;
     background-color: #f8f8f8;
     cursor: pointer; }
+
+.product-main {
+  position: relative;
+  padding-top: 15px; }
+  .product-main .product-ul {
+    width: 1260px;
+    overflow: hidden; }
+    .product-main .product-ul li {
+      float: left;
+      overflow: hidden;
+      width: 224px;
+      height: 290px;
+      margin-right: 20px;
+      margin-bottom: 20px; }
+      .product-main .product-ul li .thumb {
+        width: 224px;
+        height: 224px;
+        text-align: center; }
+        .product-main .product-ul li .thumb img {
+          max-width: 100%; }
+      .product-main .product-ul li .p1 {
+        font-size: 14px;
+        height: 20px;
+        padding-top: 10px;
+        color: #444444;
+        overflow: hidden; }
+      .product-main .product-ul li .p2 {
+        height: 30px;
+        padding-top: 5px;
+        font-size: 20px;
+        color: #ff6e6e; }

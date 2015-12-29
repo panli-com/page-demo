@@ -39,9 +39,6 @@ input, a {
 .pw {
   width: 1200px; }
 
-.m-auto {
-  margin: 0 auto; }
-
 .f12 {
   font-size: 12px; }
 
@@ -493,19 +490,19 @@ clearfix:after {
   left: 0px; }
 
 .icon_my {
-  background-position: -60px 0px;
+  background-position: -61px 0px;
   top: -5px;
   left: 0px; }
 
 .icon_u {
-  background-position: -90px 0px;
+  background-position: -92px 0px;
   top: -5px;
   left: 0px; }
 
 .icon_j {
   background-position: -60px -30px;
   top: -4px;
-  right: 0px;
+  right: 5px;
   transition: -webkit-transform 0.3s ease-in;
   transition: transform 0.3s ease-in; }
 
@@ -637,7 +634,7 @@ clearfix:after {
   padding-right: 15px; }
 
 .nav_icon .icon_j {
-  right: 15px;
+  right: 22px;
   top: 4px;
   transition: -webkit-transform 0.3s ease-in;
   transition: transform 0.3s ease-in; }
