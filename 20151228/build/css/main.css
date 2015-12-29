@@ -56,15 +56,18 @@
   height: 22px;
   margin-top: -10px; }
   .wrap-search-sp .filter-text {
+    border: 1px solid #999;
     height: 20px;
     width: 399px;
-    border: 1px solid #999; }
+    display: block;
+    padding: 0; }
   .wrap-search-sp .filter-btn {
     position: absolute;
     top: 0;
     right: 0;
     width: 68px;
-    height: 22px;
+    height: 20px;
+    line-height: 20px;
     text-align: center;
     display: inline-block;
     color: #444;
