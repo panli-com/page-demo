@@ -404,7 +404,12 @@
                 </div>
                 <!-- 分页 Paging-->
                 <div class="wrap-paging">
-                    
+                    <div id="wrapper">
+                        <section>
+                            <div class="data-container"></div>
+                            <div id="pagination-demo1"></div>
+                        </section>
+                    </div>
                 </div>
                 <!-- 分页 Paging end-->
             </div>
@@ -509,12 +514,79 @@
     <script type="text/javascript" src="./build/js/main.min.js"></script>
     <script>
     $(document).ready(function() {
+        
+        
       $(".wrap-banner").ibanner({     
         slideSpeed : 1000,
         paginationSpeed : 1000,
         singleItem : true,
         autoPlay : true
       });
+      
+      
+      
+    });
+    
+    
+    
+    
+    $(function(){
+
+        // function createDemo(name){
+        //     var container = $('#pagination-' + name);
+        //     var sources = function(){
+        //         var result = [];
+
+        //         for(var i = 1; i < 196; i++){
+        //             result.push(i);
+        //         }
+
+        //         return result;
+        //     }();
+
+        //     var options = {
+        //         dataSource: sources,
+        //         prevText : "上一页",
+        //         nextText : "下一页",
+        //         pageSize: 50,
+        //         callback: function(response, pagination){
+        //             window.console && console.log(response, pagination);
+
+        //             var dataHtml = '';
+
+        //             $.each(response, function(index, item){
+        //                 dataHtml +=  '<li>'+ 
+        //                                 '<div class="thumb">'+ 
+        //                                     '<a href="#">'+ 
+        //                                     ' <img src="./build/images/thumb.png" alt="">         '+                            
+        //                                     '</a>'+ 
+        //                             ' </div>'+ 
+        //                             ' <p class="p1">秋季毛衣女头套宽松长款'+ item +'</p>'+ 
+        //                             ' <p class="p2">￥199.80</p>'+ 
+        //                             '</li>';
+        //             });                
+
+        //             $(".product-ul").html(dataHtml);
+        //         }
+        //     };
+
+        //     //$.pagination(container, options);
+
+        //     container.addHook('beforeInit', function(){
+        //         window.console && console.log('beforeInit...');
+        //     });
+        //     container.pagination(options);
+
+        //     container.addHook('beforePageOnClick', function(){
+        //         window.console && console.log('beforePageOnClick...');
+        //         //return false
+        //     });
+
+        //     return container;
+        // }
+
+        // createDemo('demo1');
+
     });
     </script>
 </body>

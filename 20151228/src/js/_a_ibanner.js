@@ -1,17 +1,11 @@
 /*
- *  jQuery ibanner v1.3.3
+ *  ibanner v1.3.3
  *
  *  Copyright (c) 2015 Julian
  *  http://www.zanjs.com/ibanner/
  *
- *  Licensed under MIT
  *
  */
-
-/*JS Lint helpers: */
-/*global dragMove: false, dragEnd: false, $, jQuery, alert, window, document */
-/*jslint nomen: true, continue:true */
-
 if (typeof Object.create !== "function") {
     Object.create = function (obj) {
         function F() {}
