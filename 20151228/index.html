@@ -80,8 +80,9 @@
                 </div>
             </div>
             <div class="w por fixed-header-logo">
-                <div class="fixed-logo-wrap logo">
-                    <a href="http://www.panli.com"><img src="./build/images/fixed-logo.png" alt="panli logo"></a>
+                <div class="fixed-logo-wrap logo">                    
+                        <a href="http://www.panli.com"><img src="./build/images/fixed-logo.png" alt="panli logo"></a>          
+                    
                 </div>
 
                 <div class="search-wrap search">
@@ -230,7 +231,15 @@
             <div class="pw m-auto banner-all-sp clear">
                 <!--主banner-->               
                 <div class="wrap-banner">
-                    <img src="./build/images/banner-sll.jpg" alt="">
+                    <div class="">
+                        <img src="./build/images/banner-sll.jpg" alt="">
+                    </div>
+                    <div class="">
+                        <img src="./build/images/banner-sll.jpg" alt="">
+                    </div>
+                    <div class="">
+                        <img src="./build/images/banner-sll.jpg" alt="">
+                    </div>
                 </div>
                  <!--主banner end-->
                  <!--小banner-->
@@ -377,8 +386,18 @@
     <script type="text/javascript" src="http://sf.panli.com/FrontEnd/js20090801/Gobal/Head.js"></script>
 
 
+    <script type="text/javascript" src="./build/js/main.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      $(".wrap-banner").ibanner({     
+        slideSpeed : 1000,
+        paginationSpeed : 1000,
+        singleItem : true,
+        autoPlay : true
 
-
+      });
+    });
+    </script>
 </body>
 
 </html>
