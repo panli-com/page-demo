@@ -41,6 +41,17 @@
 				position: relative;
 				z-index: 1;
 			}
+			&.sequence-li{
+				.on{
+					color: #ff6e6e;
+					.icon-sp-top{
+						background: url(../images/arrow-top-on.png) no-repeat center center;
+					}
+					.icon-sp-bottom{
+						background: url(../images/arrow-bottom-on.png) no-repeat center center;
+					}
+				}	
+			}
 			.line-r{
 				position: absolute;
 				top: 50%;
