@@ -44,12 +44,17 @@
         <script type="text/javascript">
         $(document).ready(function() {
             $('.plselect').plselect({
-                buttonClass: 'btn',
+                
                 buttonWidth: 'auto',
-                enableFiltering: true,
+                
                 filterPlaceholder: '搜索',               
                 maxHeight: false,
                 buttonText: function(options) {
+                    
+                    for(var i=0;i<options.length;i++){
+                          console.log(options[i])
+                    }
+                  
                 if (options.length == 0) {
                 return '请选择';
                 }
@@ -76,13 +81,15 @@
             $(".plselect2").html(opt);
             
              $('.plselect2').plselect({
-                    maxHeight: 200,
+                    maxHeight: 300,
                     includeSelectAllOption: true,
                     filterPlaceholder: '搜索',
                     enableFiltering: true,
                     selectAllText: '选择所有',
+                   
                     onChange: function(option, checked) {
-                        console.log(option.text() + ' options ' + (checked ? 'selected' : 'deselected'));
+                        
+                        //console.log(JSON.stringify($(this)) + ' options ' + (checked ? 'selected' : 'deselected'));
                     },
                     buttonText: function(options) {
                             if (options.length == 0) {
@@ -98,6 +105,9 @@
                                 });
                                     return selected.substr(0, selected.length -2) + ' ';
                                 }
+                    },
+                    buttonTitle:function(options){
+                        
                     }
                 });
             

@@ -252,6 +252,7 @@
              * @returns {String}
              */
             optionLabel: function(element){
+               
                 return $(element).attr('label') || $(element).text();
             },
             /**
@@ -313,7 +314,7 @@
                 
             },
             /**
-             * Triggered after initializing.
+             * 初始化后触发.
              *
              * @param {jQuery} $select
              * @param {jQuery} $container
@@ -371,7 +372,7 @@
         constructor: plselect,
 
         /**
-         * Builds the container of the plselect.
+         *  plselect 构建的容器.
          */
         buildContainer: function() {
             this.$container = $(this.options.buttonContainer);
@@ -382,7 +383,7 @@
         },
 
         /**
-         * Builds the button of the plselect.
+         * plselect 构建按钮.
          */
         buildButton: function() {
             this.$button = $(this.options.templates.button).addClass(this.options.buttonClass);
@@ -419,7 +420,7 @@
         },
 
         /**
-         * Builds the ul representing the dropdown menu.
+         * 建立表示下拉菜单中的UL.
          */
         buildDropdown: function() {
 
@@ -457,9 +458,9 @@
         },
 
         /**
-         * Build the dropdown options and binds all nessecary events.
+         * 建立下拉选项，并结合所有必要的活动。
          * 
-         * Uses createDivider and createOptionValue to create the necessary options.
+         * 使用createDivider和createOptionValue创造必要的选项。
          */
         buildDropdownOptions: function() {
 
@@ -1472,9 +1473,9 @@
         },
 
         /**
-         * Update the button text and its title based on the currently selected options.
+         * 更新基于当前选定的选项按钮上的文字和标题
          */
-        updateButtonText: function() {
+        updateButtonText: function(callback) {
             var options = this.getSelected();
             
             // First update the displayed button text.
@@ -1484,22 +1485,27 @@
             else {
                 $('.plselect .plselect-selected-text', this.$container).text(this.options.buttonText(options, this.$select));
             }
-            
+           
+        
             // Now update the title attribute of the button.
+          
             $('.plselect', this.$container).attr('title', this.options.buttonTitle(options, this.$select));
+            
+            return this.options.buttonTitle(options, this.$select);
         },
 
         /**
-         * Get all selected options.
+         * 获取所有选择的选项。
          *
-         * @returns {jQUery}
+         * @returns {QUery}
          */
         getSelected: function() {
+               
             return $('option', this.$select).filter(":selected");
         },
 
         /**
-         * Gets a select option by its value.
+         * 获取由它的价值选择选项。
          *
          * @param {String} value
          * @returns {jQuery}
@@ -1524,13 +1530,14 @@
          * @returns {jQuery}
          */
         getInputByValue: function (value) {
-
+            
             var checkboxes = $('li input', this.$ul);
             var valueToCompare = value.toString();
 
             for (var i = 0; i < checkboxes.length; i = i + 1) {
                 var checkbox = checkboxes[i];
                 if (checkbox.value === valueToCompare) {
+                    console.log(checkbox)
                     return $(checkbox);
                 }
             }
