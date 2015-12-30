@@ -4,25 +4,45 @@
         <title>select</title>
         <meta name="robots" content="noindex, nofollow" />
         <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-
-        <link rel="stylesheet" href="./build/css/main.min.css" type="text/css">
-      
-
-
+        <link rel="stylesheet" href="./build/css/main.min.css" type="text/css">  
         <script type="text/javascript" src="docs/js/jquery-2.1.3.min.js"></script>
-        <script type="text/javascript" src="./build/js/main.min.js"></script>
-
-        
+        <script type="text/javascript" src="./build/js/main.min.js"></script>        
     </head>
     <body>
-      <script type="text/javascript">
+        <div class="app" style="padding-left:40px;">
+        <div class="">
+            <h1>下拉框多选查询</h1>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <select class="plselect" multiple="multiple">
+            <option value="苹果">苹果</option>
+            <option value="香蕉">香蕉</option>
+            <option value="橘子">橘子</option>
+            <option value="芒果">芒果</option>
+            <option value="荔枝">荔枝</option>
+            <option value="西瓜">西瓜</option>
+        </select>
+        <br/>
+        <br/>
+        <br/>
+       
+       
+        <select class="plselect2" multiple="multiple">
+           
+        </select>
+         </div>
+        </div>
+	</body>
+        <script type="text/javascript">
         $(document).ready(function() {
-            $('.multiselect').multiselect({
+            $('.plselect').plselect({
                 buttonClass: 'btn',
                 buttonWidth: 'auto',
                 enableFiltering: true,
                 filterPlaceholder: '搜索',
-                buttonContainer: '<div class="btn-group" />',
+               
                 maxHeight: false,
                 buttonText: function(options) {
                 if (options.length == 0) {
@@ -48,9 +68,9 @@
                 
             }
             
-            $(".multiselect2").html(opt);
+            $(".plselect2").html(opt);
             
-             $('.multiselect2').multiselect({
+             $('.plselect2').plselect({
                     maxHeight: 200,
                     includeSelectAllOption: true,
                     filterPlaceholder: '搜索',
@@ -78,24 +98,4 @@
             
         });
         </script>
-        
-        <select class="multiselect" multiple="multiple">
-            <option value="苹果">苹果</option>
-            <option value="香蕉">香蕉</option>
-            <option value="橘子">橘子</option>
-            <option value="芒果">芒果</option>
-            <option value="荔枝">荔枝</option>
-            <option value="西瓜">西瓜</option>
-        </select>
-        <br/>
-        <br/>
-        <br/>
-       
-       
-        <select class="multiselect2" multiple="multiple">
-           
-        </select>
-       
-        </div>
-	</body>
 	</html>

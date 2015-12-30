@@ -8,15 +8,15 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 !function ($) {
     "use strict";// jshint ;_;
 
-    if (typeof ko !== 'undefined' && ko.bindingHandlers && !ko.bindingHandlers.multiselect) {
-        ko.bindingHandlers.multiselect = {
+    if (typeof ko !== 'undefined' && ko.bindingHandlers && !ko.bindingHandlers.plselect) {
+        ko.bindingHandlers.plselect = {
             after: ['options', 'value', 'selectedOptions', 'enable', 'disable'],
 
             init: function(element, valueAccessor, allBindings, viewModel, bindingContext) {
                 var $element = $(element);
                 var config = ko.toJS(valueAccessor());
 
-                $element.multiselect(config);
+                $element.plselect(config);
 
                 if (allBindings.has('options')) {
                     var options = allBindings.get('options');
@@ -25,10 +25,10 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
                             read: function() {
                                 options();
                                 setTimeout(function() {
-                                    var ms = $element.data('multiselect');
+                                    var ms = $element.data('plselect');
                                     if (ms)
                                         ms.updateOriginalOptions();//Not sure how beneficial this is.
-                                    $element.multiselect('rebuild');
+                                    $element.plselect('rebuild');
                                 }, 1);
                             },
                             disposeWhenNodeIsRemoved: element
@@ -46,7 +46,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
                             read: function() {
                                 value();
                                 setTimeout(function() {
-                                    $element.multiselect('refresh');
+                                    $element.plselect('refresh');
                                 }, 1);
                             },
                             disposeWhenNodeIsRemoved: element
@@ -63,7 +63,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
                             read: function() {
                                 selectedOptions();
                                 setTimeout(function() {
-                                    $element.multiselect('refresh');
+                                    $element.plselect('refresh');
                                 }, 1);
                             },
                             disposeWhenNodeIsRemoved: element
@@ -74,9 +74,9 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
                 var setEnabled = function (enable) {
                     setTimeout(function () {
                         if (enable)
-                            $element.multiselect('enable');
+                            $element.plselect('enable');
                         else
-                            $element.multiselect('disable');
+                            $element.plselect('disable');
                     });
                 };
 
@@ -109,7 +109,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
                 }
 
                 ko.utils.domNodeDisposal.addDisposeCallback(element, function() {
-                    $element.multiselect('destroy');
+                    $element.plselect('destroy');
                 });
             },
 
@@ -117,8 +117,8 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
                 var $element = $(element);
                 var config = ko.toJS(valueAccessor());
 
-                $element.multiselect('setOptions', config);
-                $element.multiselect('rebuild');
+                $element.plselect('setOptions', config);
+                $element.plselect('rebuild');
             }
         };
     }
@@ -130,13 +130,13 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
     }
 
     /**
-     * Constructor to create a new multiselect using the given select.
+     * Constructor to create a new plselect using the given select.
      *
      * @param {jQuery} select
      * @param {Object} options
-     * @returns {Multiselect}
+     * @returns {plselect}
      */
-    function Multiselect(select, options) {
+    function plselect(select, options) {
 
         this.$select = $(select);
         
@@ -181,7 +181,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
         this.options.onInitialized(this.$select, this.$container);
     }
 
-    Multiselect.prototype = {
+    plselect.prototype = {
 
         defaults: {
             /**
@@ -271,7 +271,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
                 return $(element).attr('class') || '';
             },
             /**
-             * Triggered on change of the multiselect.
+             * Triggered on change of the plselect.
              * 
              * Not triggered when selecting/deselecting options manually.
              * 
@@ -343,7 +343,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
             includeSelectAllOption: false,
             includeSelectAllIfMoreThan: 0,
             selectAllText: ' Select all',
-            selectAllValue: 'multiselect-all',
+            selectAllValue: 'plselect-all',
             selectAllName: false,
             selectAllNumber: true,
             selectAllJustVisible: true,
@@ -365,20 +365,20 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
             disabledText: '',
             delimiterText: ', ',
             templates: {
-                button: '<button type="button" class="multiselect dropdown-toggle" data-toggle="dropdown"><span class="multiselect-selected-text"></span> <b class="caret"></b></button>',
-                ul: '<ul class="multiselect-container dropdown-menu"></ul>',
-                filter: '<li class="multiselect-item filter"><div class="input-group"><input class="form-control multiselect-search" type="text"></div></li>',
-                filterClearBtn: '<span class="input-group-btn"><button class="btn btn-default multiselect-clear-filter" type="button"><i class="glyphicon glyphicon-remove-circle"></i></button></span>',
+                button: '<button type="button" class="plselect dropdown-toggle" data-toggle="dropdown"><span class="plselect-selected-text"></span> <b class="caret"></b></button>',
+                ul: '<ul class="plselect-container dropdown-menu"></ul>',
+                filter: '<li class="plselect-item filter"><div class="input-group"><input class="form-control plselect-search" type="text"></div></li>',
+                filterClearBtn: '<span class="input-group-btn"><button class="btn btn-default plselect-clear-filter" type="button"><i class="glyphicon glyphicon-remove-circle"></i></button></span>',
                 li: '<li><a tabindex="0"><label></label></a></li>',
-                divider: '<li class="multiselect-item divider"></li>',
-                liGroup: '<li class="multiselect-item multiselect-group"><label></label></li>'
+                divider: '<li class="plselect-item divider"></li>',
+                liGroup: '<li class="plselect-item plselect-group"><label></label></li>'
             }
         },
 
-        constructor: Multiselect,
+        constructor: plselect,
 
         /**
-         * Builds the container of the multiselect.
+         * Builds the container of the plselect.
          */
         buildContainer: function() {
             this.$container = $(this.options.buttonContainer);
@@ -389,7 +389,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
         },
 
         /**
-         * Builds the button of the multiselect.
+         * Builds the button of the plselect.
          */
         buildButton: function() {
             this.$button = $(this.options.templates.button).addClass(this.options.buttonClass);
@@ -589,7 +589,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
                 var $target = $(event.target);
                 
                 if (event.shiftKey && this.options.multiple) {
-                    if($target.is("label")){ // Handles checkbox selection manually (see https://github.com/davidstutz/bootstrap-multiselect/issues/431)
+                    if($target.is("label")){ // Handles checkbox selection manually (see https://github.com/davidstutz/bootstrap-plselect/issues/431)
                         event.preventDefault();
                         $target = $target.find("input");
                         $target.prop("checked", !$target.prop("checked"));
@@ -633,7 +633,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
                 }
                 
                 // Remembers last clicked option
-                if($target.is("input") && !$target.closest("li").is(".multiselect-item")){
+                if($target.is("input") && !$target.closest("li").is(".plselect-item")){
                     this.lastToggledInput = $target;
                 }
 
@@ -641,7 +641,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
             }, this));
 
             // Keyboard support.
-            this.$container.off('keydown.multiselect').on('keydown.multiselect', $.proxy(function(event) {
+            this.$container.off('keydown.plselect').on('keydown.plselect', $.proxy(function(event) {
                 if ($('input[type="text"]', this.$container).is(':focus')) {
                     return;
                 }
@@ -686,13 +686,13 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
             }, this));
 
             if(this.options.enableClickableOptGroups && this.options.multiple) {
-                $('li.multiselect-group', this.$ul).on('click', $.proxy(function(event) {
+                $('li.plselect-group', this.$ul).on('click', $.proxy(function(event) {
                     event.stopPropagation();
                     console.log('test');
                     var group = $(event.target).parent();
 
                     // Search all option in optgroup
-                    var $options = group.nextUntil('li.multiselect-group');
+                    var $options = group.nextUntil('li.plselect-group');
                     var $visibleOptions = $options.filter(":visible:not(.disabled)");
 
                     // check or uncheck items
@@ -717,19 +717,19 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
             }
 
             if (this.options.enableCollapsibleOptGroups && this.options.multiple) {
-                $("li.multiselect-group input", this.$ul).off();
-                $("li.multiselect-group", this.$ul).siblings().not("li.multiselect-group, li.multiselect-all", this.$ul).each( function () {
+                $("li.plselect-group input", this.$ul).off();
+                $("li.plselect-group", this.$ul).siblings().not("li.plselect-group, li.plselect-all", this.$ul).each( function () {
                     $(this).toggleClass('hidden', true);
                 });
                 
-                $("li.multiselect-group", this.$ul).on("click", $.proxy(function(group) {
+                $("li.plselect-group", this.$ul).on("click", $.proxy(function(group) {
                     group.stopPropagation();
                 }, this));
                 
-                $("li.multiselect-group > a > b", this.$ul).on("click", $.proxy(function(t) {
+                $("li.plselect-group > a > b", this.$ul).on("click", $.proxy(function(t) {
                     t.stopPropagation();
                     var n = $(t.target).closest('li');
-                    var r = n.nextUntil("li.multiselect-group");
+                    var r = n.nextUntil("li.plselect-group");
                     var i = true;
                     
                     r.each(function() {
@@ -739,10 +739,10 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
                     r.toggleClass('hidden', !i);
                 }, this));
                 
-                $("li.multiselect-group > a > input", this.$ul).on("change", $.proxy(function(t) {
+                $("li.plselect-group > a > input", this.$ul).on("change", $.proxy(function(t) {
                     t.stopPropagation();
                     var n = $(t.target).closest('li');
-                    var r = n.nextUntil("li.multiselect-group", ':not(.disabled)');
+                    var r = n.nextUntil("li.plselect-group", ':not(.disabled)');
                     var s = r.find("input");
                     
                     var i = true;
@@ -754,8 +754,8 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
                 }, this));
                 
                 // Set the initial selection state of the groups.
-                $('li.multiselect-group', this.$ul).each(function() {
-                    var r = $(this).nextUntil("li.multiselect-group", ':not(.disabled)');
+                $('li.plselect-group', this.$ul).each(function() {
+                    var r = $(this).nextUntil("li.plselect-group", ':not(.disabled)');
                     var s = r.find("input");
                     
                     var i = true;
@@ -771,8 +771,8 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
                 $("li input", this.$ul).on("change", $.proxy(function(t) {
                     t.stopPropagation();
                     var n = $(t.target).closest('li');
-                    var r1 = n.prevUntil("li.multiselect-group", ':not(.disabled)');
-                    var r2 = n.nextUntil("li.multiselect-group", ':not(.disabled)');
+                    var r1 = n.prevUntil("li.plselect-group", ':not(.disabled)');
+                    var r2 = n.nextUntil("li.plselect-group", ':not(.disabled)');
                     var s1 = r1.find("input");
                     var s2 = r2.find("input");
                     
@@ -785,12 +785,12 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
                         i = i && $(this).prop("checked");
                     });
                     
-                    n.prevAll('.multiselect-group').find('input').prop('checked', i);
+                    n.prevAll('.plselect-group').find('input').prop('checked', i);
                 }, this));
                 
-                $("li.multiselect-all", this.$ul).css('background', '#f3f3f3').css('border-bottom', '1px solid #eaeaea');
-                $("li.multiselect-group > a, li.multiselect-all > a > label.checkbox", this.$ul).css('padding', '3px 20px 3px 35px');
-                $("li.multiselect-group > a > input", this.$ul).css('margin', '4px 0px 5px -20px');
+                $("li.plselect-all", this.$ul).css('background', '#f3f3f3').css('border-bottom', '1px solid #eaeaea');
+                $("li.plselect-group > a, li.plselect-all > a > label.checkbox", this.$ul).css('padding', '3px 20px 3px 35px');
+                $("li.plselect-group > a > input", this.$ul).css('margin', '4px 0px 5px -20px');
             }
         },
 
@@ -834,9 +834,9 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
             $checkbox.val(value);
 
             if (value === this.options.selectAllValue) {
-                $li.addClass("multiselect-item multiselect-all");
+                $li.addClass("plselect-item plselect-all");
                 $checkbox.parent().parent()
-                    .addClass('multiselect-all');
+                    .addClass('plselect-all');
             }
 
             $label.attr('title', $element.attr('title'));
@@ -879,10 +879,10 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
             if (this.options.enableCollapsibleOptGroups && this.options.multiple) {
                 var label = $(group).attr("label");
                 var value = $(group).attr("value");
-                var r = $('<li class="multiselect-item multiselect-group"><a href="javascript:void(0);"><input type="checkbox" value="' + value + '"/><b> ' + label + '<b class="caret"></b></b></a></li>');
+                var r = $('<li class="plselect-item plselect-group"><a href="javascript:void(0);"><input type="checkbox" value="' + value + '"/><b> ' + label + '<b class="caret"></b></b></a></li>');
 
                 if (this.options.enableClickableOptGroups) {
-                    r.addClass("multiselect-group-clickable")
+                    r.addClass("plselect-group-clickable")
                 }
                 this.$ul.append(r);
                 if ($(group).is(":disabled")) {
@@ -906,7 +906,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
                 }
 
                 if (this.options.enableClickableOptGroups) {
-                    $li.addClass('multiselect-group-clickable');
+                    $li.addClass('plselect-group-clickable');
                 }
 
                 this.$ul.append($li);
@@ -962,9 +962,9 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
                 var $checkbox = $('input', $li);
                 $checkbox.val(this.options.selectAllValue);
 
-                $li.addClass("multiselect-item multiselect-all");
+                $li.addClass("plselect-item plselect-all");
                 $checkbox.parent().parent()
-                    .addClass('multiselect-all');
+                    .addClass('plselect-all');
 
                 this.$ul.prepend($li);
 
@@ -991,7 +991,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
                         var clearBtn = $(this.options.templates.filterClearBtn);
                         clearBtn.on('click', $.proxy(function(event){
                             clearTimeout(this.searchTimeout);
-                            this.$filter.find('.multiselect-search').val('');
+                            this.$filter.find('.plselect-search').val('');
                             $('li', this.$ul).show().removeClass("filter-hidden");
                             this.updateSelectAll();
                         }, this));
@@ -1057,7 +1057,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
                                         $(element).toggle(showElement).toggleClass('filter-hidden', !showElement);
                                         
                                         // Differentiate groups and group items.
-                                        if ($(element).hasClass('multiselect-group')) {
+                                        if ($(element).hasClass('plselect-group')) {
                                             // Remember group status.
                                             currentGroup = element;
                                             currentGroupVisible = showElement;
@@ -1090,11 +1090,11 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
         destroy: function() {
             this.$container.remove();
             this.$select.show();
-            this.$select.data('multiselect', null);
+            this.$select.data('plselect', null);
         },
 
         /**
-         * Refreshs the multiselect based on the selected options of the select.
+         * Refreshs the plselect based on the selected options of the select.
          */
         refresh: function () {
             var inputs = $.map($('li input', this.$ul), $);
@@ -1405,7 +1405,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
         },
 
         /**
-         * Enable the multiselect.
+         * Enable the plselect.
          */
         enable: function() {
             this.$select.prop('disabled', false);
@@ -1414,7 +1414,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
         },
 
         /**
-         * Disable the multiselect.
+         * Disable the plselect.
          */
         disable: function() {
             this.$select.prop('disabled', true);
@@ -1447,7 +1447,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
          * @returns {Boolean}
          */
         hasSelectAll: function() {
-            return $('li.multiselect-all', this.$ul).length > 0;
+            return $('li.plselect-all', this.$ul).length > 0;
         },
 
         /**
@@ -1455,10 +1455,10 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
          */
         updateSelectAll: function(notTriggerOnSelectAll) {
             if (this.hasSelectAll()) {
-                var allBoxes = $("li:not(.multiselect-item):not(.filter-hidden) input:enabled", this.$ul);
+                var allBoxes = $("li:not(.plselect-item):not(.filter-hidden) input:enabled", this.$ul);
                 var allBoxesLength = allBoxes.length;
                 var checkedBoxesLength = allBoxes.filter(":checked").length;
-                var selectAllLi  = $("li.multiselect-all", this.$ul);
+                var selectAllLi  = $("li.plselect-all", this.$ul);
                 var selectAllInput = selectAllLi.find("input");
                 
                 if (checkedBoxesLength > 0 && checkedBoxesLength === allBoxesLength) {
@@ -1486,14 +1486,14 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
             
             // First update the displayed button text.
             if (this.options.enableHTML) {
-                $('.multiselect .multiselect-selected-text', this.$container).html(this.options.buttonText(options, this.$select));
+                $('.plselect .plselect-selected-text', this.$container).html(this.options.buttonText(options, this.$select));
             }
             else {
-                $('.multiselect .multiselect-selected-text', this.$container).text(this.options.buttonText(options, this.$select));
+                $('.plselect .plselect-selected-text', this.$container).text(this.options.buttonText(options, this.$select));
             }
             
             // Now update the title attribute of the button.
-            $('.multiselect', this.$container).attr('title', this.options.buttonTitle(options, this.$select));
+            $('.plselect', this.$container).attr('title', this.options.buttonTitle(options, this.$select));
         },
 
         /**
@@ -1563,32 +1563,32 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
         }
     };
 
-    $.fn.multiselect = function(option, parameter, extraOptions) {
+    $.fn.plselect = function(option, parameter, extraOptions) {
         return this.each(function() {
-            var data = $(this).data('multiselect');
+            var data = $(this).data('plselect');
             var options = typeof option === 'object' && option;
 
-            // Initialize the multiselect.
+            // Initialize the plselect.
             if (!data) {
-                data = new Multiselect(this, options);
-                $(this).data('multiselect', data);
+                data = new plselect(this, options);
+                $(this).data('plselect', data);
             }
 
-            // Call multiselect method.
+            // Call plselect method.
             if (typeof option === 'string') {
                 data[option](parameter, extraOptions);
                 
                 if (option === 'destroy') {
-                    $(this).data('multiselect', false);
+                    $(this).data('plselect', false);
                 }
             }
         });
     };
 
-    $.fn.multiselect.Constructor = Multiselect;
+    $.fn.plselect.Constructor = plselect;
 
     $(function() {
-        $("select[data-role=multiselect]").multiselect();
+        $("select[data-role=plselect]").plselect();
     });
 
 }(window.jQuery);
