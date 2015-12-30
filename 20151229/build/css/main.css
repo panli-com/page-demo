@@ -4157,15 +4157,6 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   color: #aaa;
   cursor: text; }
 
-/**
- * Blackboard theme
- *
- * Adapted from Domenico Carbotta's TextMate theme of the same name
- *
- * @author Domenico Carbotta
- * @author Craig Campbell
- * @version 1.0.2
- */
 pre {
   background: #0B1022;
   word-wrap: break-word;

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>select</title>
+        <meta name="robots" content="noindex, nofollow" />
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+        <link rel="stylesheet" href="./build/css/main.min.css" type="text/css">
+      
+
+
+        <script type="text/javascript" src="docs/js/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript" src="./build/js/main.min.js"></script>
+
+        
+    </head>
+    <body>
+      <script type="text/javascript">
+        $(document).ready(function() {
+            $('.multiselect').multiselect({
+                buttonClass: 'btn',
+                buttonWidth: 'auto',
+                enableFiltering: true,
+                filterPlaceholder: '搜索',
+                buttonContainer: '<div class="btn-group" />',
+                maxHeight: false,
+                buttonText: function(options) {
+                if (options.length == 0) {
+                return '请选择';
+                }
+                else if (options.length > 3) {
+                //return options.length + ' selected <b class="caret"></b>';
+                }
+                else {
+                    var selected = '';
+                    options.each(function() {
+                    selected += $(this).text() + ', ';
+                    });
+                        return selected.substr(0, selected.length -2) + ' ';
+                    }
+                }
+            });
+            
+            var opt = '';
+            for (var j = 0; j < 100; j++) {
+                
+                opt += '<option value="苹果'+ j +'">苹果'+ j +'</option>';
+                
+            }
+            
+            $(".multiselect2").html(opt);
+            
+             $('.multiselect2').multiselect({
+                    maxHeight: 200,
+                    includeSelectAllOption: true,
+                    filterPlaceholder: '搜索',
+                    enableFiltering: true,
+                    selectAllText: '选择所有',
+                    onChange: function(option, checked) {
+                        console.log(option.text() + ' options ' + (checked ? 'selected' : 'deselected'));
+                    },
+                    buttonText: function(options) {
+                            if (options.length == 0) {
+                                return '请选择';
+                            }
+                            else if (options.length > 3) {
+                                
+                            }
+                            else {
+                                var selected = '';
+                                options.each(function() {
+                                selected += $(this).text() + ', ';
+                                });
+                                    return selected.substr(0, selected.length -2) + ' ';
+                                }
+                    }
+                });
+            
+        });
+        </script>
+        
+        <select class="multiselect" multiple="multiple">
+            <option value="苹果">苹果</option>
+            <option value="香蕉">香蕉</option>
+            <option value="橘子">橘子</option>
+            <option value="芒果">芒果</option>
+            <option value="荔枝">荔枝</option>
+            <option value="西瓜">西瓜</option>
+        </select>
+        <br/>
+        <br/>
+        <br/>
+       
+       
+        <select class="multiselect2" multiple="multiple">
+           
+        </select>
+       
+        </div>
+	</body>
+	</html>
