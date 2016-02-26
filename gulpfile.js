@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 
-var day = '20151230';
+var day = '20151228';
+var cssName = 'main';
 
 // 引入组件
 var sass = require('gulp-sass'),
@@ -33,7 +34,7 @@ var reload      = browserSync.reload;
 
 //编译Sass，Autoprefix及缩小化
 gulp.task('sass', function() {
-    return gulp.src('./'+ day +'/src/scss/main.scss')
+    return gulp.src('./'+ day +'/src/scss/'+ cssName +'.scss')
         .pipe(sass({ style: 'expanded' }))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe(gulp.dest('./'+ day +'/build/css'))

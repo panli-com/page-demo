@@ -518,6 +518,9 @@ clearfix:after {
 .icon_fxg {
   background-position: 0px -120px; }
 
+.icon_zhidemai {
+  background-position: -62px -90px; }
+
 .drop {
   position: absolute;
   z-index: 50;
@@ -531,18 +534,19 @@ clearfix:after {
 
 .drop_item {
   display: block;
-  height: 38px;
-  line-height: 38px;
+  height: 48px;
+  line-height: 48px;
   padding-left: 60px;
   font-size: 15px;
   position: relative;
   border-top: 1px solid #FFF; }
   .drop_item .icon_m {
     left: 24px;
-    top: 5px; }
+    top: 9px; }
   .drop_item a {
     text-decoration: none;
-    color: #999; }
+    color: #999;
+    display: block; }
   .drop_item:hover {
     background-color: #ffbbbb;
     color: #fff; }
@@ -556,6 +560,8 @@ clearfix:after {
       background-position: -30px -90px; }
     .drop_item:hover .icon_fxg {
       background-position: -30px -120px; }
+    .drop_item:hover .icon_zhidemai {
+      background-position: -92px -90px; }
 
 .logo {
   margin: 15px 0 35px;
@@ -612,23 +618,33 @@ clearfix:after {
     z-index: 22;
     width: 150px;
     height: 38px; }
-  .nav li:hover a.nav_l {
-    background-color: #ffbbbb;
-    color: #fff; }
-  .nav li.on a.nav_l {
-    color: #fff;
-    background-color: #ff6e6e; }
-  .nav li.nav_icon:hover {
-    width: 148px;
-    background-color: #fff;
-    border-left: solid 1px #ddd;
-    border-right: solid 1px #ddd; }
-  .nav li.nav_icon:hover .icon_j {
-    background-position: -60px -60px;
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg); }
-  .nav li.nav_icon:hover .drop {
-    display: block; }
+    .nav li:hover a.nav_l {
+      background-color: #ff6e6e;
+      color: #fff; }
+    .nav li.on a.nav_l {
+      color: #fff;
+      background-color: #ff6e6e; }
+    .nav li.nav_icon:hover {
+      width: 148px;
+      background-color: #fff;
+      border-left: solid 1px #ddd;
+      border-right: solid 1px #ddd; }
+      .nav li.nav_icon:hover > a {
+        background-color: #f8f8f8;
+        color: #444; }
+      .nav li.nav_icon:hover .drop {
+        display: block; }
+        .nav li.nav_icon:hover .drop .drop_item:hover {
+          background-color: #FF6E6E; }
+        .nav li.nav_icon:hover .drop a:visited, .nav li.nav_icon:hover .drop a:hover {
+          background-color: #FF6E6E; }
+    .nav li.nav_icon > a:hover {
+      background-color: #ff6e6e;
+      color: #fff; }
+      .nav li.nav_icon > a:hover .icon_j {
+        background-position: -60px -60px;
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg); }
 
 .nav_icon .nav_l {
   padding-right: 15px; }

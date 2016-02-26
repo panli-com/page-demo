@@ -15,11 +15,15 @@
 	}
 	.filter-ul{
 		height: 34px;
+        position: relative;
 		li{	
-			float: left;
+			//float: left;
+            display: inline-block;
 			height: 34px;
 			line-height: 34px;
 			position: relative;
+           
+            // background-color: #CCC;
 			&:hover{
 				.childen-filter{
 					display: block;
@@ -31,36 +35,38 @@
 					transform:rotate(180deg); 
 					//filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
 				}
-			}		
+			}
+            &.li1{
+                width: 110px;
+                &>a{
+                    text-align: center;
+                    
+                    text-indent: 0px;
+                }
+            }
+            	
 			&>a{
 				text-decoration: none;
 				display: block;
-				padding: 0 30px;
+                position: relative;
 				color: #444;
-				font-size: 12px;
-				position: relative;
+				font-size: 12px;              
+				
 				z-index: 1;
 			}
-			&.sequence-li{
-				.on{
-					color: #ff6e6e;
-					.icon-sp-top{
-						background: url(../images/arrow-top-on.png) no-repeat center center;
-					}
-					.icon-sp-bottom{
-						background: url(../images/arrow-bottom-on.png) no-repeat center center;
-					}
-				}	
-			}
+			
 			.line-r{
 				position: absolute;
 				top: 50%;
-				right: 0;
+				right: 0px;
+                padding: 0;
+                margin: 0;
 				margin-top: -10px;
 				height: 20px;
 				width: 1px;
-				background-color: #dddddd;
-				display: block;
+				background-color: #ddd;
+				display: inline-block;
+                
 			}
 			.icon_j{
 				position: absolute;
@@ -71,23 +77,43 @@
 			.icon-sp-top,.icon-sp-bottom{
 				position: absolute;
 				display: block;
-				width: 30px;
-				height: 30px;
-				top: 3px;
-				right: 6px;				
+				width: 8px;
+				height: 8px;
+				top: 14px;
+				right: 36px;
+                background: url(../images/arrow-all.png) no-repeat center center;			
 			}
+            
 			.icon-sp-top{
-				background: url(../images/arrow-top.png) no-repeat center center;
+				background-position: 0 -15px;
 			}
 			.icon-sp-bottom{
-				background: url(../images/arrow-bottom.png) no-repeat center center;
+				background-position: 0 0;
+			}
+            &.sequence-li{
+                position: relative;
+                width: 100px;
+                
+                &>a{
+                  text-indent: 30px;  
+                }
+				.on{
+					color: #ff6e6e;
+                    
+					.icon-sp-top{
+						background-position: -10px -15px;
+					}
+					.icon-sp-bottom{
+						background-position: -10px 0;
+					}
+				}	
 			}
 			
 			.childen-filter{
 				display: none;
 				position: absolute;
 				background-color: #f8f8f8;
-				width: 82px;
+				width: 108px;
 				top: 4px;
 				left: 0;
 				border:1px solid #dddddd;
@@ -115,10 +141,11 @@
 
 .wrap-search-sp{
 	position: absolute;	
-	right: 80px;	
+	right: 40px;	
 	top: 50%;	
 	height: 22px;
-	margin-top: -10px;	
+	margin-top: -10px;
+    padding-right: 69px;
 	.filter-text{
 		border: 1px solid #999;
 		height: 20px;

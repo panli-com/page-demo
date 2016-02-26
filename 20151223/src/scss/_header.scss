@@ -195,6 +195,9 @@
 .icon_fxg {
 	background-position:0px -120px;
 }
+.icon_zhidemai {
+	background-position:-62px -90px;
+}
 
 
 
@@ -212,19 +215,20 @@
 
 .drop_item {
 	display:block;
-	height:38px;
-	line-height:38px;
+	height:48px;
+	line-height:48px;
 	padding-left:60px;
 	font-size:15px;
 	position:relative;
 	border-top: 1px solid #FFF;
 	.icon_m {
 		left:24px;
-		top:5px;
+		top:9px;
 	}
 	a {
 		text-decoration:none;
 		color:#999;
+        display: block;
 	}
 	&:hover{
 	background-color:#ffbbbb;
@@ -243,6 +247,9 @@
 		}
 		.icon_fxg {
 			background-position:-30px -120px;
+		}
+        .icon_zhidemai {
+			background-position:-92px -90px;
 		}
 	} 
 }
@@ -309,29 +316,52 @@
 		z-index:22;
 		width:150px;
 		height:38px;
-	}
-	li:hover a.nav_l {
-		background-color:#ffbbbb;
-		color:#fff;
-	}
-	li.on a.nav_l {
-		color:#fff;
-		background-color:#ff6e6e;
-	}
-	li.nav_icon:hover {
-		width:148px;
-		background-color:#fff;
-		border-left:solid 1px #ddd;
-		border-right:solid 1px #ddd;
-	}
-	li.nav_icon:hover .icon_j {
-		background-position:-60px -60px;
-		-webkit-transform:rotate(180deg);
-		-ms-transform:rotate(180deg);
-		transform:rotate(180deg);
-	}
-	li.nav_icon:hover .drop {
-		display:block;
+        &:hover{
+           a.nav_l {
+            background-color:#ff6e6e ;
+            color:#fff;
+	       }            
+        } 
+        &.on{        
+            a.nav_l {
+                color:#fff;
+                background-color:#ff6e6e;
+            }        
+        }
+        &.nav_icon{            
+           &:hover{        
+                width:148px;
+                background-color:#fff;
+                border-left:solid 1px #ddd;
+                border-right:solid 1px #ddd;
+                &>a{                
+                background-color:#f8f8f8;
+                color:#444;
+                }
+                
+                .drop {
+                    .drop_item{
+                        &:hover{
+                            background-color: #FF6E6E;
+                        }
+                    }
+                    display:block;
+                    a:visited,a:hover{
+                       background-color: #FF6E6E;
+                    }
+                }
+            }
+            &>a:hover{                
+                background-color:#ff6e6e ;
+                color:#fff;
+                .icon_j {
+                    background-position:-60px -60px;
+                    -webkit-transform:rotate(180deg);
+                    -ms-transform:rotate(180deg);
+                    transform:rotate(180deg);
+                }
+            }          
+        }
 	}
 }
 
