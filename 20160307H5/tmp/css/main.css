@@ -636,7 +636,7 @@ a {
       word-spacing: 0;
       font-size: 0;
       border-radius: 0.22222rem;
-      margin: 0.01389rem 0.02778rem;
+      margin: 0.01528rem 0.02778rem;
       text-align: center; }
       .jiugong ul li span {
         margin-top: 0.25rem;
@@ -760,6 +760,7 @@ a {
 .layermchild {
   text-align: left;
   font-size: 14px;
+  margin: 0 auto;
   border-radius: 6px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   pointer-events: auto;
@@ -825,7 +826,7 @@ a {
 
 .layermbox2 .layermcont {
   text-align: center;
-  padding: 30px 30px 0;
+  padding: 20px 20px 2px;
   line-height: 0; }
 
 .layermbox2 .layermcont i {

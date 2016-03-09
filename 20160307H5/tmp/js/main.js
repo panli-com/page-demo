@@ -468,12 +468,12 @@ $.fn.extend({
  * ====================================================
  * this.start(index, fn) 开始调用动画 
  	index 集合中哪一项为中奖结果 索引值 从0开始 最后一项为opts.length-1
-	fn 动画完成后
+	fn 动画完成后 
  * ==================================
  **/
 (function(window, document) {
 	'use strict';
-	var styleBox = function(opts) {
+	var zhuanQuan = function(opts) {
 		opts = opts || {};
 		this.idPart = opts.idPart;
 		this.idDigit = opts.idDigit;
@@ -489,7 +489,7 @@ $.fn.extend({
 		this.animated = false;
 		this.init();
 	};
-	styleBox.prototype = {
+	zhuanQuan.prototype = {
 		init: function() {
 			var start = this.idDigit,
 				end = this.length + start - 1,
@@ -569,11 +569,11 @@ $.fn.extend({
 		}
 	};
 	if (typeof define === 'function' && define.amd) {
-		define('styleBox', [], function() {
-			return styleBox;
+		define('zhuanQuan', [], function() {
+			return zhuanQuan;
 		});
 	} else {
-		window.styleBox = styleBox;
+		window.zhuanQuan = zhuanQuan;
 	}
 }(window, document));
 function layerBtn(i){
@@ -667,7 +667,7 @@ function callmyInfo(i){
         '</div>'+
     '</div> ';
     
-    
+     
     
     
     PL.open({

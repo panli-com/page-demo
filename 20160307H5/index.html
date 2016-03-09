@@ -16,6 +16,7 @@
 <title>逢抽必中</title>
 <link type="text/css" href="./build/css/main.min.css?v=0.0.2" rel="stylesheet" />
 <script src="./build/js/main.min.js?v=0.0.2" charset="utf-8"></script>
+
 </head>
 <body>
 <!-- main -->
@@ -192,53 +193,43 @@
 </div>
 </body>
 <script charset="utf-8">
-     $(function(){
-         
-         
-         
-         var startBtn = $('#li9'),
-            animated = true;
-            
-            $('#li9').on("touchend",function(){
-                
-                
-                
-                lhj = new styleBox({
-                    idPart: 'li',
-                    idDigit: 1,
-                    length: 8,
-                    count: 10,
-                    duration: 5000,
-                    easing: 'easeInOutCirc'
-                });
-                
-             
-                
-                if (!animated) return;
-                animated = false;
-                // console.time('计时');
-                var index = (Math.random() * 8) >> 0; //奖项
-                var jiangN = Number(correspondIndex()[index])-1;
-                console.log(index+"等奖");
-                console.log("对应号"+ jiangN);
-            
-                lhj.start(index, function() {
-                    // console.timeEnd('计时');
-                    animated = true; 
-                    
-                    callmyInfo(index); 
-                    
-                    console.log(  ' 恭喜你中了'+ index +'奖！');
-                });
+    
+    
+    //抽奖
+var animated = true,
+	quan = new zhuanQuan({
+		idPart: 'li',
+		idDigit: 1,
+		length: 8,
+		count: 8,
+		duration: 8000,
+		easing: 'easeInOutCirc'
+	});
+    
+    $("#li9").on("touchend",function(){
+        
+        
+        if (!animated) return;
+        animated = false;
 
-                
-            })
-         
-         
-         
-         
-         
-     })   
-           
+        var index = (Math.random() * 8) >> 0;
+        var jiangN = Number(correspondIndex()[index])-1;
+                    console.log(index+"等奖");
+                    console.log("对应号"+ jiangN);
+        
+        quan.start(jiangN, function() {
+            
+            animated = true;
+            callmyInfo(index); 
+                        
+            console.log(  ' 恭喜你中了'+ index +'奖！');
+            
+        });
+        
+        
+    })
+    
+
+
 </script>
 </html>
