@@ -1,0 +1,33 @@
+.winners-wrap{
+   padding: pxTorem(30);
+   
+}
+.winners-title{
+    height: pxTorem(34);
+    background: url(../images/xian.png);
+    background-size: contain;
+    margin-bottom: pxTorem(34);
+    
+}
+
+
+.winners-list{
+    background:#6f3fba;
+    ul{
+       padding: pxTorem(16) pxTorem(26); 
+       li{
+           font-size: pxTorem(24);
+           padding: pxTorem(14);
+           border-bottom: 2px dotted #8a4ee6;
+           .name{
+               color:#ffe400;
+           }
+           .wupin{
+               color:#ff6666;
+           }
+           &:last-child{
+               border-bottom:none;
+           }
+       }
+    }
+}

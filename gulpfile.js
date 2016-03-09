@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 
-var day = '20151228';
+var day = '20160307H5';
 var cssName = 'main';
 
 // 引入组件
@@ -14,7 +14,9 @@ var sass = require('gulp-sass'),
     notify = require('gulp-notify'),
     autoprefixer = require('gulp-autoprefixer'),
     livereload = require('gulp-livereload'),
-    zip = require('gulp-zip');
+    zip = require('gulp-zip'),
+    postcss = require('gulp-postcss'),
+ px2rem = require('postcss-px2rem');
     // port = process.env.port || 5000;
 
 
@@ -34,10 +36,14 @@ var reload      = browserSync.reload;
 
 //编译Sass，Autoprefix及缩小化
 gulp.task('sass', function() {
+    
+    var processors = [px2rem({remUnit: 72})];
+    
     return gulp.src('./'+ day +'/src/scss/'+ cssName +'.scss')
         .pipe(sass({ style: 'expanded' }))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(gulp.dest('./'+ day +'/build/css'))
+        .pipe(gulp.dest('./'+ day +'/tmp/css'))
+        // .pipe(postcss(processors))
         .pipe(rename({suffix: '.min'}))
         .pipe(minifycss())
         .pipe(gulp.dest('./'+ day +'/build/css/'))
@@ -84,7 +90,7 @@ gulp.task('homeHtml',function(){
 gulp.task('scripts',function(){
     return gulp.src('./'+ day +'/src/js/*.js')
         .pipe(concat('main.js'))
-        .pipe(gulp.dest('./'+ day +'/build/js'))
+        .pipe(gulp.dest('./'+ day +'/tmp/js'))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
         .pipe(gulp.dest('./'+ day +'/build/js/'))
