@@ -16,22 +16,25 @@
 .fr{
   float: right;
 }
+.m-auto{
+  margin: 0 auto;
+}
+.red{
+  color: #ff2828;
+}
+.font20{
+  font-size: 20px;
+}
+.font30{
+  font-size: 30px;
+}
 .del-link{
   text-decoration:line-through;
 }
-.text-center{
-  text-align: center;
-}
+
 *:focus {outline: none;}
 
-.textarea-wrap-pla{
-  position: relative;
-  .text-placeholder{
-    position: absolute;
-    z-index: 0;
-    left: 5px;
-    top: 10px;
-    color: #999;
-  }
- 
+.page-w{
+    width: 1000px;
 }
+
