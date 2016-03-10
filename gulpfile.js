@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 
-var day = '20160307H5';
+var day = '20160307';
 var cssName = 'main';
 
 // 引入组件

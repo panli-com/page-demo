@@ -19,7 +19,7 @@
         display: block;
         display:table;  /* 调教webkit*/
         word-spacing:-1em;
-        padding-top: pxTorem(6);
+        padding-top: pxTorem(5.6);
         padding-left: pxTorem(5);
         li{
             display: inline-block;
@@ -31,7 +31,7 @@
             word-spacing:0;
             font-size: 0;
             border-radius: pxTorem(16);
-            margin: pxTorem(1.1) pxTorem(2);
+            margin:0 pxTorem(2);
             text-align: center;
             span{
                 margin-top: pxTorem(18);

@@ -14,11 +14,11 @@
         $(this).addClass("on");
       });
       
-      $(".btn-layer .btnd").on("touchstart",function(){
-        var _t = $(this),
-            _id = _t.data("id");            
-            layerBtn(_id);
+      $(".btn-layer .btn-rule").on("click",function(){               
+            layerBtn(layerBtnT2());
       });
+      
+      
       
       $(".go-to-btn").on("touchend touchcancel",function(){
         $(this).removeClass("on");

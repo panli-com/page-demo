@@ -27,16 +27,18 @@
 	<section class="jiugong-wrap">
            <div class="jiugong-bg">
                <div class="jiugong">
-                   <ul class="clearfix">
+                   <ul class="flex flex-left flex-main-center flex-cross-top">
                        <li class="li1" id="li1">
                             <span></span>
                        </li>
                        <li class="li2" id="li2">
                            <span></span>
-                       </li>
+                       </li>                   
                        <li class="li3" id="li3">
                            <span></span>
                        </li>
+                    </ul>
+                    <ul class="flex flex-left flex-main-center flex-cross-top">
                        <li class="li8" id="li8">
                            <span></span>
                        </li>
@@ -46,6 +48,8 @@
                         <li class="li4" id="li4">
                            <span></span>
                        </li>
+                      </ul>
+                    <ul class="flex flex-left flex-main-center flex-cross-top">
                         <li class="li7" id="li7">
                            <span></span>
                        </li>
@@ -55,12 +59,12 @@
                        <li class="li5" id="li5">
                            <span></span>
                        </li>
-                   </ul>
+                     </ul>
                </div>
            </div>
 	</section>
     <section class="btnbox">
-        <div class="btntitle flex flex-main-center flex-cross-center">
+        <div class="btntitle">
            <div class="btntitle-bg"><span class="liwu"></span> 你有 <span class="chance-num">0</span> 次抽奖机会</div>
         </div>
         <div class="btn-layer flex flex-left flex-main-justify flex-cross-top">
@@ -106,7 +110,7 @@
 <!-- main end -->
 <div class="layer-none">
     <!--活动规则-->    
-    <div class="layer-box-1 layer-box-all">
+    <div class="layer-box-2 layer-box-all">
         <div class="layer-box-title"></div>
         <div class="layer-box-main">
             <div class="layer-box-main-border">
@@ -137,7 +141,7 @@
     </div>
     <!--活动规则 end -->
     <!--我的奖品-->
-    <div class="layer-box-2 layer-box-all">
+    <div class="layer-box-1 layer-box-all">
         <div class="layer-box-title"></div>
         <div class="layer-box-main">
             <div class="layer-box-main-border">
@@ -193,41 +197,53 @@
 </div>
 </body>
 <script charset="utf-8">
-    
-    
-    //抽奖
-var animated = true,
-	quan = new zhuanQuan({
-		idPart: 'li',
-		idDigit: 1,
-		length: 8,
-		count: 8,
-		duration: 8000,
-		easing: 'easeInOutCirc'
-	});
-    
-    $("#li9").on("touchend",function(){
-        
-        
-        if (!animated) return;
-        animated = false;
-
-        var index = (Math.random() * 8) >> 0;
-        var jiangN = Number(correspondIndex()[index])-1;
-                    console.log(index+"等奖");
-                    console.log("对应号"+ jiangN);
-        
-        quan.start(jiangN, function() {
-            
-            animated = true;
-            callmyInfo(index); 
-                        
-            console.log(  ' 恭喜你中了'+ index +'奖！');
-            
+   
+   $(function(){
+    //    
+      $(".btn-layer .btn-my-prize").on("click",function(){
+            var list = $(".layer-box-list ul").html()
+                         
+            layerBtn(layerBtnT1(list));
+      });
+       
+       
+           
+        //抽奖 
+        var animated = true,
+        quan = new zhuanQuan({
+            idPart: 'li',
+            idDigit: 1,
+            length: 8,
+            count: 10,
+            duration: 9000,
+            easing: 'easeInOutCirc'
         });
-        
-        
-    })
+
+        $("#li9").on("touchend",function(){            
+            
+            if (!animated) return;
+            animated = false;
+
+            var index = (Math.random() * 8) >> 0;
+            var jiangN = Number(correspondIndex()[index])-1;
+                        console.log(index+"等奖");
+                        console.log("对应号"+ jiangN);
+            
+            quan.start(jiangN, function() {
+                
+                animated = true;
+                callmyInfo(index,1); 
+                            
+                console.log(  ' 恭喜你中了'+ index +'奖！');
+                
+            });
+            
+            
+        })
+
+       
+   }) 
+
     
 
 

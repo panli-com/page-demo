@@ -197,40 +197,13 @@ return(!i||i!==r&&!b.contains(r,i))&&(e.type=o.origType,n=o.handler.apply(this,a
                 Pan.close((boxs[0].getAttribute('index')|0));
             }
         },
-        /* 谷歌统计代码 */
-        googleCount:function(){
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        msg:function (info) {
             
-            loadjscssfile(gaJsHost+'google-analytics.com/ga.js','js');
-            
-            try { var pageTracker = _gat._getTracker("UA-436090-1"); pageTracker._trackPageview(); } catch (err) { };
-            
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                        (i[r].q = i[r].q || []).push(arguments)
-                    }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-            ga('create', 'UA-436090-2', 'auto');ga('require', 'displayfeatures');
-            ga('send', 'pageview');
-        },
-        googleCountBall:function () {
-            try { var pageTracker = _gat._getTracker("UA-436090-1"); pageTracker._trackPageview(); } catch (err) { };
-        },
-        /* rem 字体转换  */
-        remFontSize:function(){
-            var fontsize = function () {
-                var W = document.body.getBoundingClientRect().width, defaultW = 720, defaultSize = 40;
-                W = W > defaultW ? defaultW : W < 320 ? 320 : W;
-                window.W = W; document.documentElement.style.fontSize = (W / defaultW * defaultSize).toFixed(2) + 'px';
-            };
-            var fontset = setTimeout(fontsize, 300);
-            window.addEventListener('resize', function () { clearTimeout(fontset); fontset = setTimeout(fontsize, 300) });
-            window.addEventListener("DOMContentLoaded", fontsize);
-            setTimeout(fontsize, 300);
-
-        },
+            PL.open({
+                content: '<div class="layerMsg">'+ info +'</div>',
+                time: 3
+            });
+        }
     };
 
     'function' === typeof define ? define(function() {
@@ -445,7 +418,7 @@ $.fn.extend({
                 var autoStop = function(){
                         if(timer)window.clearInterval(timerID);
                 };
-                 //鼠标事件绑定
+                 //鼠标事件绑定 
                 _this.hover(autoStop,autoPlay).mouseout();
                 _btnUp.css("cursor","pointer").click( scrollUp ).hover(autoStop,autoPlay);//Shawphy:向上向下鼠标事件绑定
                 _btnDown.css("cursor","pointer").click( scrollDown ).hover(autoStop,autoPlay);
@@ -464,7 +437,7 @@ $.fn.extend({
  * opts.index 从哪一项开始 索引值 从0开始 最后一项为opts.length-1
  * opts.count 滚动的圈数 默认10圈
  * opts.duration 持续时间 默认3000(毫秒)
- * opts.easing 动画效果 (easeInOutCubic默认 easeInOutQuad  easeInOutSine easeInOutCirc)
+ * opts.easing 动画效果 (easeInOutCirc默认 easeInOutQuad  easeInOutSine easeInOutCirc)
  * ====================================================
  * this.start(index, fn) 开始调用动画 
  	index 集合中哪一项为中奖结果 索引值 从0开始 最后一项为opts.length-1
@@ -480,7 +453,7 @@ $.fn.extend({
 		this.length = opts.length;
 		this.current = opts.current || 'current';
 		this.duration = opts.duration || 3000;
-		this.easing = (opts.easing && this.tween[opts.easing]) || this.tween.easeInOutCubic;
+		this.easing = (opts.easing && this.tween[opts.easing]) || this.tween.easeInOutCirc;
 		this.count = opts.count || 10;
 		this.index = opts.index || 0;
 		this.index > this.length - 1 && (this.index = 0);
@@ -523,7 +496,7 @@ $.fn.extend({
 					_this.animated = false;
 					fn && fn();
 				} else {
-					setTimeout(animate, 20);
+					setTimeout(animate, 30);
 				}
 			}();
 		},
@@ -576,22 +549,79 @@ $.fn.extend({
 		window.zhuanQuan = zhuanQuan;
 	}
 }(window, document));
-function layerBtn(i){
+function layerBtn(str){
     
-    var str = $(".layer-box-"+i).html();
-        str = '<div class="layer-box-'+ i +' layer-box-all">'+str+'</div>';
+  
     PL.open({
     type: 1, //1代表页面层
     content: str,
     
     success: function(oPan){
-        $(".layer-box-"+i).on("touchend",function(){
+        $(".layer-box-title").on("touchend",function(){
             PL.closeAll();
+            
+            return false; 
         })
     }
     });
 }
+// 1
+function layerBtnT1(list){
+   
+   var str = '<div class="layer-box-2 layer-box-all">'+
+        '<div class="layer-box-title"></div>'+
+        '<div class="layer-box-main">'+
+         '   <div class="layer-box-main-border">'+
+          '      <div class="layer-box-text">'+
+           '       <div class="layer-box-list">'+
+            '          <ul>'+  list +        
+                     ' </ul>'+
+                 ' </div>'+
+               ' </div>'+
+            '</div>'+
+        '</div>'+
+   ' </div>';
+   
+     
+   return str;
+    
+}
 
+// 2
+function layerBtnT2(){
+    
+    var str = '<div class="layer-box-1 layer-box-all">'+
+        '<div class="layer-box-title"></div>'+
+        '<div class="layer-box-main">'+
+         '   <div class="layer-box-main-border">'+
+          '      <div class="layer-box-text">'+
+           '         <div class="rule-title">'+
+           '             <div class="line"></div>'+
+           '             <span>抽奖资格获取说明</span>'+
+           '         </div>'+
+           '         <ol>'+
+           '             <li>每天登录Panli可获得1次抽奖机会，当天有效;</li>'+
+           '             <li>每天成功提交订单可获得1次抽奖机会，多个订单 也仅限1次机会，活动期间有效，可累计；</li>'+
+           '            <li>每次成功提交运单，并待状态为“已发货”时，可获得1次抽奖机会，活动期间有效，可累计。</li>'+
+          '          </ol>'+
+          '           <div class="rule-title">'+
+          '              <div class="line"></div>'+
+           '             <span>奖品说明</span>'+
+           '         </div>'+
+            '        <ol>'+
+             '           <li>抽到的代金券，系统自动发放到您的Panli账户，可以在“我的-代金券”查看到账情况；</li>'+
+              '          <li>抽到的番币，系统自动发放到您的Panli账户，可以在“我的-番币”查看到账情况；</li>'+
+               '         <li>抽到的免服务费1个月和运费85折1个月，系统自动发放特权，提交运单时即可享受优惠；</li>'+
+                '        <li>抽到的iPhone 6s，将在1个工作日通过邮件私信获奖者，告知奖品发放的明细信息。</li>'+
+                 '       <li>本活动最终解释权归Panli所有。</li>'+
+                 '   </ol>'+
+                '</div>'+
+            '</div>'+
+        '</div>'+
+    '</div>';
+     
+    return str;
+}
 
 function UserBalance(uName,callback) {  
      $.ajax({
@@ -612,19 +642,29 @@ function UserBalance(uName,callback) {
 }
 
 
-function callmyInfo(i){
+function callmyInfo(i,n){
     
-    var index = Number(i)-1;
+    var index = Number(i)-1,
+        numb = '';
+        
+    if(Number(n) > 0){
+        
+       numb +=    '<div class="layer-my-popup-btn">'+
+            '    继续抽奖'+
+            '</div>';
+    
+    }
+  
     
    var arrar = [
-       {
-           "title":"恭喜您~<br/>抽中了免服务费1个月特权！",
-           "info":"提交运单时即可享受优惠，30天后失效。"
-       },
        {
            "title":"恭喜您~<br/>抽中了运费85折1个月！",
            "info":"提交运单时即可享受优惠，30天后失效。"
        },
+       {
+           "title":"恭喜您~<br/>抽中了免服务费1个月特权！",
+           "info":"提交运单时即可享受优惠，30天后失效。"
+       },       
        {
            "title":"恭喜您~<br/>抽中了11元无门槛代金券！",
            "info":"提交订单时即可享受优惠，14天后失效。"
@@ -660,10 +700,7 @@ function callmyInfo(i){
              '   </p>'+
               '  <p class="p2">'+ info +  
               '  </p>'+
-            '</div>'+
-            '<div class="layer-my-popup-btn">'+
-            '    继续抽奖'+
-            '</div>'+
+            '</div>'+ numb +           
         '</div>'+
     '</div> ';
     
@@ -709,8 +746,6 @@ function TurntableSt(){
     },3000);
     
     
-    
-    
 }
 
 // 奖项对应关系
@@ -730,9 +765,53 @@ function correspondIndex(){
 }
 
 
+// 渲染中奖名单
+function readerlistName(data){
+    
+    
+    
+    if(data.length > 0 ){
+        var str = '';
+        
+        
+        
+        for(var i = 0;i<data.length;i++){
+            
+           str += ' <li class="flex flex-left flex-main-justify flex-cross-top">'+
+                   ' <div class="text-info">'+
+                   '     <span class="name">'+ data[i].Name +'</span>抽中了<span class="wupin">data[i].Name </span>'+
+                   ' </div>'+
+                 '   <div class="la-time">data[i].CreateDate</div>'+
+                '</li>';
+            
+            
+        }
+        
+        
+        $(".winners-list ul").html(str);
+        
+    }
 
-
-      
+}
+// 获取数据函数
+function getServeData(src,obj,call){
+    $.ajax({
+            type: "POST",
+            url: src,
+            dataType: "json",
+            data:obj,
+            contentType: "application/json;utf-8",
+            
+            error: function (ms) { 
+                call(ms)
+            },
+            success: function (data) {
+                call(data)               
+            }
+   });
+    
+    
+}      
 
 /*
 ** randomWord 产生任意长度随机字母数字组合
@@ -1096,11 +1175,11 @@ function enTimeF(endTime,nowTime){
         $(this).addClass("on");
       });
       
-      $(".btn-layer .btnd").on("touchstart",function(){
-        var _t = $(this),
-            _id = _t.data("id");            
-            layerBtn(_id);
+      $(".btn-layer .btn-rule").on("click",function(){               
+            layerBtn(layerBtnT2());
       });
+      
+      
       
       $(".go-to-btn").on("touchend touchcancel",function(){
         $(this).removeClass("on");

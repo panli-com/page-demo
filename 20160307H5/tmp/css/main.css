@@ -624,7 +624,7 @@ a {
     display: table;
     /* 调教webkit*/
     word-spacing: -1em;
-    padding-top: 0.08333rem;
+    padding-top: 0.07778rem;
     padding-left: 0.06944rem; }
     .jiugong ul li {
       display: inline-block;
@@ -636,7 +636,7 @@ a {
       word-spacing: 0;
       font-size: 0;
       border-radius: 0.22222rem;
-      margin: 0.01528rem 0.02778rem;
+      margin: 0 0.02778rem;
       text-align: center; }
       .jiugong ul li span {
         margin-top: 0.25rem;
@@ -668,6 +668,9 @@ a {
       .jiugong ul li.li5 span {
         background-image: url(../images/pan55.png); }
 
+.btntitle {
+  text-align: center; }
+
 .btntitle-bg {
   background: #4f2e84;
   padding: 0 0.5rem 0 1.05556rem;
@@ -675,7 +678,8 @@ a {
   line-height: 0.72222rem;
   position: relative;
   border-radius: 16px;
-  font-size: 0.41667rem; }
+  font-size: 0.41667rem;
+  display: inline-block; }
   .btntitle-bg .liwu {
     position: absolute;
     left: -0.16667rem;
@@ -688,9 +692,12 @@ a {
 .btn-layer {
   padding: 0.41667rem; }
   .btn-layer .btnd {
+    display: inline-block;
     width: 4.16667rem;
     height: 1.11111rem;
     background-size: contain; }
+  .btn-layer .btn-rule {
+    float: right; }
 
 .btn-my-prize {
   background-image: url(../images/btn-my-prize.png); }
@@ -714,11 +721,16 @@ a {
     .winners-list ul li {
       font-size: 0.33333rem;
       padding: 0.19444rem;
-      border-bottom: 2px dotted #8a4ee6; }
+      border-bottom: 2px dotted #8a4ee6;
+      transition: 1s; }
       .winners-list ul li .name {
         color: #ffe400; }
       .winners-list ul li .wupin {
         color: #ff6666; }
+      .winners-list ul li .text-info {
+        display: inline-block; }
+      .winners-list ul li .la-time {
+        float: right; }
       .winners-list ul li:last-child {
         border-bottom: none; }
 
@@ -956,6 +968,14 @@ a {
   height: 80px;
   background-color: #fff;
   background-color: rgba(0, 0, 0, 0.01); }
+
+.layerMsg {
+  margin: 0 auto;
+  background: #FFF;
+  text-align: center;
+  color: #333;
+  padding: 10px 0;
+  border-radius: 5px; }
 
 .layer-none {
   display: none; }

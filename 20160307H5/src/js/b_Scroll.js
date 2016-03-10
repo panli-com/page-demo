@@ -47,7 +47,7 @@ $.fn.extend({
                 var autoStop = function(){
                         if(timer)window.clearInterval(timerID);
                 };
-                 //鼠标事件绑定
+                 //鼠标事件绑定 
                 _this.hover(autoStop,autoPlay).mouseout();
                 _btnUp.css("cursor","pointer").click( scrollUp ).hover(autoStop,autoPlay);//Shawphy:向上向下鼠标事件绑定
                 _btnDown.css("cursor","pointer").click( scrollDown ).hover(autoStop,autoPlay);

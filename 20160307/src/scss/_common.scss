@@ -1,0 +1,37 @@
+
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+
+
+.clearfix {display:block;}
+
+.clear{
+  clear:both;
+  overflow:hidden;
+}
+
+
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.del-link{
+  text-decoration:line-through;
+}
+.text-center{
+  text-align: center;
+}
+*:focus {outline: none;}
+
+.textarea-wrap-pla{
+  position: relative;
+  .text-placeholder{
+    position: absolute;
+    z-index: 0;
+    left: 5px;
+    top: 10px;
+    color: #999;
+  }
+ 
+}

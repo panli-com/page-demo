@@ -8,7 +8,7 @@
  * opts.index 从哪一项开始 索引值 从0开始 最后一项为opts.length-1
  * opts.count 滚动的圈数 默认10圈
  * opts.duration 持续时间 默认3000(毫秒)
- * opts.easing 动画效果 (easeInOutCubic默认 easeInOutQuad  easeInOutSine easeInOutCirc)
+ * opts.easing 动画效果 (easeInOutCirc默认 easeInOutQuad  easeInOutSine easeInOutCirc)
  * ====================================================
  * this.start(index, fn) 开始调用动画 
  	index 集合中哪一项为中奖结果 索引值 从0开始 最后一项为opts.length-1
@@ -24,7 +24,7 @@
 		this.length = opts.length;
 		this.current = opts.current || 'current';
 		this.duration = opts.duration || 3000;
-		this.easing = (opts.easing && this.tween[opts.easing]) || this.tween.easeInOutCubic;
+		this.easing = (opts.easing && this.tween[opts.easing]) || this.tween.easeInOutCirc;
 		this.count = opts.count || 10;
 		this.index = opts.index || 0;
 		this.index > this.length - 1 && (this.index = 0);
@@ -67,7 +67,7 @@
 					_this.animated = false;
 					fn && fn();
 				} else {
-					setTimeout(animate, 20);
+					setTimeout(animate, 30);
 				}
 			}();
 		},
