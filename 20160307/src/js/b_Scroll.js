@@ -7,7 +7,7 @@ $.fn.extend({
                 var _btnDown = $("#"+ opt.down);//Shawphy:向下按钮
                 var timerID;
                 var _this=this.eq(0).find("ul:first");
-                var     lineH= 26, //获取行高
+                var     lineH= 41, //获取行高
                         line=opt.line?parseInt(opt.line,10):parseInt(this.height()/lineH,10), //每次滚动的行数，默认为一屏，即父容器高度
                         speed=opt.speed?parseInt(opt.speed,10):500; //卷动速度，数值越大，速度越慢（毫秒）
                         timer=opt.timer //?parseInt(opt.timer,10):3000; //滚动的时间间隔（毫秒）
@@ -42,7 +42,7 @@ $.fn.extend({
                 }
                //Shawphy:自动播放
                 var autoPlay = function(){
-                        if(timer)timerID = window.setInterval(scrollUp,timer);
+                        if(timer)timerID = window.setInterval(scrollDown,timer);
                 };
                 var autoStop = function(){
                         if(timer)window.clearInterval(timerID);

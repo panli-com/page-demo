@@ -8,14 +8,15 @@
     background: url(../images/zhuanpan.png) no-repeat;
     .zhuanpan-box{
         position: relative;
-        padding: 32px 0 0 33px; 
+        padding: 34px 0 0 33px; 
         li{
             float: left;
             width: 190px;
-            height: 154px;
+            height: 153px;
             margin: 2px;
             // border-radius: 16px;
-            background:  url(../images/panbg2.png) no-repeat;
+            background:  url(../images/panbg3.png) no-repeat;
+            background-position: 0 -153px;
             span{
                
                 display: inline-block;
@@ -26,8 +27,8 @@
                 
             }
             &.current{
-                background-image:  none;
-                
+                background-image:  url(../images/panbg1.png);
+                background-position: 0 0;
             }
             &.li1{
                 span{
@@ -51,9 +52,11 @@
             }
             &.li9{
                 cursor: pointer;
-                background-image: url(../images/pan99.png);
-                
-                
+                background-image: url(../images/pan99_a.png);
+                background-position: 0 0;
+                &:active{
+                    background-position: 0 -153px;
+                }
             }
             &.li4{
                 span{

@@ -1,8 +1,17 @@
+
+.layui-Pan-nobg{
+    background-color: transparent;
+}
+.layer-none{
+    display: none;
+}
+
 .page-layer-main{
     background: #ff4343;
     border-radius: 6px;
     padding: 8px;
     display: inline-block;
+    color: #FFF;
     .page-layer-border{
         width: 458px;
         margin: 0 auto;
@@ -23,16 +32,17 @@
     
     .layer-my-popup-info{
         text-align: center;
-        padding-top: 30px;
+        padding-top: 22px;
     
         .p1{
             color: #fff55c;
-            font-size: 24px;
+            font-size: 21px;
             line-height: 30px;
+            padding-bottom: 5px;
         }
         .p2{
             padding-bottom: 20px;
-            font-size:16px;
+            font-size:14px;
         }
     
     }
@@ -49,8 +59,9 @@
         line-height: 40px;
         border: 1px solid #FFF;
         text-align: center;
-        font-size: 22px;
+        font-size: 19px;
         border-radius: 5px;
+        text-decoration: none;
         &:hover{
             background: #F53C3C;
           
@@ -75,12 +86,15 @@
 .page-layer-wrap{
     position: relative;
     width: 480px;
-    padding-top: 40px;
+    padding-top: 99px;
+    .page-layer-border{
+        padding-bottom: 0;
+    }
     .layer-my-pin-img{
         position: absolute;
         left: 0;
         right: 0;
-        top: -38px;
+        top: 29px;
         height: 99px;
         z-index: 10;
         background: url(../images/myjiangpin.png) no-repeat center center;
@@ -89,7 +103,7 @@
         position: absolute;
         cursor: pointer;
         right: 20px;
-        top: -6px;
+        top: 46px;
         width: 35px;
         height: 35px;
         display: inline-block;
@@ -98,23 +112,23 @@
     }   
 }
 
-
-
-
 .layer-box-list{
     padding: 20px;
+    padding-top: 46px;
     li{
-        font-size: 18px;
+        font-size: 17px;
         height: 50px;
         line-height: 50px;
         overflow: hidden;
         padding: 0 10px;
         .text-name{
-            color: #fdff57;
-            
+            color: #fdff57;            
         }
         .text-num{
            float: right;
+        }
+        &.lin-0{
+           background-color: #e53939;
         }
         &:nth-of-type(odd){
             background-color: #e53939;
@@ -123,4 +137,11 @@
             // background:#FFCC00;
         }
     }
+}
+
+.yourclass1{
+    width: 458px;
+}
+.layui-layer{
+    border-radius: 6px;
 }

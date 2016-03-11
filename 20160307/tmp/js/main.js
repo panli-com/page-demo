@@ -7,7 +7,7 @@ $.fn.extend({
                 var _btnDown = $("#"+ opt.down);//Shawphy:向下按钮
                 var timerID;
                 var _this=this.eq(0).find("ul:first");
-                var     lineH= 26, //获取行高
+                var     lineH= 41, //获取行高
                         line=opt.line?parseInt(opt.line,10):parseInt(this.height()/lineH,10), //每次滚动的行数，默认为一屏，即父容器高度
                         speed=opt.speed?parseInt(opt.speed,10):500; //卷动速度，数值越大，速度越慢（毫秒）
                         timer=opt.timer //?parseInt(opt.timer,10):3000; //滚动的时间间隔（毫秒）
@@ -42,7 +42,7 @@ $.fn.extend({
                 }
                //Shawphy:自动播放
                 var autoPlay = function(){
-                        if(timer)timerID = window.setInterval(scrollUp,timer);
+                        if(timer)timerID = window.setInterval(scrollDown,timer);
                 };
                 var autoStop = function(){
                         if(timer)window.clearInterval(timerID);
@@ -178,98 +178,50 @@ $.fn.extend({
 		window.zhuanQuan = zhuanQuan;
 	}
 }(window, document));
-function layerBtn(str){
-    
-  
-    PL.open({
-    type: 1, //1代表页面层
-    content: str,
-    
-    success: function(oPan){
-        $(".layer-box-title").on("touchend",function(){
-            PL.closeAll();
-            
-            return false; 
-        })
-    }
-    });
-}
+
 // 1
 function layerBtnT1(list){
    
-   var str = '<div class="layer-box-1 layer-box-all">'+
-        '<div class="layer-box-title"></div>'+
-        '<div class="layer-box-main">'+
-         '   <div class="layer-box-main-border">'+
-          '      <div class="layer-box-text">'+
-           '       <div class="layer-box-list">'+
-            '          <ul>'+  list +        
-                     ' </ul>'+
-                 ' </div>'+
-               ' </div>'+
-            '</div>'+
+   var str = '<div class="page-layer-wrap">'+
+        '<span class="m-close"></span>'+
+        '<div class="layer-my-pin-img"></div>'+
+        '<div class="page-layer-main">'+
+        '    <div class="page-layer-border">'+    
+        '        <div class="layer-box-list">'+
+        '              <ul>'+ list +                      
+        '              </ul>'+
+        '          </div>'+  
+        '    </div>'+
         '</div>'+
-   ' </div>';
+    '</div>';
    
      
    return str;
     
 }
 
-// 2
-function layerBtnT2(){
+function listNameAnmi(){
     
-    var str = '<div class="layer-box-1 layer-box-all">'+
-        '<div class="layer-box-title"></div>'+
-        '<div class="layer-box-main">'+
-         '   <div class="layer-box-main-border">'+
-          '      <div class="layer-box-text">'+
-           '         <div class="rule-title">'+
-           '             <div class="line"></div>'+
-           '             <span>抽奖资格获取说明</span>'+
-           '         </div>'+
-           '         <ol>'+
-           '             <li>每天登录Panli可获得1次抽奖机会，当天有效;</li>'+
-           '             <li>每天成功提交订单可获得1次抽奖机会，多个订单 也仅限1次机会，活动期间有效，可累计；</li>'+
-           '            <li>每次成功提交运单，并待状态为“已发货”时，可获得1次抽奖机会，活动期间有效，可累计。</li>'+
-          '          </ol>'+
-          '           <div class="rule-title">'+
-          '              <div class="line"></div>'+
-           '             <span>奖品说明</span>'+
-           '         </div>'+
-            '        <ol>'+
-             '           <li>抽到的代金券，系统自动发放到您的Panli账户，可以在“我的-代金券”查看到账情况；</li>'+
-              '          <li>抽到的番币，系统自动发放到您的Panli账户，可以在“我的-番币”查看到账情况；</li>'+
-               '         <li>抽到的免服务费1个月和运费85折1个月，系统自动发放特权，提交运单时即可享受优惠；</li>'+
-                '        <li>抽到的iPhone 6s，将在1个工作日通过邮件私信获奖者，告知奖品发放的明细信息。</li>'+
-                 '       <li>本活动最终解释权归Panli所有。</li>'+
-                 '   </ol>'+
-                '</div>'+
-            '</div>'+
-        '</div>'+
-    '</div>';
-     
-    return str;
+    $(".list-name").ZScroll({ line: 1, speed: 1000, timer: 3000, up: "but_up", down: "but_down" });    
+    
 }
 
-function UserBalance(uName,callback) {  
-     $.ajax({
-            type: "POST",
-            url: "/App_Services/wsSendMessage.asmx/Testsum5",
-            dataType: "json",
-            data: '{userName:"' + uName + '"}',
-            contentType: "application/json;utf-8",
-            timeout: 20000,
-            error: function () {
-                //alert("500"); 
-            },
-            success: function (data) {
-                callback(data);         
-
-            }
-        });    
+function layerMyPin(list) {
+    
+    
+    PL.open({
+    type: 1,
+    title: false,
+    closeBtn: false,
+    area: '486px',
+    skin: 'layui-Pan-nobg', //没有背景色
+    shadeClose: true,
+    content: layerBtnT1(list)
+    });
+    
+    
+    
 }
-
 
 function callmyInfo(i,n){
     
@@ -278,7 +230,7 @@ function callmyInfo(i,n){
         
     if(Number(n) > 0){
         
-       numb +=    '<div class="layer-my-popup-btn">'+
+       numb +=    '<div class="layer-btn layer-btn-jixu">'+
             '    继续抽奖'+
             '</div>';
     
@@ -288,72 +240,104 @@ function callmyInfo(i,n){
    var arrar = [
        {
            "title":"恭喜您~<br/>抽中了运费85折1个月！",
-           "info":"提交运单时即可享受优惠，30天后失效。"
+           "info":"提交运单时即可享受优惠，30天后失效。",
+           "src":"http://www.panli.com/mypanli/OrderCart.aspx",
+           "btn":"马上提交运单"
        },
        {
            "title":"恭喜您~<br/>抽中了免服务费1个月特权！",
-           "info":"提交运单时即可享受优惠，30天后失效。"
+           "info":"提交运单时即可享受优惠，30天后失效。",
+           "src":"http://www.panli.com/mypanli/OrderCart.aspx",
+           "btn":"马上提交运单"
        },       
        {
            "title":"恭喜您~<br/>抽中了11元无门槛代金券！",
-           "info":"提交订单时即可享受优惠，14天后失效。"
+           "info":"提交订单时即可享受优惠，14天后失效。",
+           "src":"http://www.panli.com/Special/TopicColumn.aspx",
+           "btn":"马上代购"
        },
        {
            "title":"恭喜您~<br/>抽中了一张满299减100元代金券！",
-           "info":"提交订单时即可享受优惠，14天后失效。"
+           "info":"提交订单时即可享受优惠，14天后失效。",
+           "src":"http://www.panli.com/Special/TopicColumn.aspx",
+           "btn":"马上代购"
        },
        {
            "title":"恭喜您~<br/>抽中了一张满199减20元代金券！",
-           "info":"提交订单时即可享受优惠，14天后失效。"
+           "info":"提交订单时即可享受优惠，14天后失效。",
+           "src":"http://www.panli.com/Special/TopicColumn.aspx",
+           "btn":"马上代购"
        }, 
        {
            "title":"恭喜您~<br/>抽中了一张满99减10元代金券！",
-           "info":"提交订单时即可享受优惠，14天后失效。"
+           "info":"提交订单时即可享受优惠，14天后失效。",
+           "src":"http://www.panli.com/Special/TopicColumn.aspx",
+           "btn":"马上代购"
        },
        {
            "title":"恭喜您~抽中了11个番币！",
-           "info":"提交运单时，可直接抵扣服务费。"
+           "info":"提交运单时，可直接抵扣服务费。",
+           "src":"http://www.panli.com/mypanli/OrderCart.aspx",
+           "btn":"马上提交运单"
        }  
    ];
    
    
    var title = arrar[index]["title"];
    var info = arrar[index]["info"];
+   var src = arrar[index]["src"];
+   var btn = arrar[index]["btn"];
     
     
-  var str = '<div class="layer-my-popup">'+
-       ' <div class="layer-border">'+
-        '    <span class="close"></span>'+
-         '   <div class="layer-my-popup-info">'+
-          '      <p class="p1">'+ title +
-             '   </p>'+
-              '  <p class="p2">'+ info +  
-              '  </p>'+
-            '</div>'+ numb +           
-        '</div>'+
-    '</div> ';
+  var str = '<div class="page-layer-main">'+
+            '<div class="page-layer-border">'+
+             '   <span class="l-close"></span>'+
+              '  <div class="layer-my-popup-info">'+
+               '     <p class="p1">'+ title +            
+               '     </p>'+
+               '     <p class="p2">'+ info + 
+               '     </p>'+
+               '</div>'+
+               ' <div class="layer-btn-wrap">'+
+               '     <a href="'+ src +'" class="layer-btn layer-btn-1">'+ btn +
+               '     </a>'+ numb + 
+               ' </div>'+
+           ' </div>'+
+        '</div>';
     
      
     
     
+     
     PL.open({
-    type: 1, //1代表页面层
-    content: str,
-    
-    success: function(oPan){
-        $(".layer-my-popup-btn").on("touchend",function(){
-            
-            // $(".jiugong li").removeClass("current");
-            PL.closeAll();
-        });
-        
-        
-        $(".layer-my-popup .close").on("touchend",function(){
-            // $(".jiugong li").removeClass("current");
-            PL.closeAll();
-        })
-    }
+    type: 1,
+    title: false,
+    closeBtn: false,
+    area: '478px',
+    skin: 'layui-Pan-nobg', //没有背景色
+    shadeClose: true,
+    content: str
     });
+    
+    
+    // PL.open({
+    // type: 1, //1代表页面层
+    // content: str,
+    
+    // success: function(oPan){
+    //     $(".layer-my-popup-btn").on("touchend",function(){
+            
+    //         // $(".jiugong li").removeClass("current");
+    //         PL.closeAll();
+    //     });
+        
+        
+    //     $(".layer-my-popup .close").on("touchend",function(){
+    //         // $(".jiugong li").removeClass("current");
+    //         PL.closeAll();
+    //     })
+    // }
+    // });
     
     
     
@@ -425,7 +409,9 @@ function getServeData(src,obj,call){
    });
     
     
-}      
+}     
+
+ 
 
 /*
 ** randomWord 产生任意长度随机字母数字组合
@@ -584,7 +570,9 @@ function enTimeF(endTime,nowTime){
   
   $(function(){
      
-    
+    $("body").on("click",".m-close,.l-close,.layer-btn-jixu",function(){
+        PL.closeAll();
+    })
      
     //  我的奖品
     //   $(".my-pin-btn").on("click",function(){               

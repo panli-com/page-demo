@@ -169,71 +169,11 @@
                 <div class="list-name">
                     <ul>
                         <li>
-                            <span class="name">月***赫</span>
+                            <span class="name">月***赫1</span>
                             <span class="desc">抽中了</span>
                             <span class="pin">满299减100元代金券</span>
                             <span class="time fr">2分钟前</span>
-                        </li>
-                        <li>
-                            <span class="name">月***赫</span>
-                            <span class="desc">抽中了</span>
-                            <span class="pin">满299减100元代金券</span>
-                            <span class="time fr">2分钟前</span>
-                        </li>
-                        <li>
-                            <span class="name">月***赫</span>
-                            <span class="desc">抽中了</span>
-                            <span class="pin">满299减100元代金券</span>
-                            <span class="time fr">2分钟前</span>
-                        </li>
-                        <li>
-                            <span class="name">月***赫</span>
-                            <span class="desc">抽中了</span>
-                            <span class="pin">满299减100元代金券</span>
-                            <span class="time fr">2分钟前</span>
-                        </li>
-                        <li>
-                            <span class="name">月***赫</span>
-                            <span class="desc">抽中了</span>
-                            <span class="pin">满299减100元代金券</span>
-                            <span class="time fr">2分钟前</span>
-                        </li>
-                        <li>
-                            <span class="name">月***赫</span>
-                            <span class="desc">抽中了</span>
-                            <span class="pin">满299减100元代金券</span>
-                            <span class="time fr">2分钟前</span>
-                        </li>
-                        <li>
-                            <span class="name">月***赫</span>
-                            <span class="desc">抽中了</span>
-                            <span class="pin">满299减100元代金券</span>
-                            <span class="time fr">2分钟前</span>
-                        </li>
-                        <li>
-                            <span class="name">月***赫</span>
-                            <span class="desc">抽中了</span>
-                            <span class="pin">满299减100元代金券</span>
-                            <span class="time fr">2分钟前</span>
-                        </li>
-                        <li>
-                            <span class="name">月***赫</span>
-                            <span class="desc">抽中了</span>
-                            <span class="pin">满299减100元代金券</span>
-                            <span class="time fr">2分钟前</span>
-                        </li>
-                        <li>
-                            <span class="name">月***赫</span>
-                            <span class="desc">抽中了</span>
-                            <span class="pin">满299减100元代金券</span>
-                            <span class="time fr">2分钟前</span>
-                        </li>
-                        <li>
-                            <span class="name">月***赫</span>
-                            <span class="desc">抽中了</span>
-                            <span class="pin">满299减100元代金券</span>
-                            <span class="time fr">2分钟前</span>
-                        </li>
+                        </li>                  
                     </ul>
                 </div>
             </div>
@@ -287,6 +227,7 @@
         <p class="p1">所有抽奖奖品由Panli提供，与Apple Inc.无关。</p>
     </div>
     <!--layer-->
+    <div class="layer-none1">
     <div class="page-layer-main">
             <div class="page-layer-border">
                 <span class="l-close"></span>
@@ -300,9 +241,9 @@
                     </p>
                 </div>
                 <div class="layer-btn-wrap">
-                    <div class="layer-btn layer-btn-1">
+                    <a href="http://www.panli.com/Special/TopicColumn.aspx" class="layer-btn layer-btn-1">
                         马上代购
-                    </div>
+                    </a>
                     <div class="layer-btn">
                         继续抽奖
                     </div>
@@ -318,35 +259,114 @@
                 
                 <div class="layer-box-list">
                       <ul>
-                          <li class="flex flex-left flex-main-justify flex-cross-top">
-                              <div class="text-name">满99减10元代金券</div>
-                              <div class="text-num">2张</div>
+                          <li class="lin-0">
+                              <span class="text-name">满99减10元代金券</span>
+                              <span class="text-num">2张</span>
                            </li>
-                           <li class="flex flex-left flex-main-justify flex-cross-top">
-                              <div class="text-name">免服务费1个月</div>
-                              <div class="text-num">1个月特权</div>
+                           <li class="lin-1">
+                              <span class="text-name">满99减10元代金券</span>
+                              <span class="text-num">2张</span>
                            </li>
-                           <li class="flex flex-left flex-main-justify flex-cross-top">
-                              <div class="text-name">番币 </div>
-                              <div class="text-num">22个</div>
+                           <li class="lin-0">
+                              <span class="text-name">满99减10元代金券</span>
+                              <span class="text-num">2张</span>
                            </li>
-                           <li class="flex flex-left flex-main-justify flex-cross-top">
-                              <div class="text-name">番币 </div>
-                              <div class="text-num">22个</div>
+                           <li class="lin-1">
+                              <span class="text-name">满99减10元代金券</span>
+                              <span class="text-num">2张</span>
                            </li>
-                           <li class="flex flex-left flex-main-justify flex-cross-top">
-                              <div class="text-name">番币 </div>
-                              <div class="text-num">22个</div>
-                           </li>
+                           
                       </ul>
                   </div>
                 
             </div>
         </div>
     </div>
+    </div>
     <!--layer end-->
 </div>
 <!--逢抽必中 end-->
+<script src="./build/js/main.min.js?v=0.0.2" charset="utf-8"></script>
+<script>
+$(function(){  
+        
+        // 中奖名单列表
+        listNameAnmi();        
+        listNameData(function(){
+            
+        });
+        
+        // 我的奖品
+         $(".my-pin-btn").on("click",function(){   
+             
+             var str = '<li class="lin-0">'+
+                           '   <span class="text-name">满99减10元代金券</span>'+
+                           '   <span class="text-num">2张</span>'+
+                        '</li>';
+             
+             
+             layerMyPin(str);
+             
+         }); 
+        
+        
+         //抽奖 
+        var animated = true,
+        quan = new zhuanQuan({
+            idPart: 'li',
+            idDigit: 1,
+            length: 8,
+            count: 10,
+            duration: 9000,
+            easing: 'easeInOutCirc'
+        });
+
+        $("#li9").on("click",function(){            
+            
+            if (!animated) return;
+            animated = false;
+
+            var index = (Math.random() * 8) >> 0;
+            var jiangN = Number(correspondIndex()[index])-1;
+                        console.log(index+"等奖");
+                        console.log("对应号"+ jiangN);
+            
+            quan.start(jiangN, function() {
+                
+                animated = true;
+                callmyInfo(index,1); 
+                            
+                console.log(  ' 恭喜你中了'+ index +'奖！');
+                
+            });
+            
+            
+        })
+        
+      
+      
+});
+
+
+function listNameData(call){
+    var str = ''; 
+      for(var i = 0;i<20; i++){
+          
+          str += '<li>'+
+                   ' <span class="name">月***'+ i +'</span>'+
+                   ' <span class="desc">抽中了</span>'+
+                   ' <span class="pin">满299减100元代金券</span>'+
+                   ' <span class="time fr">2分钟前</span>'+
+                '</li>';
+          
+          
+      }
+      $(".list-name ul").html(str);
+      
+      call();
+      
+}
+</script>
 
 
 

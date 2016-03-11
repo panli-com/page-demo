@@ -63,13 +63,14 @@
   background: url(../images/zhuanpan.png) no-repeat; }
   .zhuanpan-wrap .zhuanpan-box {
     position: relative;
-    padding: 32px 0 0 33px; }
+    padding: 34px 0 0 33px; }
     .zhuanpan-wrap .zhuanpan-box li {
       float: left;
       width: 190px;
-      height: 154px;
+      height: 153px;
       margin: 2px;
-      background: url(../images/panbg2.png) no-repeat; }
+      background: url(../images/panbg3.png) no-repeat;
+      background-position: 0 -153px; }
       .zhuanpan-wrap .zhuanpan-box li span {
         display: inline-block;
         width: 190px;
@@ -77,7 +78,8 @@
         background-repeat: no-repeat;
         background-position: center bottom; }
       .zhuanpan-wrap .zhuanpan-box li.current {
-        background-image: none; }
+        background-image: url(../images/panbg1.png);
+        background-position: 0 0; }
       .zhuanpan-wrap .zhuanpan-box li.li1 span {
         background-image: url(../images/pan33.png); }
       .zhuanpan-wrap .zhuanpan-box li.li2 span {
@@ -88,7 +90,10 @@
         background-image: url(../images/pan11.png); }
       .zhuanpan-wrap .zhuanpan-box li.li9 {
         cursor: pointer;
-        background-image: url(../images/pan99.png); }
+        background-image: url(../images/pan99_a.png);
+        background-position: 0 0; }
+        .zhuanpan-wrap .zhuanpan-box li.li9:active {
+          background-position: 0 -153px; }
       .zhuanpan-wrap .zhuanpan-box li.li4 span {
         background-image: url(../images/pan22.png); }
       .zhuanpan-wrap .zhuanpan-box li.li7 span {
@@ -255,11 +260,18 @@
   font-size: 14px;
   color: #a878f4; }
 
+.layui-Pan-nobg {
+  background-color: transparent; }
+
+.layer-none {
+  display: none; }
+
 .page-layer-main {
   background: #ff4343;
   border-radius: 6px;
   padding: 8px;
-  display: inline-block; }
+  display: inline-block;
+  color: #FFF; }
   .page-layer-main .page-layer-border {
     width: 458px;
     margin: 0 auto;
@@ -277,14 +289,15 @@
     background: url(../images/close.png) no-repeat; }
   .page-layer-main .layer-my-popup-info {
     text-align: center;
-    padding-top: 30px; }
+    padding-top: 22px; }
     .page-layer-main .layer-my-popup-info .p1 {
       color: #fff55c;
-      font-size: 24px;
-      line-height: 30px; }
+      font-size: 21px;
+      line-height: 30px;
+      padding-bottom: 5px; }
     .page-layer-main .layer-my-popup-info .p2 {
       padding-bottom: 20px;
-      font-size: 16px; }
+      font-size: 14px; }
   .page-layer-main .layer-btn-wrap {
     text-align: center; }
   .page-layer-main .layer-btn {
@@ -296,8 +309,9 @@
     line-height: 40px;
     border: 1px solid #FFF;
     text-align: center;
-    font-size: 22px;
-    border-radius: 5px; }
+    font-size: 19px;
+    border-radius: 5px;
+    text-decoration: none; }
     .page-layer-main .layer-btn:hover {
       background: #F53C3C; }
   .page-layer-main .layer-btn-1 {
@@ -312,12 +326,14 @@
 .page-layer-wrap {
   position: relative;
   width: 480px;
-  padding-top: 40px; }
+  padding-top: 99px; }
+  .page-layer-wrap .page-layer-border {
+    padding-bottom: 0; }
   .page-layer-wrap .layer-my-pin-img {
     position: absolute;
     left: 0;
     right: 0;
-    top: -38px;
+    top: 29px;
     height: 99px;
     z-index: 10;
     background: url(../images/myjiangpin.png) no-repeat center center; }
@@ -325,7 +341,7 @@
     position: absolute;
     cursor: pointer;
     right: 20px;
-    top: -6px;
+    top: 46px;
     width: 35px;
     height: 35px;
     display: inline-block;
@@ -333,9 +349,10 @@
     background: url(../images/close.png) no-repeat; }
 
 .layer-box-list {
-  padding: 20px; }
+  padding: 20px;
+  padding-top: 46px; }
   .layer-box-list li {
-    font-size: 18px;
+    font-size: 17px;
     height: 50px;
     line-height: 50px;
     overflow: hidden;
@@ -344,5 +361,13 @@
       color: #fdff57; }
     .layer-box-list li .text-num {
       float: right; }
+    .layer-box-list li.lin-0 {
+      background-color: #e53939; }
     .layer-box-list li:nth-of-type(odd) {
       background-color: #e53939; }
+
+.yourclass1 {
+  width: 458px; }
+
+.layui-layer {
+  border-radius: 6px; }
