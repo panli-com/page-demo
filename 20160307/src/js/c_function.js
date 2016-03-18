@@ -1,4 +1,4 @@
-
+var console=console||{log:function(){return;}}  
 // 1
 function layerBtnT1(list){
    
@@ -19,6 +19,8 @@ function layerBtnT1(list){
    return str;
     
 }
+
+
 
 function listNameAnmi(){
     

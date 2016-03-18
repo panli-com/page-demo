@@ -40,7 +40,7 @@
 			this.animate(index, function() {
 				fn && fn();
 			});
-		},
+		},        
 		animate: function(index, fn) {
 			if (this.animated) return;
 			var start = this.index,
@@ -68,10 +68,10 @@
 			}();
 		},
 		scroll: function(v) {
-			 console.log(v + '=01')
+			//  console.log(v + '=01')
 			this.index = Math.round(v) % this.length;
 			if (this.index === this.oIndex) return;
-			console.log(this.index + '=02')
+			// console.log(this.index + '=02')
 			this.index < 0 && (this.index = 0);
 			this.index > this.length - 1 && (this.index = 0);
 			this.next();
@@ -80,7 +80,7 @@
            
             if(this.els[this.index]){
                 
-                console.log(this.els[this.index]); 
+               
                 
                 this.els[this.index].className.indexOf(this.current) < 0 && (this.els[this.index].className += ' ' + this.current);
                 this.els[this.oIndex].className = this.els[this.oIndex].className.replace(this.current, '');
@@ -88,7 +88,9 @@
                 
                 
             }else{
-                window.location.href = window.location.href; 
+            //    this.restart();
+             
+                 window.location.href = window.location.href; 
             }
 			
 		},

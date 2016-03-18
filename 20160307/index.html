@@ -191,7 +191,7 @@
     <!--转盘盒子 end-->
     <div class="page-rule-wrap page-w m-auto">
         <div class="page-rule">
-            <h4 class="title">活动规则</h4>
+            <h4 class="title ">活动规则</h4>
             <h5 class="title-ch">抽奖资格获取说明</h5>
             <ol>
                 <li>
@@ -287,7 +287,18 @@
 </div>
 <!--逢抽必中 end-->
 <script src="./build/js/main.min.js?v=0.0.2" charset="utf-8"></script>
+<script type="text/javascript" src="http://api.youziku.com/wwwroot/js/g_webfont.min.js"></script>
+<script type="text/javascript">
+ WebFont.load({
+          custom: {
+          urls: ['http://api.youziku.com/webfont/CSS/56e62c7cf629d801b40f8f42']
+     }
+ });
+ </script>
 <script>
+ 
+ 
+    
 $(function(){  
         
         // 中奖名单列表
@@ -295,6 +306,8 @@ $(function(){
         listNameData(function(){
             
         });
+        
+       
         
         // 我的奖品
          $(".my-pin-btn").on("click",function(){   
@@ -328,15 +341,14 @@ $(function(){
 
             var index = (Math.random() * 8) >> 0;
             var jiangN = Number(correspondIndex()[index])-1;
-                        console.log(index+"等奖");
-                        console.log("对应号"+ jiangN);
+                       
             
             quan.start(jiangN, function() {
                 
                 animated = true;
                 callmyInfo(index,1); 
                             
-                console.log(  ' 恭喜你中了'+ index +'奖！');
+                
                 
             });
             
@@ -350,7 +362,7 @@ $(function(){
 
 function listNameData(call){
     var str = ''; 
-      for(var i = 0;i<20; i++){
+      for(var i = 0;i<6; i++){
           
           str += '<li>'+
                    ' <span class="name">月***'+ i +'</span>'+

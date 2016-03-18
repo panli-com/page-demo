@@ -17,7 +17,7 @@ function layerBtn(str){
 // 1
 function layerBtnT1(list){
    
-   var str = '<div class="layer-box-2 layer-box-all">'+
+   var str = '<div class="layer-box-1 layer-box-all">'+
         '<div class="layer-box-title"></div>'+
         '<div class="layer-box-main">'+
          '   <div class="layer-box-main-border">'+
@@ -36,6 +36,42 @@ function layerBtnT1(list){
     
 }
 
+function layerBtnT2(){
+    
+  var str = '<div class="layer-box-2 layer-box-all"><div class="layer-box-title"></div>'+
+       ' <div class="layer-box-main">'+
+           ' <div class="layer-box-main-border">'+
+                '<div class="layer-box-text">'+
+                   ' <div class="rule-title">'+
+                       ' <div class="line"></div>'+
+                       ' <span>抽奖资格获取说明</span>'+
+                    '</div>'+
+                  '  <ol>'+
+                    '    <li>每天登录Panli可获得1次抽奖机会，当天有效;</li>'+
+                    '    <li>每天成功提交订单可获得1次抽奖机会，多个订单 也仅限1次机会，活动期间有效，可累计；</li>'+
+                   '     <li>每次成功提交运单，并待状态为“已发货”时，可获得1次抽奖机会，活动期间有效，可累计。</li>'+
+                   ' </ol>'+
+                  '   <div class="rule-title">'+
+                   '     <div class="line"></div>'+
+                    '    <span>奖品说明</span>'+
+                   ' </div>'+
+                  '  <ol>'+
+                   '     <li>抽到的代金券，系统自动发放到您的Panli账户，可以在“我的-代金券”查看到账情况；</li>'+
+                   '     <li>抽到的番币，系统自动发放到您的Panli账户，可以在“我的-番币”查看到账情况；</li>'+
+                   '     <li>抽到的免服务费1个月和运费85折1个月，系统自动发放特权，提交运单时即可享受优惠；</li>'+
+                    '    <li>抽到的iPhone 6s，将在1个工作日通过邮件私信获奖者，告知奖品发放的明细信息。</li>'+
+                  '      <li>本活动最终解释权归Panli所有。</li>'+
+                 '   </ol>'+
+               ' </div>'+
+          '  </div>'+
+     '   </div>'+
+  '  </div>';
+    
+    
+     return str;
+    
+
+}
 
 
 function UserBalance(uName,callback) {  
@@ -127,14 +163,14 @@ function callmyInfo(i,n){
     content: str,
     
     success: function(oPan){
-        $(".layer-my-popup-btn").on("touchend",function(){
+        // $(".layer-my-popup-btn").on("touchend",function(){
             
-            // $(".jiugong li").removeClass("current");
-            PL.closeAll();
-        });
+        //     // $(".jiugong li").removeClass("current");
+        //     PL.closeAll();
+        // });
         
         
-        $(".layer-my-popup .close").on("touchend",function(){
+        $(".layer-my-popup").on("touchend",function(){
             // $(".jiugong li").removeClass("current");
             PL.closeAll();
         })

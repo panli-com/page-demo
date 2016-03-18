@@ -428,22 +428,19 @@ $.fn.extend({
 })(jQuery);
 
 /**
-
- * ==================================
  * opts.idPart 集合中每一项的id中相同的部分 必需设置
  * opts.idDigit 集合中每一项的id中不同的部分 第一项开始的数字 必需设置
  * opts.legnth 集合中共有几项 必需设置
  * opts.current 集合中当前项添加的类名 默认'current'
  * opts.index 从哪一项开始 索引值 从0开始 最后一项为opts.length-1
  * opts.count 滚动的圈数 默认10圈
- * opts.duration 持续时间 默认3000(毫秒)
- * opts.easing 动画效果 (easeInOutCirc默认 easeInOutQuad  easeInOutSine easeInOutCirc)
- * ====================================================
+ * opts.duration 持续时间 默认5000(毫秒)
+ * opts.easing 动画效果 
  * this.start(index, fn) 开始调用动画 
- 	index 集合中哪一项为中奖结果 索引值 从0开始 最后一项为opts.length-1
-	fn 动画完成后 
- * ==================================
+ * index 集合中哪一项为中奖结果 索引值 从0开始 最后一项为opts.length-1
+ * fn 动画完成后 
  **/
+ 
 (function(window, document) {
 	'use strict';
 	var zhuanQuan = function(opts) {
@@ -452,7 +449,7 @@ $.fn.extend({
 		this.idDigit = opts.idDigit;
 		this.length = opts.length;
 		this.current = opts.current || 'current';
-		this.duration = opts.duration || 3000;
+		this.duration = opts.duration || 5000;
 		this.easing = (opts.easing && this.tween[opts.easing]) || this.tween.easeInOutCirc;
 		this.count = opts.count || 10;
 		this.index = opts.index || 0;
@@ -568,7 +565,7 @@ function layerBtn(str){
 // 1
 function layerBtnT1(list){
    
-   var str = '<div class="layer-box-2 layer-box-all">'+
+   var str = '<div class="layer-box-1 layer-box-all">'+
         '<div class="layer-box-title"></div>'+
         '<div class="layer-box-main">'+
          '   <div class="layer-box-main-border">'+
@@ -587,41 +584,43 @@ function layerBtnT1(list){
     
 }
 
-// 2
 function layerBtnT2(){
     
-    var str = '<div class="layer-box-1 layer-box-all">'+
-        '<div class="layer-box-title"></div>'+
-        '<div class="layer-box-main">'+
-         '   <div class="layer-box-main-border">'+
-          '      <div class="layer-box-text">'+
-           '         <div class="rule-title">'+
-           '             <div class="line"></div>'+
-           '             <span>抽奖资格获取说明</span>'+
-           '         </div>'+
-           '         <ol>'+
-           '             <li>每天登录Panli可获得1次抽奖机会，当天有效;</li>'+
-           '             <li>每天成功提交订单可获得1次抽奖机会，多个订单 也仅限1次机会，活动期间有效，可累计；</li>'+
-           '            <li>每次成功提交运单，并待状态为“已发货”时，可获得1次抽奖机会，活动期间有效，可累计。</li>'+
-          '          </ol>'+
-          '           <div class="rule-title">'+
-          '              <div class="line"></div>'+
-           '             <span>奖品说明</span>'+
-           '         </div>'+
-            '        <ol>'+
-             '           <li>抽到的代金券，系统自动发放到您的Panli账户，可以在“我的-代金券”查看到账情况；</li>'+
-              '          <li>抽到的番币，系统自动发放到您的Panli账户，可以在“我的-番币”查看到账情况；</li>'+
-               '         <li>抽到的免服务费1个月和运费85折1个月，系统自动发放特权，提交运单时即可享受优惠；</li>'+
-                '        <li>抽到的iPhone 6s，将在1个工作日通过邮件私信获奖者，告知奖品发放的明细信息。</li>'+
-                 '       <li>本活动最终解释权归Panli所有。</li>'+
+  var str = '<div class="layer-box-2 layer-box-all"><div class="layer-box-title"></div>'+
+       ' <div class="layer-box-main">'+
+           ' <div class="layer-box-main-border">'+
+                '<div class="layer-box-text">'+
+                   ' <div class="rule-title">'+
+                       ' <div class="line"></div>'+
+                       ' <span>抽奖资格获取说明</span>'+
+                    '</div>'+
+                  '  <ol>'+
+                    '    <li>每天登录Panli可获得1次抽奖机会，当天有效;</li>'+
+                    '    <li>每天成功提交订单可获得1次抽奖机会，多个订单 也仅限1次机会，活动期间有效，可累计；</li>'+
+                   '     <li>每次成功提交运单，并待状态为“已发货”时，可获得1次抽奖机会，活动期间有效，可累计。</li>'+
+                   ' </ol>'+
+                  '   <div class="rule-title">'+
+                   '     <div class="line"></div>'+
+                    '    <span>奖品说明</span>'+
+                   ' </div>'+
+                  '  <ol>'+
+                   '     <li>抽到的代金券，系统自动发放到您的Panli账户，可以在“我的-代金券”查看到账情况；</li>'+
+                   '     <li>抽到的番币，系统自动发放到您的Panli账户，可以在“我的-番币”查看到账情况；</li>'+
+                   '     <li>抽到的免服务费1个月和运费85折1个月，系统自动发放特权，提交运单时即可享受优惠；</li>'+
+                    '    <li>抽到的iPhone 6s，将在1个工作日通过邮件私信获奖者，告知奖品发放的明细信息。</li>'+
+                  '      <li>本活动最终解释权归Panli所有。</li>'+
                  '   </ol>'+
-                '</div>'+
-            '</div>'+
-        '</div>'+
-    '</div>';
-     
-    return str;
+               ' </div>'+
+          '  </div>'+
+     '   </div>'+
+  '  </div>';
+    
+    
+     return str;
+    
+
 }
+
 
 function UserBalance(uName,callback) {  
      $.ajax({
@@ -712,14 +711,14 @@ function callmyInfo(i,n){
     content: str,
     
     success: function(oPan){
-        $(".layer-my-popup-btn").on("touchend",function(){
+        // $(".layer-my-popup-btn").on("touchend",function(){
             
-            // $(".jiugong li").removeClass("current");
-            PL.closeAll();
-        });
+        //     // $(".jiugong li").removeClass("current");
+        //     PL.closeAll();
+        // });
         
         
-        $(".layer-my-popup .close").on("touchend",function(){
+        $(".layer-my-popup").on("touchend",function(){
             // $(".jiugong li").removeClass("current");
             PL.closeAll();
         })
@@ -732,21 +731,7 @@ function callmyInfo(i,n){
 }
 
 
-// 转盘
 
-function TurntableSt(){
-    
-    var num = 8;
-    
-    
-    setInterval(function(){
-    
-
-
-    },3000);
-    
-    
-}
 
 // 奖项对应关系
 function correspondIndex(){
@@ -842,83 +827,10 @@ var Range = Max - Min;
 var Rand = Math.random();   
 return(Min + Math.round(Rand * Range));   
 }   
-//抢代金券领取接口
-function getDouble12(obj,callback) {
-    var radNub = randomWord(false, 18);
-    console.log(obj);
-     $.ajax({
-            type: "POST",
-            url: "/App_Services/wsSpecial.asmx/getDouble12?time="+radNub,
-            dataType: "json",
-            data: '{userName:"' + obj.userName + '",UserID:"' + obj.UserID + '",cotype:"' + obj.cotype + '"}',
-            contentType: "application/json;utf-8",
-            timeout: 20000,
-            error: function () {
-                PL.closeAll();
-                PL.open({
-                    content: '请求错误，请再试',
-                    time: 2
-                });
-            },
-            success: function (data) {
-                callback(data);
-            }
-        });    
-}
-//获取抢代金券剩余数量
-function CouponNumberState(callback) {
-    var radNub = randomWord(false, 18);
-     $.ajax({
-            type: "POST",
-            url: "/App_Services/wsSpecial.asmx/Coupon_NumberState?time="+radNub,
-            dataType: "json",
-            data: '',
-            contentType: "application/json;utf-8",
-            timeout: 20000,
-            error: function () {
-                PL.open({
-                    content: '请求错误，请再试',
-                    time: 2
-                });
-            },
-            success: function (data) {
-                callback(data);
-            }
-        });    
-}
 
 
-var moCoReact = [{"CouponType":50,"state":-1},{"CouponType":200,"state":-1},{"CouponType":300,"state":0},{"CouponType":0,"state":0}];
-
-//代金券数量响应
-function CouponReact(obj){    
-    for(var i = 0;i< obj.length;i++){
-       var  _type = obj[i].CouponType,
-            _state = obj[i].state;        
-       if(_state != 0){
-            $("#coupon-type-"+_type).removeClass("red-packet-btn").addClass("on").attr("no-click", 4);
-       }      
-    }   
-    
-}
 
 
-function ReturnLayer(num){
-  var icon = 5;
-  var num = Number(num);
-  num == 1 ? icon = 6 : "";
-  var text = [
-    "恭喜您成功抢到代金券",
-    "每个人只能领两张券哦",
-    "这张券已经抢过了哦",
-    "啊喔, 这张券已经被大家抢光了呢"
-  ];
- 
-  PL.open({
-    content: text[num-1],
-    time: 5
-});
-}
 
 // v  
 function appV(){
@@ -993,48 +905,7 @@ function getServerTimeStamp(callback){
     });
 }
 
-function get_Cookie(name)
-{
-    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
-    if(arr=document.cookie.match(reg))
-        return unescape(arr[2]);
-    else
-        return null;
-};
-function del_Cookie(name)
-{
-    var exp = new Date();
-    exp.setTime(exp.getTime() - 1);
-    var cval=get_Cookie(name);
-    if(cval!=null)
-        document.cookie= name + "="+cval+";expires="+exp.toGMTString();
-};
 
-function set_Cookie(name,value,time,path)
-{
-
-    var exp = new Date();
-    exp.setTime(time);
-    document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString()+"; path=" + path;
-};
-function getsec(str)
-{
-
-    var str1=str.substring(1,str.length)*1;
-    var str2=str.substring(0,1);
-    if (str2=="s")
-    {
-        return str1*1000;
-    }
-    else if (str2=="h")
-    {
-        return str1*60*60*1000;
-    }
-    else if (str2=="d")
-    {
-        return str1*24*60*60*1000;
-    }
-};
 // 今日 结束时间
 function getDateEnd(date) {
     var _date = new Date(date);
@@ -1175,7 +1046,8 @@ function enTimeF(endTime,nowTime){
         $(this).addClass("on");
       });
       
-      $(".btn-layer .btn-rule").on("click",function(){               
+      $(".btn-layer .btn-rule").on("click",function(){   
+                      
             layerBtn(layerBtnT2());
       });
       

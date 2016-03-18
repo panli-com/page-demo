@@ -1018,10 +1018,10 @@ a {
       background: #FFF; }
 
 .layer-box-1 .layer-box-title {
-  background-image: url("../images/rule-title.png"); }
+  background-image: url("../images/my-pin-title.png"); }
 
 .layer-box-2 .layer-box-title {
-  background-image: url("../images/my-pin-title.png"); }
+  background-image: url("../images/rule-title.png"); }
 
 .layer-box-text ol {
   margin-left: -20px; }

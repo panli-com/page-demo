@@ -14,11 +14,15 @@
 .winners-list{
     background:#6f3fba;
     // height: pxTorem(600);
+
     ul{
        padding: pxTorem(16) pxTorem(26); 
        li{
            font-size: pxTorem(24);
            padding: pxTorem(14);
+        //     padding: 0 pxTorem(14);
+        //    height: pxTorem(60);
+        //    line-height: pxTorem(60);
            border-bottom: 2px dotted #8a4ee6;
            transition: 1s;
            .name{

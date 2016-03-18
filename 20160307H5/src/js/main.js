@@ -14,7 +14,8 @@
         $(this).addClass("on");
       });
       
-      $(".btn-layer .btn-rule").on("click",function(){               
+      $(".btn-layer .btn-rule").on("click",function(){   
+                      
             layerBtn(layerBtnT2());
       });
       

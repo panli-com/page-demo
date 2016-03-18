@@ -6,6 +6,7 @@ $.fn.extend({
                 var _btnUp = $("#"+ opt.up);//Shawphy:向上按钮
                 var _btnDown = $("#"+ opt.down);//Shawphy:向下按钮
                 var timerID;
+                var lengQ = 10;
                 var _this=this.eq(0).find("ul:first");
                 var     lineH= 41, //获取行高
                         line=opt.line?parseInt(opt.line,10):parseInt(this.height()/lineH,10), //每次滚动的行数，默认为一屏，即父容器高度
@@ -29,7 +30,10 @@ $.fn.extend({
                 }
                 //Shawphy:向下翻页函数 
                 var scrollDown=function(){
+                    
                         _btnDown.unbind("click",scrollDown);
+                        
+                        console.log(line);
                         for(i=1;i<=line;i++){
                                 _this.find("li:last").show().prependTo(_this);
                         }

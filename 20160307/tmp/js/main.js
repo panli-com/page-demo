@@ -6,6 +6,7 @@ $.fn.extend({
                 var _btnUp = $("#"+ opt.up);//Shawphy:向上按钮
                 var _btnDown = $("#"+ opt.down);//Shawphy:向下按钮
                 var timerID;
+                var lengQ = 10;
                 var _this=this.eq(0).find("ul:first");
                 var     lineH= 41, //获取行高
                         line=opt.line?parseInt(opt.line,10):parseInt(this.height()/lineH,10), //每次滚动的行数，默认为一屏，即父容器高度
@@ -29,7 +30,10 @@ $.fn.extend({
                 }
                 //Shawphy:向下翻页函数 
                 var scrollDown=function(){
+                    
                         _btnDown.unbind("click",scrollDown);
+                        
+                        console.log(line);
                         for(i=1;i<=line;i++){
                                 _this.find("li:last").show().prependTo(_this);
                         }
@@ -98,7 +102,7 @@ $.fn.extend({
 			this.animate(index, function() {
 				fn && fn();
 			});
-		},
+		},        
 		animate: function(index, fn) {
 			if (this.animated) return;
 			var start = this.index,
@@ -126,10 +130,10 @@ $.fn.extend({
 			}();
 		},
 		scroll: function(v) {
-			 console.log(v + '=01')
+			//  console.log(v + '=01')
 			this.index = Math.round(v) % this.length;
 			if (this.index === this.oIndex) return;
-			console.log(this.index + '=02')
+			// console.log(this.index + '=02')
 			this.index < 0 && (this.index = 0);
 			this.index > this.length - 1 && (this.index = 0);
 			this.next();
@@ -138,7 +142,7 @@ $.fn.extend({
            
             if(this.els[this.index]){
                 
-                console.log(this.els[this.index]); 
+               
                 
                 this.els[this.index].className.indexOf(this.current) < 0 && (this.els[this.index].className += ' ' + this.current);
                 this.els[this.oIndex].className = this.els[this.oIndex].className.replace(this.current, '');
@@ -146,7 +150,9 @@ $.fn.extend({
                 
                 
             }else{
-                window.location.href = window.location.href; 
+            //    this.restart();
+             
+                 window.location.href = window.location.href; 
             }
 			
 		},
@@ -176,7 +182,7 @@ $.fn.extend({
 		window.zhuanQuan = zhuanQuan;
 	}
 }(window, document));
-
+var console=console||{log:function(){return;}}  
 // 1
 function layerBtnT1(list){
    
