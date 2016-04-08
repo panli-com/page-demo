@@ -1,49 +1,36 @@
 var gulp = require('gulp');
 
-var day = '20160318H5';
-var cssName = 'main';
+var day = '20160408';
+var cssName = 'main',
+    minjs   = 'head_2016.js';
 
 // 引入组件
 var sass = require('gulp-sass'),
-    connect = require('gulp-connect'),
     minifycss = require('gulp-minify-css'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
-    browserify = require('gulp-browserify'),
     notify = require('gulp-notify'),
     autoprefixer = require('gulp-autoprefixer'),
-    livereload = require('gulp-livereload'),
-    zip = require('gulp-zip'),
-    postcss = require('gulp-postcss'),
- px2rem = require('postcss-px2rem');
-    // port = process.env.port || 5000;
+    zip = require('gulp-zip');
+
 
 
 var browserSync = require('browser-sync').create();
 var reload      = browserSync.reload;
 
 
-// live reload
-// gulp.task('connect',function(){
-//     connect.server({
-//         // root:'./',
-//         port: port,
-//         livereload: true,
-//     })
-// });
+
 
 
 //编译Sass，Autoprefix及缩小化
 gulp.task('sass', function() {
     
-    var processors = [px2rem({remUnit: 72})];
     
     return gulp.src('./'+ day +'/src/scss/'+ cssName +'.scss')
         .pipe(sass({ style: 'expanded' }))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe(gulp.dest('./'+ day +'/tmp/css'))
-        // .pipe(postcss(processors))
         .pipe(rename({suffix: '.min'}))
         .pipe(minifycss())
         .pipe(gulp.dest('./'+ day +'/build/css/'))
@@ -91,7 +78,7 @@ gulp.task('scripts',function(){
     return gulp.src('./'+ day +'/src/js/*.js')
         .pipe(concat('main.js'))
         .pipe(gulp.dest('./'+ day +'/tmp/js'))
-        .pipe(rename({suffix: '.min'}))
+        .pipe(rename(minjs))
         .pipe(uglify())
         .pipe(gulp.dest('./'+ day +'/build/js/'))
         .pipe(reload({stream: true}))
@@ -149,6 +136,6 @@ gulp.task('watch', function() {
 
 });
 
-gulp.task('serve',['connect','watch']);
+gulp.task('serve',['watch']);
 
 gulp.task('default', ['dev']);
