@@ -294,3 +294,13 @@ clearfix:after {
 .m-auto{
 	margin: 0 auto;
 }
+
+.material-design {
+  position: relative;
+}
+.material-design canvas {
+  opacity: 0.25;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

@@ -263,12 +263,17 @@
 	display:inline;
 	.search_text, .button {
 		border:solid 2px #ff6e6e;
-		//padding:5px;
 		padding: 5px 10px;
 		height:20px;
-		width:548px;
+		
 		display:inline;
 	}
+    .search_text{
+        width:548px;
+        
+        line-height: 24px;
+        
+    }
 	.button {
 		background:#ff6e6e;
 		color:#fff;
@@ -415,4 +420,73 @@
 	margin-top: 0;
 	margin-left: 418px;
 	margin-bottom: 14px;
+}
+.search-wrap{
+    .head-search-text{
+        padding-left: 90px;
+    }
+}
+
+//2016年04月09日14:18:30
+.tab-seach-sel-wrap{
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 78px;
+    height: 30px;
+    background-color: #f8f8f8;
+    font-size: 14px;
+    a{
+        text-decoration: none;
+        color: #444;
+    }
+    .on{
+         display: block;
+         height:30px;
+         line-height: 30px;
+         padding-left: 19px;
+         
+     }
+     .tab-sel-2{
+         display: none;
+        //  visibility:hidden;
+         margin-left: -2px;
+         background-color: #f8f8f8;
+         width: 58px;
+         height:30px;
+         line-height: 30px;
+         padding-left: 19px;
+         border:solid 2px #ff6e6e;
+         border-top: none;
+         color: #ff6e6e;
+     }
+     .seach-sanjiao{
+         display: block;
+         position: absolute;
+         left: 55px;
+         top: 12px;
+         z-index: 10;
+         width: 7px;
+         height: 7px;
+         background: url(../images/seach-sanjiao.png) no-repeat center center;
+     }
+    
+}
+.search-help-wrap{
+    position: absolute;
+    right: 16px;
+    width: 100px;
+    height: 30px;
+    display: none;
+    top: 36px;
+    text-align: right;
+    a{
+        text-decoration: none;
+        color: #696969;
+        font-size: 12px;
+        line-height: 25px;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
 }
