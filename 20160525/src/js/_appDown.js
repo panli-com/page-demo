@@ -14,14 +14,17 @@
             downUrl = Android;
         } 
         
-        var str = '<div class="appDown"><div class="downLogo"></div>'+
+        var str = '<div class="appDown" id="appDown"><div class="downLogo"></div>'+
                     '<span class="s1">下载手机 App, 让代购更轻松！</span>'+
                     '<a class="down" target="_blank" href="'+ downUrl +'" >立即下载</a>'+
                     '<a class="Downclose"  >X</a>'+
                     '</div>';
         
-        PD("body").append(str)
-        console.log(PD("body"))
+        PD("body").append(str); 
+        
+        PD("body").on("click",".Downclose",function(){
+            PD("#appDown").remove();
+        })
         
     }
     
