@@ -61,7 +61,7 @@ supportCss3 = function (style) {
     return false; 
 }
 
-
+ 
 String.prototype.replaces = function (oldrel, newrel) {
     if (!oldrel || oldrel == '') oldrel = '\\\w\+';
     var rel = new RegExp('{{' + oldrel + '}}', 'g');

@@ -4,7 +4,8 @@
   "description": "",
   "main": "pan.js",
   "scripts": {
-    "start": "gulp"
+    "start": "gulp",
+    "pro":"gulp pro"
   },
   "author": "",
   "license": "ISC",

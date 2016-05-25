@@ -1,8 +1,9 @@
 var gulp = require('gulp');
 
-var day = '20160408';
+var day = '20160525';
 var cssName = 'main',
-    minjs   = 'head_2016.js';
+    minjs   = 'head_2016.js',
+    proPath = '/Users/julaud/www/panli/sf-panli-com/Ued/pc/index/build/';
 
 // 引入组件
 var sass = require('gulp-sass'),
@@ -95,6 +96,11 @@ gulp.task('zip', function () {
         .pipe(notify({ message: 'zip task complete' }));
 });
 
+gulp.task('pro',function () {
+    return gulp.src('./'+ day +'/build/**/*')
+        .pipe(gulp.dest(proPath))
+        .pipe(notify({ message: 'pro ok' }));
+})
 
 
 // 静态服务器 + 监听 scss/html 文件

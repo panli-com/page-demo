@@ -126,7 +126,7 @@ supportCss3 = function (style) {
     return false; 
 }
 
-
+ 
 String.prototype.replaces = function (oldrel, newrel) {
     if (!oldrel || oldrel == '') oldrel = '\\\w\+';
     var rel = new RegExp('{{' + oldrel + '}}', 'g');
@@ -135,6 +135,10 @@ String.prototype.replaces = function (oldrel, newrel) {
 }
 
 ;(function(){
+    
+    PD(function(){
+        
+        
     
     if (!supportCss3('transform')) {
         document.body.className += 'no_transform'
@@ -172,7 +176,7 @@ String.prototype.replaces = function (oldrel, newrel) {
            var urlFe = ["","http://www.panli.com/Crawler.aspx?purl=","http://www.panli.com/mypanli/SelfPurchase/Order.aspx?szURL="]
             
             
-            window.location.href = urlFe[urV] + encodeURIComponent(url);
+            window.open(urlFe[urV] + encodeURIComponent(url));
         } else {
             $input.addClass('red').val(errerText);
             return false;
@@ -213,23 +217,9 @@ String.prototype.replaces = function (oldrel, newrel) {
 
 
 
-    RightK();
- 
-
-    $(window).resize(RightK); 
-
-    $(window).scroll(function () {
-        var scrollTop = $(window).scrollTop(),
-                    topHeight = $('#nav_list').offset().top + 48;
-        if (scrollTop > topHeight) { }
-        $('.overHead')[scrollTop > topHeight ? 'addClass' : 'removeClass']('top_Show');
-        // (scrollTop > topHeight ? $('#topSearch') : $('#headSearch')).prev().focus();
-        $('#black_Top')[scrollTop > 400 ? 'show' : 'hide']();
-        if (window['IsIndex']) {
-
-            $('#index_message')[scrollTop > 400 ? 'show' : 'hide']();
-        }
-    });
+   })
+    
+    
     
 })()
 
@@ -246,8 +236,46 @@ String.prototype.replaces = function (oldrel, newrel) {
  */
 ;(function () {
     
+    function topFixNav(){
+        
+            
+            var scrollTop = $(window).scrollTop();
+            
+            if($('#nav_list').length > 0){
+                   var  topHeight = $('#nav_list').offset().top + 48;
+                     if (scrollTop > topHeight) { }
+                        $('.overHead')[scrollTop > topHeight ? 'addClass' : 'removeClass']('top_Show');
+             }
+           
+            // (scrollTop > topHeight ? $('#topSearch') : $('#headSearch')).prev().focus();
+            
+            
+            $('#black_Top')[scrollTop > 400 ? 'show' : 'hide']();
+            
+            if (window['IsIndex']) {
+
+                $('#index_message')[scrollTop > 400 ? 'show' : 'hide']();
+            }
+            
+       
+        
+         
+    }
+    
+    
+    $(window).resize(RightK); 
+
+     $(window).scroll(function () {
+        topFixNav();
+     });
     
     PD(function () {
+        
+        
+        
+         RightK();    
+           
+        
         var tabObj = {
             "1":{
                 text:"代购"

@@ -512,9 +512,7 @@ clearfix:after {
   background-position: -60px -30px;
   top: -4px;
   right: 5px;
-  transition: -webkit-transform 0.3s ease-in;
-  transition: transform 0.3s ease-in;
-  transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in; }
+  transition: transform 0.3s ease-in; }
 
 .icon_pdg {
   background-position: 0px -30px; }
@@ -655,7 +653,6 @@ clearfix:after {
       color: #fff; }
       .nav li.nav_icon > a:hover .icon_j {
         background-position: -60px -60px;
-        -webkit-transform: rotate(180deg);
         transform: rotate(180deg); }
 
 .nav_icon .nav_l {
@@ -664,15 +661,12 @@ clearfix:after {
 .nav_icon .icon_j {
   right: 22px;
   top: 4px;
-  transition: -webkit-transform 0.3s ease-in;
-  transition: transform 0.3s ease-in;
-  transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in; }
+  transition: transform 0.3s ease-in; }
 
 .nav li.on .icon_j {
   background-position: -60px -60px; }
 
 .fore_h .icon_j, .fore_b .icon_j {
-  -webkit-transform: rotate(180deg);
   transform: rotate(180deg); }
 
 .header-logo {
@@ -978,11 +972,8 @@ clearfix:after {
   .page-index .referr img {
     float: left;
     display: inline;
-    transition: -webkit-transform 0.3s ease-in;
-    transition: transform 0.3s ease-in;
-    transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in; }
+    transition: transform 0.3s ease-in; }
     .page-index .referr img:hover {
-      -webkit-transform: translateX(-5px);
       transform: translateX(-5px); }
   .page-index .referr a {
     display: block;
@@ -1160,9 +1151,7 @@ clearfix:after {
   width: 60px; }
 
 .hover_b, .hover_a {
-  transition: -webkit-transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out; }
+  transition: transform 0.3s ease-in-out; }
 
 .no_transform .hover_a, .no_transform .r_l_nav li:hover .hover_b {
   display: none; }
@@ -1223,7 +1212,6 @@ clearfix:after {
   line-height: 18px;
   text-decoration: none;
   padding-top: 10px;
-  -webkit-transform: scale(0);
   transform: scale(0); }
 
 .icon_r_navjy_h {
@@ -1240,16 +1228,12 @@ clearfix:after {
   border-right: solid 1px #f8f8f8; }
 
 .hover_b, .hover_a {
-  transition: -webkit-transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out; }
+  transition: transform 0.3s ease-in-out; }
 
 .r_l_nav li:hover .hover_a {
-  -webkit-transform: scale(1);
   transform: scale(1); }
 
 .r_l_nav li:hover .hover_b {
-  -webkit-transform: scale(0);
   transform: scale(0); }
 
 .online-ul .online-li {
