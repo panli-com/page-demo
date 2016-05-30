@@ -141,27 +141,27 @@
 }
 .appDown{
 	position: fixed;
-	height: 100px;
+	height: 140px;
 	width: 100%;
 	bottom: 0;
 	left: 0px;
 	z-index: 999;
 	background: rgba(255, 255, 255,.88);
-	line-height: 100px;
-	
-	font-size: 35px;
+	line-height: 140px;
+	font-size: 39px;
 	color: #ff6e6e;
 	.s1{
 		display: inline-block;
-		text-indent: 150px;
+		text-indent: 190px;
 	}
 	.downLogo{
 		position: absolute;
 		top: -30px;
 		left: 30px;
-		width: 96px;
-		height: 96px;
-		background: url(../images/appDown.png) no-repeat center center;
+		width: 136px;
+		height: 136px;
+		background: url(../images/192-192.png) no-repeat center center;
+		background-size: cover;
 	}
 	a{
 		text-decoration: none;
@@ -171,18 +171,22 @@
 		display: inline-block;
 		position: absolute;
 		top: 50%;
-		margin-top: -32px;
-		height: 63px;
-		line-height: 63px;
+		margin-top: -46px;
+		height: 93px;
+		line-height: 93px;
 		padding: 0 20px;
 		border-radius: 5px;
 		background: #ff6e6e;
 		color: #FFF;
-		right: 70px;
+		right: 100px;
 	}
 	a.Downclose{
 		display: inline-block;
+		// background-color: #ff6e6e;
+		font-size: 50px;
+		text-align: center;
+		width: 80px;
 		position: absolute;
-		right: 20px;
+		right: 0px;
 	}
 }

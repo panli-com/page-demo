@@ -12,6 +12,7 @@ var sass = require('gulp-sass'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     notify = require('gulp-notify'),
+    saveLicense = require('uglify-save-license');
     autoprefixer = require('gulp-autoprefixer'),
     zip = require('gulp-zip');
 
@@ -20,6 +21,7 @@ var sass = require('gulp-sass'),
 var browserSync = require('browser-sync').create();
 var reload      = browserSync.reload;
 
+var prodUrl = '/Users/julaud/www/panli/sf-panli-com/Ued/pc/index/build/';
 
 
 
@@ -35,6 +37,7 @@ gulp.task('sass', function() {
         .pipe(rename({suffix: '.min'}))
         .pipe(minifycss())
         .pipe(gulp.dest('./'+ day +'/build/css/'))
+        .pipe(gulp.dest(prodUrl + '/css/'))
         .pipe(reload({stream: true}))
         .pipe(notify({ message: 'Styles  task complete' }));
 });
@@ -82,6 +85,7 @@ gulp.task('scripts',function(){
         .pipe(rename(minjs))
         .pipe(uglify())
         .pipe(gulp.dest('./'+ day +'/build/js/'))
+        .pipe(gulp.dest(prodUrl + '/js/'))
         .pipe(reload({stream: true}))
         .pipe(notify({ message: 'Scripts task complete' }));
 

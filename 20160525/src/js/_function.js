@@ -1,9 +1,9 @@
 
-/**
+/*! 
  * 整理老代码梳理结构 
  * 2016年04月08日18:03:15
  * By Julian zanjser@163.com
- * 
+ * .
  */
 
 function getCookie(name) {
@@ -121,3 +121,7 @@ function detectOS() {
     } 
     return "other"; 
 } 
+
+function removeDown(){
+    PD("#appDown").remove();
+}
