@@ -1145,41 +1145,45 @@ clearfix:after {
 
 .appDown {
   position: fixed;
-  height: 140px;
+  height: 150px;
   width: 100%;
   bottom: 0;
   left: 0px;
   z-index: 999;
   background: rgba(255, 255, 255, 0.88);
-  line-height: 140px;
+  line-height: 150px;
   font-size: 39px;
   color: #ff6e6e; }
   .appDown .s1 {
     display: inline-block;
-    text-indent: 190px; }
+    text-indent: 200px; }
   .appDown .downLogo {
     position: absolute;
-    top: -30px;
-    left: 30px;
+    left: 42px;
     width: 136px;
     height: 136px;
-    background: url(../images/192-192.png) no-repeat center center;
+    bottom: 30px;
+    background: url(../images/0531.png) no-repeat center center;
     background-size: cover; }
   .appDown a {
-    text-decoration: none; }
-  .appDown a.down {
+    text-decoration: none;
+    color: #ff6e6e;
+    display: block;
+    width: 100%; }
+  .appDown .down {
     display: inline-block;
     position: absolute;
     top: 50%;
     margin-top: -46px;
     height: 93px;
     line-height: 93px;
-    padding: 0 20px;
+    width: 230px;
+    text-align: center;
     border-radius: 5px;
     background: #ff6e6e;
     color: #FFF;
-    right: 100px; }
-  .appDown a.Downclose {
+    right: 42px; }
+  .appDown .Downclose {
     display: inline-block;
     font-size: 50px;
     text-align: center;

@@ -19,9 +19,10 @@
             } 
             
             var str = '<div class="appDown" id="appDown"><div class="downLogo"></div>'+
+                        '<a ctarget="_blank" href="'+ downUrl +'">'+
                         '<span class="s1">下载手机 App, 让代购更轻松！</span>'+
-                        '<a class="down" target="_blank" href="'+ downUrl +'" >立即下载</a>'+
-                        '<a class="Downclose" onClick="removeDown()" > X</a>'+
+                        '<span class="down"  >立即下载</span>'+
+                        '</a>'+
                         '</div>';
             
             PD("body").append(str); 

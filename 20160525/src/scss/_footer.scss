@@ -141,46 +141,53 @@
 }
 .appDown{
 	position: fixed;
-	height: 140px;
+	height: 150px;
 	width: 100%;
 	bottom: 0;
 	left: 0px;
 	z-index: 999;
 	background: rgba(255, 255, 255,.88);
-	line-height: 140px;
+	// background: red;
+	line-height: 150px;
 	font-size: 39px;
 	color: #ff6e6e;
 	.s1{
 		display: inline-block;
-		text-indent: 190px;
+		text-indent: 200px;
 	}
 	.downLogo{
 		position: absolute;
-		top: -30px;
-		left: 30px;
+		
+		left: 42px;
 		width: 136px;
 		height: 136px;
-		background: url(../images/192-192.png) no-repeat center center;
+		bottom: 30px;
+		background: url(../images/0531.png) no-repeat center center;
 		background-size: cover;
 	}
 	a{
 		text-decoration: none;
-		
+		color: #ff6e6e;
+		display: block;
+		width: 100%;
+		// background: #ff6e6e
 	}
-	a.down{
+	.down{
 		display: inline-block;
 		position: absolute;
 		top: 50%;
 		margin-top: -46px;
+		// bottom: 34px;
 		height: 93px;
 		line-height: 93px;
-		padding: 0 20px;
+		width: 230px;
+		text-align: center;
 		border-radius: 5px;
 		background: #ff6e6e;
 		color: #FFF;
-		right: 100px;
+		right: 42px;
 	}
-	a.Downclose{
+	.Downclose{
 		display: inline-block;
 		// background-color: #ff6e6e;
 		font-size: 50px;
