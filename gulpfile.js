@@ -1,8 +1,8 @@
 var gulp = require('gulp');
 
-var day = '20160525';
-var cssName = 'main',
-    minjs   = 'head_2016.js',
+var day = '20160711404';
+var cssName = '404.css',
+    minjs   = '404.js',
     proPath = '/Users/julaud/www/panli/sf-panli-com/Ued/pc/index/build/';
 
 // 引入组件
@@ -30,11 +30,11 @@ var prodUrl = '/Users/julaud/www/panli/sf-panli-com/Ued/pc/index/build/';
 gulp.task('sass', function() {
     
     
-    return gulp.src('./'+ day +'/src/scss/'+ cssName +'.scss')
+    return gulp.src('./'+ day +'/src/scss/main.scss')
         .pipe(sass({ style: 'expanded' }))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe(gulp.dest('./'+ day +'/tmp/css'))
-        .pipe(rename({suffix: '.min'}))
+        .pipe(rename(cssName))
         .pipe(minifycss())
         .pipe(gulp.dest('./'+ day +'/build/css/'))
         .pipe(gulp.dest(prodUrl + '/css/'))

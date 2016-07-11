@@ -1,0 +1,55 @@
+
+
+.header{
+    border-bottom: 1px solid #ff7575;
+    padding: 10px 0;
+    
+}
+
+.header-m{
+    position: relative;
+    .top-link{
+        position: absolute;
+        top: 0px;
+        right: 0;
+        text-align: right;
+        .login-status{
+            height: 30px;
+            
+            display: inline-block;
+            a{
+                color: $PColor;
+            }
+        }
+        a{
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            span{
+                display: inline-block;
+                vertical-align: top;
+                text-indent: -5px;
+            }
+        }
+        &>a{
+            margin-left: 24px;
+            display: inline-block;
+            &:hover{
+                text-decoration: none;
+                color: $PColor;
+            }
+        }
+        i{
+            background: url(http://sf.panli.com/Ued/Pc/index/build/images/icon.png) no-repeat;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            // background-color: olivedrab;
+            vertical-align: top;
+        }
+        .icon-cart{
+            background-position: -30px 0;
+            
+        }
+    }
+}

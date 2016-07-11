@@ -1,0 +1,37 @@
+
+$pw:1200px;
+
+$color:#444;
+
+$PColor:#ff6e6e;
+
+
+$footerColor:#999;
+
+
+
+.pw{
+    width: $pw;
+}
+
+.wb{
+    width: 100%;
+    min-width: 100%;
+}
+.mt{
+    margin: 0 auto;
+}
+
+.fl{
+    float: left;
+}
+
+.fr{
+    float: right;
+}
+
+.setmp{
+    margin: 0;
+    padding: 0;
+}
+
