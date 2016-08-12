@@ -1,0 +1,98 @@
+// 其他商家
+.other-postage{
+    border: 5px solid #ffd3d3;
+    border-left: none;
+    border-right: none;
+    padding: 10px 0;
+    .title{
+        position: relative;
+        color: #333;
+        padding-left: 34px;
+        .star-red{
+            position: absolute;
+            width: 21px;
+            height: 20px;
+            background: url(../imgs/star-red.png) no-repeat center center;
+            left: 0;
+        }
+    }
+    .j-list{
+        padding-top: 14px;
+        padding-bottom: 10px;
+        a{
+            display: inline-block;
+            font-size: 0;
+            width: 110px;
+            height: 45px;
+            border: 1px solid #e4e4e4;
+            overflow: hidden;
+            margin-right: 40px;
+        }
+    }
+}
+
+//会员最爱店铺
+.user-love-shop{
+    padding-top: 14px;
+    .title{
+        position: relative;
+        color: #333;
+        padding-left: 34px;
+        .love{
+            position: absolute;
+            width: 21px;
+            height: 20px;
+            background: url(../imgs/love.png) no-repeat center center;
+            left: 0;
+        }
+    }
+    .j-list{
+        padding-top: 10px;
+        li{
+            position: relative;
+            font-size: 14px;
+            clear: both;
+            overflow: hidden;
+            color: #333;
+            padding: 5px 0;
+            .numb{
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                border: 1px solid #ccc;
+                color: #ccc;
+                text-align: center;
+                line-height: 22px;
+                &.numb1{
+                    color: white;
+                    background-color: #ffcb15;
+                    border-color: #ffcb15;
+                }
+                &.numb2{
+                    color: white;
+                    background-color: #e2e2e2;
+                    border-color: #e2e2e2;
+                }
+                &.numb3{ 
+                    color: white;
+                    background-color: #e45314;
+                    border-color: #e45314;
+                }
+            }
+            a{
+                &:hover{
+                    color: #ff6e6e;
+                    text-decoration: underline;
+                }
+            }
+            .name{
+                padding-left: 10px;
+                width: 180px;
+            }
+            i{
+                float: right;
+            }
+        }
+    }
+}
