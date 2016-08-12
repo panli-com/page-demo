@@ -1100,7 +1100,8 @@ clearfix:after {
 
 .icon_code_p {
   background: url(http://sf.panli.com/Ued/pc/footer/images/appcode.png) no-repeat center;
-  background-size: 103px;
+  background-size: 103px 103px;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://sf.panli.com/Ued/pc/footer/images/appcode.png', sizingMethod='scale');
   width: 119px;
   height: 119px;
   left: 121px;
