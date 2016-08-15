@@ -85,6 +85,14 @@
     text-decoration: underline; }
     .jui-message a:hover {
       color: #ff6e6e; }
+  .jui-message .triangle-topleft {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 20px solid #ff6e6e;
+    border-right: 20px solid transparent; }
 
 .floor-nav {
   padding: 14px 0; }
