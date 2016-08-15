@@ -13,7 +13,7 @@
 .postage-right {
   width: 344px; }
 
-@-webkit-keyframes hvr-hang {
+@-webkit-keyframes jui-hang {
   0% {
     -webkit-transform: translateY(4px);
             transform: translateY(4px); }
@@ -24,7 +24,7 @@
     -webkit-transform: translateY(4px);
             transform: translateY(4px); } }
 
-@keyframes hvr-hang {
+@keyframes jui-hang {
   0% {
     -webkit-transform: translateY(4px);
             transform: translateY(4px); }
@@ -35,30 +35,32 @@
     -webkit-transform: translateY(4px);
             transform: translateY(4px); } }
 
-@-webkit-keyframes hvr-hang-sink {
+@-webkit-keyframes jui-hang-sink {
   100% {
     -webkit-transform: translateY(4px);
             transform: translateY(4px); } }
 
-@keyframes hvr-hang-sink {
+@keyframes jui-hang-sink {
   100% {
     -webkit-transform: translateY(4px);
             transform: translateY(4px); } }
 
-.hvr-hang {
+.jui-hang {
   display: inline-block;
   vertical-align: middle;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
-  -webkit-box-shadow: 0 0 1px transparent;
-          box-shadow: 0 0 1px transparent;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition: .3s;
+  transition: .3s; }
 
-.hvr-hang:hover, .hvr-hang:focus, .hvr-hang:active {
-  -webkit-animation-name: hvr-hang-sink, hvr-hang;
-          animation-name: hvr-hang-sink, hvr-hang;
+.jui-hang:hover, .jui-hang:focus, .jui-hang:active {
+  -webkit-transition: .3s;
+  transition: .3s;
+  -webkit-animation-name: jui-hang-sink, jui-hang;
+          animation-name: jui-hang-sink, jui-hang;
   -webkit-animation-duration: .3s, 1.5s;
           animation-duration: .3s, 1.5s;
   -webkit-animation-delay: 0s, .3s;
@@ -71,6 +73,119 @@
           animation-fill-mode: forwards;
   -webkit-animation-direction: normal, alternate;
           animation-direction: normal, alternate; }
+
+/* Float */
+.jui-float {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out; }
+
+.jui-float:hover, .jui-float:focus, .jui-float:active {
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px); }
+
+/* Wobble Bottom */
+@-webkit-keyframes jui-wobble-bottom {
+  16.65% {
+    -webkit-transform: skew(-12deg);
+            transform: skew(-12deg); }
+  33.3% {
+    -webkit-transform: skew(10deg);
+            transform: skew(10deg); }
+  49.95% {
+    -webkit-transform: skew(-6deg);
+            transform: skew(-6deg); }
+  66.6% {
+    -webkit-transform: skew(4deg);
+            transform: skew(4deg); }
+  83.25% {
+    -webkit-transform: skew(-2deg);
+            transform: skew(-2deg); }
+  100% {
+    -webkit-transform: skew(0);
+            transform: skew(0); } }
+@keyframes jui-wobble-bottom {
+  16.65% {
+    -webkit-transform: skew(-12deg);
+            transform: skew(-12deg); }
+  33.3% {
+    -webkit-transform: skew(10deg);
+            transform: skew(10deg); }
+  49.95% {
+    -webkit-transform: skew(-6deg);
+            transform: skew(-6deg); }
+  66.6% {
+    -webkit-transform: skew(4deg);
+            transform: skew(4deg); }
+  83.25% {
+    -webkit-transform: skew(-2deg);
+            transform: skew(-2deg); }
+  100% {
+    -webkit-transform: skew(0);
+            transform: skew(0); } }
+
+.jui-wobble-bottom {
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0; }
+
+.jui-wobble-bottom:hover, .jui-wobble-bottom:focus, .jui-wobble-bottom:active {
+  -webkit-animation-name: jui-wobble-bottom;
+          animation-name: jui-wobble-bottom;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1; }
+
+/* Overline From Center */
+.jui-overline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden; }
+
+.jui-overline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  background: #ff6e6e;
+  height: 1px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out; }
+
+.jui-overline-from-center:hover:before, .jui-overline-from-center:focus:before, .jui-overline-from-center:active:before {
+  left: 0;
+  right: 0; }
 
 .jui-message {
   color: #666;
