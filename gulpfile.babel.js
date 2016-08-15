@@ -45,7 +45,7 @@ gulp.task('ejs', () => gulp.src(`./${day}/templates/layout.ejs`)
 //编译Sass，Autoprefix及缩小化
 gulp.task('sass', () => gulp.src(`./${day}/src/scss/main.scss`)
     .pipe(sass({ style: 'expanded' }))
-    .pipe(autoprefixer('safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    .pipe(autoprefixer('safari 5', 'Firefox > 20','ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     .pipe(gulp.dest(`./${day}/.tmp/css`))
     .pipe(rename(cssName))
     .pipe(minifycss())

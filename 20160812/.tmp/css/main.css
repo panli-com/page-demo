@@ -13,6 +13,65 @@
 .postage-right {
   width: 344px; }
 
+@-webkit-keyframes hvr-hang {
+  0% {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px); }
+  50% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px); }
+  100% {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px); } }
+
+@keyframes hvr-hang {
+  0% {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px); }
+  50% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px); }
+  100% {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px); } }
+
+@-webkit-keyframes hvr-hang-sink {
+  100% {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px); } }
+
+@keyframes hvr-hang-sink {
+  100% {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px); } }
+
+.hvr-hang {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-box-shadow: 0 0 1px transparent;
+          box-shadow: 0 0 1px transparent;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale; }
+
+.hvr-hang:hover, .hvr-hang:focus, .hvr-hang:active {
+  -webkit-animation-name: hvr-hang-sink, hvr-hang;
+          animation-name: hvr-hang-sink, hvr-hang;
+  -webkit-animation-duration: .3s, 1.5s;
+          animation-duration: .3s, 1.5s;
+  -webkit-animation-delay: 0s, .3s;
+          animation-delay: 0s, .3s;
+  -webkit-animation-timing-function: ease-out, ease-in-out;
+          animation-timing-function: ease-out, ease-in-out;
+  -webkit-animation-iteration-count: 1, infinite;
+          animation-iteration-count: 1, infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-direction: normal, alternate;
+          animation-direction: normal, alternate; }
+
 .jui-message {
   color: #666;
   font-size: 14px;
@@ -24,6 +83,8 @@
   .jui-message a {
     color: #58a0d2;
     text-decoration: underline; }
+    .jui-message a:hover {
+      color: #ff6e6e; }
 
 .floor-nav {
   padding: 14px 0; }
@@ -37,6 +98,8 @@
       margin: 0 17px;
       vertical-align: middle;
       background: #666; }
+    .floor-nav li a:hover {
+      color: #ff6e6e; }
 
 .floor-wp {
   padding: 10px 0;
@@ -61,6 +124,8 @@
     .floor-wp li a {
       display: block;
       color: #333; }
+      .floor-wp li a:hover {
+        color: #ff6e6e; }
     .floor-wp li .thumb {
       width: 110px;
       height: 45px;
@@ -82,7 +147,7 @@
   border: 5px solid #ffd3d3;
   border-left: none;
   border-right: none;
-  padding: 10px 0; }
+  padding-top: 10px; }
   .other-postage .title {
     position: relative;
     color: #333;
@@ -94,8 +159,7 @@
       background: url(../imgs/star-red.png) no-repeat center center;
       left: 0; }
   .other-postage .j-list {
-    padding-top: 14px;
-    padding-bottom: 10px; }
+    padding-top: 14px; }
     .other-postage .j-list a {
       display: inline-block;
       font-size: 0;
@@ -103,7 +167,8 @@
       height: 45px;
       border: 1px solid #e4e4e4;
       overflow: hidden;
-      margin-right: 40px; }
+      margin-right: 40px;
+      margin-bottom: 20px; }
 
 .user-love-shop {
   padding-top: 14px; }
@@ -126,6 +191,9 @@
       overflow: hidden;
       color: #333;
       padding: 5px 0; }
+      .user-love-shop .j-list li:hover .numb {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg); }
       .user-love-shop .j-list li .numb {
         display: inline-block;
         width: 20px;
@@ -134,7 +202,9 @@
         border: 1px solid #ccc;
         color: #ccc;
         text-align: center;
-        line-height: 22px; }
+        line-height: 22px;
+        -webkit-transition: .3s;
+        transition: .3s; }
         .user-love-shop .j-list li .numb.numb1 {
           color: white;
           background-color: #ffcb15;

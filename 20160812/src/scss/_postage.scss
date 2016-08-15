@@ -10,6 +10,9 @@
     a{
         color: #58a0d2;
         text-decoration: underline;
+         &:hover{
+                color: #ff6e6e;
+            }
     }
 }
 // 楼层导航
@@ -25,6 +28,11 @@
             margin: 0 17px;
             vertical-align: middle;
             background: #666;
+        }
+        a {
+            &:hover{
+                color: #ff6e6e;
+            }
         }
     }
 }
@@ -58,6 +66,9 @@
         a{
             display: block;
             color: #333;
+            &:hover{
+                color: #ff6e6e;
+            }
         }
         .thumb{
             width: 110px;

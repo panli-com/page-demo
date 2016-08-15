@@ -3,7 +3,7 @@
     border: 5px solid #ffd3d3;
     border-left: none;
     border-right: none;
-    padding: 10px 0;
+    padding-top: 10px;
     .title{
         position: relative;
         color: #333;
@@ -18,7 +18,7 @@
     }
     .j-list{
         padding-top: 14px;
-        padding-bottom: 10px;
+       
         a{
             display: inline-block;
             font-size: 0;
@@ -27,6 +27,7 @@
             border: 1px solid #e4e4e4;
             overflow: hidden;
             margin-right: 40px;
+            margin-bottom: 20px;
         }
     }
 }
@@ -55,6 +56,11 @@
             overflow: hidden;
             color: #333;
             padding: 5px 0;
+            &:hover{
+                .numb{
+                    transform:rotate(360deg);
+                }
+            }
             .numb{
                 display: inline-block;
                 width: 20px;
@@ -64,6 +70,7 @@
                 color: #ccc;
                 text-align: center;
                 line-height: 22px;
+                transition:.3s;
                 &.numb1{
                     color: white;
                     background-color: #ffcb15;
