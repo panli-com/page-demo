@@ -159,15 +159,13 @@
 .jui-overline-from-center {
   display: inline-block;
   vertical-align: middle;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   overflow: hidden; }
 
-.jui-overline-from-center:before {
+.jui-overline-from-center:after {
   content: "";
   position: absolute;
   z-index: -1;
@@ -183,7 +181,7 @@
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out; }
 
-.jui-overline-from-center:hover:before, .jui-overline-from-center:focus:before, .jui-overline-from-center:active:before {
+.jui-overline-from-center:hover:after {
   left: 0;
   right: 0; }
 
@@ -282,9 +280,11 @@
       background: url(../imgs/star-red.png) no-repeat center center;
       left: 0; }
   .other-postage .j-list {
-    padding-top: 14px; }
+    padding-top: 14px;
+    clear: both;
+    overflow: hidden; }
     .other-postage .j-list a {
-      display: inline-block;
+      float: left;
       font-size: 0;
       width: 110px;
       height: 45px;

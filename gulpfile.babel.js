@@ -122,9 +122,9 @@ gulp.task('dev', ['sass'], () => {
     gulp.watch(`./${day}/src/js/*.js`, ['html', 'scripts']);
 
     // 看守所有.html
-    gulp.watch(`./${day}/*.html`).on('change', reload);;
+    gulp.watch(`./${day}/*.html`).on('change', reload);
     gulp.watch([`./${day}/templates/*.html`, `./${day}/templates/*.ejs`], ['ejs']);
-    gulp.watch('./*.html').on('change', reload);;
+    gulp.watch('./*.html').on('change', reload);
 
 });
 

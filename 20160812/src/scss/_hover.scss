@@ -100,13 +100,13 @@
 .jui-overline-from-center {
   display: inline-block;
   vertical-align: middle;
-  transform: translateZ(0);
+  // transform: translateZ(0);
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   overflow: hidden;
 }
-.jui-overline-from-center:before {
+.jui-overline-from-center:after {
   content: "";
   position: absolute;
   z-index: -1;
@@ -119,7 +119,7 @@
   transition-duration: 0.3s;
   transition-timing-function: ease-out;
 }
-.jui-overline-from-center:hover:before, .jui-overline-from-center:focus:before, .jui-overline-from-center:active:before {
+.jui-overline-from-center:hover:after{
   left: 0;
   right: 0;
 }
