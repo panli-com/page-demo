@@ -1,6 +1,6 @@
 import gulp from 'gulp';
 
-const day = '20160812';
+const day = '20151020';
 const cssName = 'app.css', minjs = 'app.js';
 const proPath = '/Users/julaud/www/panli/sf-panli-com/Ued/pc/index/build/';
 

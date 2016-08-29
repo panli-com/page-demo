@@ -7,11 +7,10 @@ $(function(){
 
     $(window).scroll(function () {
       var scrollTop = $(window).scrollTop();
-      console.log(swbtn);
+
         if(scrollTop+winH/2-50 >= floor4Top){
           floor4.addClass("scroll")
           swbtn = false;
-            console.log(scrollTop+"z");
 
         }
     });
