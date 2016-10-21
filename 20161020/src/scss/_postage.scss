@@ -1,0 +1,312 @@
+.help-postage-app {
+    // overflow: hidden;
+    font-size: 14px;
+}
+
+.help-postage-header {
+    padding: 22px 0;
+    position: relative;
+    z-index: 1199;
+    span {
+        display: inline-block;
+        height: 22px;
+        line-height: 24px;
+    }
+    .help-postage-select-on {
+        position: relative;
+        border: 1px solid #333;
+        font-size: 13px;
+        padding: 0 4px;
+        cursor: pointer;
+    }
+    .help-postage-header-msg {
+        position: relative;
+        text-decoration: underline;
+        color: #999;
+        cursor: pointer;
+        z-index: 1099;
+        &:hover {
+            .postage-msg-more {
+                display: block;
+            }
+        }
+        .postage-msg-more {
+            position: absolute;
+            right: 0;
+            width: 526px;
+            display: none;
+            background-color: #fff0f0;
+            border: 1px solid #ddd;
+            padding: 20px;
+            color: #333;
+            P {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+.help-postage-select-main {
+    position: absolute;
+    display: none;
+    width: 640px;
+    min-height: 100px;
+    border: 1px solid #ffaeae;
+    left: -1px;
+    background-color: #FFF;
+}
+
+.help-postage-select-box {
+    padding: 10px 0;
+}
+
+.help-postage-select-city {
+    padding-top: 10px;
+    ul {
+        clear: both;
+        overflow: hidden;
+    }
+    li {
+        float: left;
+        padding-left: 10px;
+        width: 112px;
+        line-height: 28px;
+        a {
+            &:hover,&.on{
+                color: #ffaeae;
+            }
+        }
+    }
+}
+
+.help-postage-select-header {
+    position: relative;
+    a {
+        display: inline-block;
+        margin: 0 10px;
+        &.on,
+        &:hover {
+            color: #ff6e6e;
+        }
+    }
+}
+
+.siber-line-on {
+    position: absolute;
+    height: 2px;
+    background-color: #ff6e6e;
+    width: 10px;
+    display: none;
+    div {
+        width: 0;
+        height: 0;
+        position: absolute;
+        left: 50%;
+        bottom: 2px;
+        margin-left: -2px;
+        border-left: 2px solid transparent;
+        border-right: 2px solid transparent;
+        border-bottom: 3px solid #ff6e6e;
+    }
+}
+
+.help-postage-table {
+    border: 1px solid #ddd;
+    border-bottom: none;
+    table {
+        width: 100%;
+    }
+    th,
+    td {
+        padding: 10px;
+        text-align: center;
+    }
+    td {
+        border-bottom: 1px solid #DDD;
+    }
+    .has-backcolor {
+        td {
+            background-color: #f8f8f8;
+        }
+    }
+    .red-color {
+        color: #ff6e6e;
+        font-weight: 600;
+    }
+    .help-icon-5,
+    .help-icon-4,
+    .help-icon-3,
+    .help-icon-2,
+    .help-icon-1 {
+        background-repeat: no-repeat;
+        background-position: center center;
+        display: inline-block;
+        vertical-align: middle;
+        width: 30px;
+        height: 24px;
+        margin-right: 14px;
+    }
+    .help-icon-1 {
+        background-image: url(../imgs/icon-table-1.png)
+    }
+    .help-icon-2 {
+        background-image: url(../imgs/icon-table-2.png)
+    }
+    .help-icon-3 {
+        background-image: url(../imgs/icon-table-3.png)
+    }
+    .help-icon-4 {
+        background-image: url(../imgs/icon-table-4.png)
+    }
+    .help-icon-5 {
+        background-image: url(../imgs/icon-table-5.png)
+    }
+}
+
+.help-postage-serve-more {
+    position: relative;
+    &:hover {
+        z-index: 999;
+        .serve-more {
+            display: block;
+        }
+    }
+    .serve-title {
+        cursor: pointer;
+    }
+    .serve-more {
+        position: absolute;
+        width: 240px;
+        padding: 16px;
+        padding-bottom: 0;
+        background-color: #FFF;
+        border: #ffaeae 1px solid;
+        text-align: left;
+        display: none;
+        p {
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+        h3 {
+            font-size: 12px;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+    }
+}
+
+.help-postage-footer {
+    padding-top: 10px;
+    span {
+        display: inline-block;
+        color: #666;
+        padding: 4px 10px;
+        padding-left: 30px;
+        background: #fff0f0 url(../imgs/icon-red-msg.png) no-repeat;
+        background-position: 6px center;
+    }
+}
+
+// 提示信息
+.jui-message {
+    color: #666;
+    font-size: 14px;
+    background: #fff0f0;
+    padding: 5px;
+    padding-left: 34px;
+    line-height: 30px;
+    position: relative;
+    a {
+        color: #58a0d2;
+        text-decoration: underline;
+        &:hover {
+            color: #ff6e6e;
+        }
+    }
+    .triangle-topleft {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-top: 20px solid #ff6e6e;
+        border-right: 20px solid transparent;
+    }
+}
+
+// 楼层导航
+.floor-nav {
+    padding: 14px 0;
+    li {
+        float: left;
+        font-size: 14px;
+        span {
+            display: inline-block;
+            width: 1px;
+            height: 14px;
+            margin: 0 17px;
+            vertical-align: middle;
+            background: #666;
+        }
+        a {
+            &:hover {
+                color: #ff6e6e;
+            }
+        }
+    }
+}
+
+// 楼层信息
+.floor-wp {
+    padding: 10px 0;
+    font-size: 14px;
+    .floor-m {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #d5d5d5;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    .title {
+        font-size: 14px;
+        color: #ff6e6e;
+        padding: 10px 0;
+    }
+    ul {
+        width: 840px;
+        padding-top: 10px;
+    }
+    li {
+        float: left;
+        width: 112px;
+        margin-right: 27px;
+        margin-bottom: 5px;
+        a {
+            display: block;
+            color: #333;
+            &:hover {
+                color: #ff6e6e;
+            }
+        }
+        .thumb {
+            width: 110px;
+            height: 45px;
+            border: 1px solid #e4e4e4;
+            overflow: hidden;
+            img {
+                max-width: 100%;
+            }
+        }
+        .name {
+            font-size: 12px;
+            text-align: center;
+            padding: 6px 0;
+            a {
+                display: block;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+}

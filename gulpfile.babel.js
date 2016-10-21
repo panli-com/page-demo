@@ -1,8 +1,9 @@
 import gulp from 'gulp';
 
-const day = '20151020';
+const day = '20161020';
 const cssName = 'app.css', minjs = 'app.js';
-const proPath = '/Users/julaud/www/panli/sf-panli-com/Ued/pc/index/build/';
+// const proPath = '/Users/julaud/www/panli/sf-panli-com/Ued/pc/index/build/';
+const proPath = '/';
 
 
 import pkg from './package.json';
@@ -16,9 +17,42 @@ import header from 'gulp-header';
 import autoprefixer from 'gulp-autoprefixer';
 import ejs from "gulp-ejs";
 
+
+import proxy from 'http-proxy-middleware';
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
 
+
+
+// const proxyTable = {
+// 	'/App_Services': 'http://www.panli.com/App_Services',
+// }
+// 设置代理
+// const middleware = proxy('**', {
+// 	target: 'https://api.github.com',
+// 	changeOrigin: true,
+// 	logLevel: 'debug',
+// 	pathRewrite: {
+//         '/App_Services' : '/apiA',
+//         '^/test/testb' : '/apiB'
+//     },
+// 	router: proxyTable,
+// });
+
+ const middleware = proxy('/App_Services/**', {target: 'http://www.panli.com/App_Services/**', changeOrigin: true,});
+
+// const middleware = {
+//         target: 'http://www.example.org', // target host
+//         changeOrigin: true,               // needed for virtual hosted sites
+//         ws: true,                         // proxy websockets
+//         pathRewrite: {
+//             '^/api/old-path' : '/api/new-path',     // rewrite path
+//             '^/api/remove/path' : '/path'           // remove base path
+//         },
+//         router: {
+//             '/App_Services' : 'http://localhost:8000'
+//         }
+//     };
 
 const banner = [
     '/*! ',
@@ -44,8 +78,11 @@ gulp.task('ejs', () => gulp.src(`./${day}/templates/layout.ejs`)
 
 //编译Sass，Autoprefix及缩小化
 gulp.task('sass', () => gulp.src(`./${day}/src/scss/main.scss`)
-    .pipe(sass({ style: 'expanded' }))
-    .pipe(autoprefixer('safari 5', 'Firefox > 20','ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+        browsers: ['> 1%','Firefox <= 20',''],
+        cascade: false
+    }))
     .pipe(gulp.dest(`./${day}/.tmp/css`))
     .pipe(rename(cssName))
     .pipe(minifycss())
@@ -59,7 +96,10 @@ gulp.task('sass', () => gulp.src(`./${day}/src/scss/main.scss`)
 
 gulp.task('onescss', () => gulp.src(`./${day}/images/edm/emd.scss`)
     .pipe(sass({ style: 'expanded' }))
-    .pipe(autoprefixer('safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    .pipe(autoprefixer({
+        browsers: ['> 1%','Firefox <= 20',''],
+        cascade: false
+    }))
     .pipe(rename('emd.css'))
     .pipe(minifycss())
     .pipe(gulp.dest(`./${day}/images/edm/`))
@@ -110,7 +150,8 @@ gulp.task('pro', () => gulp.src(`./${day}/build/**/*`)
 gulp.task('dev', ['sass'], () => {
 
     browserSync.init({
-        server: `./${day}/`
+        server: `./${day}/`,
+        middleware: [middleware]
     });
 
     // 看守.scss 档
