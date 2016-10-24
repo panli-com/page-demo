@@ -58,7 +58,7 @@ var helpPostage = {
     CountryType:[],
     ajaxCountry:function(call){
         var vm = this;
-
+ 
         $.ajax({
                 type: "POST",
                 contentType: "application/json;utf-8",
@@ -69,7 +69,10 @@ var helpPostage = {
                 error: function () { console.log("api error") },
                 success: function (r) {
                    vm.Country = r.d;
-                   call(r.d);
+                   if(call){
+                        call(r.d);
+                   }
+                  
                 }
         });
     },
