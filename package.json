@@ -1,8 +1,8 @@
 {
   "name": "panli-page-demo",
-  "app": "Panli运费对比表",
+  "app": "会员注册",
   "version": "1.0.0",
-  "description": "Panli运费对比表",
+  "description": "会员注册",
   "main": "pan.js",
   "scripts": {
     "start": "gulp",
