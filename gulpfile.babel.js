@@ -1,10 +1,28 @@
 import gulp from 'gulp';
 
-const day = '20161024';
-const cssName = 'app.css', minjs = 'app.js';
+
+
 // const proPath = '/Users/julaud/www/panli/sf-panli-com/Ued/pc/index/build/';
 const proPath = '/';
 
+import conf    from './config.json';
+
+
+
+const day           = conf.start;
+const title         = conf[day].title;
+const description   = conf[day].description;
+const keywords      = conf[day].keywords;
+const author        = conf[day].author;
+const version       = conf[day].version;
+const mincss        = conf[day].build.css;
+const minjs         = conf[day].build.js;
+
+
+let cssLoadSrc = conf[day].load.css;
+let jsLoadSrc  = conf[day].load.js;
+let csssrc = `./${day}/src/scss/main.scss`;
+let jssrc = `./${day}/src/js/*.js`;
 
 import pkg from './package.json';
 import sass from 'gulp-sass';
@@ -41,27 +59,17 @@ const reload = browserSync.reload;
 
  const middleware = proxy('/App_Services/**', {target: 'http://www.panli.com/App_Services/**', changeOrigin: true,});
 
-// const middleware = {
-//         target: 'http://www.example.org', // target host
-//         changeOrigin: true,               // needed for virtual hosted sites
-//         ws: true,                         // proxy websockets
-//         pathRewrite: {
-//             '^/api/old-path' : '/api/new-path',     // rewrite path
-//             '^/api/remove/path' : '/path'           // remove base path
-//         },
-//         router: {
-//             '/App_Services' : 'http://localhost:8000'
-//         }
-//     };
+
 
 const banner = [
-    '/*! ',
-    '<%= pkg.app %> ',
-    'v<%= pkg.version %> | ',
-    `(c) ${new Date()} <%= pkg.homepage %> |`,
-    ' <%= pkg.author %>',
-    ' */',
-    '\n'
+  '/*! ',
+    '<%= pkg.name %> ',
+    `v ${version}  | `,
+    `(c) ${new Date()}  ${author}  |`,
+    ' <%= pkg.homepage %> ',
+    ` ${title}`,
+  ' */',
+  '\n'
 ].join('');
 
 
@@ -70,21 +78,21 @@ gulp.task('ejs', () => gulp.src(`./${day}/templates/layout.ejs`)
         title: pkg.app,
         time: new Date().getTime()
     }))
-    .pipe(gulp.dest(`./${day}/.tmp`))
+    .pipe(gulp.dest(`./${day}/.__tmp`))
     .pipe(rename('index.html'))
     .pipe(gulp.dest(`./${day}/`))
     .pipe(reload({ stream: true }))
     .pipe(notify({ message: 'ejs task complete' })))
 
 //编译Sass，Autoprefix及缩小化
-gulp.task('sass', () => gulp.src(`./${day}/src/scss/main.scss`)
+gulp.task('sass', () => gulp.src(cssLoadSrc)
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
         browsers: ['> 1%','Firefox <= 20',''],
         cascade: false
     }))
-    .pipe(gulp.dest(`./${day}/.tmp/css`))
-    .pipe(rename(cssName))
+    .pipe(gulp.dest(`./${day}/.__tmp/css`))
+    .pipe(rename(mincss))
     .pipe(minifycss())
     .pipe(header(banner, { pkg }))
     .pipe(gulp.dest(`./${day}/build/css/`))
@@ -126,9 +134,9 @@ gulp.task('homeHtml', () => {
         .pipe(reload({ stream: true }))
 });
 
-gulp.task('scripts', () => gulp.src(`./${day}/src/js/*.js`)
+gulp.task('scripts', () => gulp.src(jsLoadSrc)
     .pipe(concat('main.js'))
-    .pipe(gulp.dest(`./${day}/tmp/js`))
+    .pipe(gulp.dest(`./${day}/__tmp/js`))
     .pipe(rename(minjs))
     .pipe(uglify())
     .pipe(header(banner, { pkg }))

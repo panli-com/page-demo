@@ -1,0 +1,33 @@
+{   
+    "start":"20161028",
+    "20161028": {
+        "title": "费用估算",
+        "keywords":"",
+        "description":"",
+        "version":"0.0.2",
+        "author":"Julian",
+        "load": {
+            "css": ["./20161028/src/scss/main.scss"],
+            "js": ["./20161028/src/js/*.js"]
+        },
+        "build":{
+            "css":"app.css",
+            "js":"app.js"
+        }
+    },
+    "20161020": {
+        "title": "Panli运费对比表",
+        "keywords":"",
+        "description":"",
+        "version":"0.0.2",
+        "author":"Julian",
+        "load": {
+            "css": ["./20161020/src/scss/main.scss"],
+            "js": ["./20161020/src/js/*.js"]
+        },
+        "build":{
+            "css":"app.css",
+            "js":"app.js"
+        }
+    }
+}
