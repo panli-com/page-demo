@@ -192,230 +192,210 @@
     </ul>
 
 </div>
-    <!--免邮商家-->
+<!--主题区域-->
 <link rel="stylesheet" href="./build/css/app.css?v1471401555491">
-<div class="help-postage">
-    <div class="help-postage-app pw m-auto clearfix">
-        <div class="help-postage-header">
-            <span class="help-postage-select-tip">
-                送货地区：
-            </span>
-            <span class="help-postage-select-on" >
-                <input class="help-postage-select-title" type="text" id="dtCountry" name="txtCountry" readonly="" value="中国大陆江浙沪">
-                <div class="help-postage-select-main">
-                    <div class="help-postage-select-box">
-                        <div class="help-postage-select-header">
-                            <a href="javascript:void(0);" class="on">常见收货区域</a>
-                            <a href="javascript:void(0);">中国大陆转送</a>
-                            <a href="javascript:void(0);">A</a>
-                            <a href="javascript:void(0);">B</a>
-                            <a href="javascript:void(0);">C-F</a>
-                            <a href="javascript:void(0);">G-H</a>
-                            <a href="javascript:void(0);">J-K</a>
-                            <a href="javascript:void(0);">L</a>
-                            <a href="javascript:void(0);">M</a>
-                            <a href="javascript:void(0);">N</a>
-                            <a href="javascript:void(0);">P-S</a>
-                            <a href="javascript:void(0);">T-Z</a>
-                            <div class="siber-line-on">
-                                <div class="triangle-up"></div>
-                            </div>
-                        </div>
-                        <div class="help-postage-select-city">
+<div class="tools-estimates w m-auto">
+    <div class="bread-tab">
+        <a href="http://service.panli.com" id="chima">帮助中心</a>
+        <span>></span>
+        <a href="/Help/Tools.aspx">常用工具</a>
+        <span>></span>
+        <span>费用估算</span>
+    </div>
+    <div class="estimates-manipulate">
+        <div class="estimates-form">
+            <div class="serve-type-sp">
+               <span class="title"> 服务类型：</span>
+               <div class="serve-type-select">
+                   <a href="javascript:void(0);" class="on">代购</a>
+                   <a href="javascript:void(0);">转运</a>
+                   <span class="type-sidebar"></span>
+                   <input type="hidden" class="serve-type" name="type" value="1" >
+               </div>
+            </div>
+            <div class="estimates-form-lab">
+                <div class="estimates-lab-box no-edit" id="price-box">
+                    <span class="title">
+                        商品总价
+                    </span>
+                    <input type="text" readonly class="jui-text kuang price-input" value="0" name="cost" id="kuang"  maxlength="10" onkeyup="this.value=this.value.replace(/[^\d\.]/g,'');"  autofocus="autofocus"  >
+                    <span class="text-tag">元</span>
+                    <span class="est_error">请填写商品总价</span>
+                </div>
+            </div>
+            <div class="estimates-form-lab z-index-10">
+                <div class="estimates-lab-box error-data">
+                    <span class="title">
+                        商品重量
+                    </span>
+                    <input type="text" class="jui-text kuang weight-input" name="weight"  maxlength="10" onkeyup="this.value=this.value.replace(/[^\d]/g,'');" value="1">
+                    <span class="text-tag">克</span>
+                    <span class="est_error">请填写商品重量</span>
+                </div>
+                <span class="span jui-tip-msg">
+                    <a href="javascript:void(0);" class="jui-tip-title">
+                        <span>常见物品重量参考</span>
+                        <div class="jui-tip-weight-more">
+                            <span class="tip-before"></span>
+                            <span class="tip-after"></span>
                             <ul>
                                 <li>
-                                    <a href="javascript:void(0);">加拿大</a>
+                                    <i class="icon-1"></i>
+                                    <span>
+                                        T恤<br />
+                                        200g
+                                    </span>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0);">加拿大</a>
+                                    <i class="icon-2"></i>
+                                    <span>
+                                        厚外套<br />
+                                        1000g
+                                    </span>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0);">加拿大</a>
+                                    <i class="icon-3"></i>
+                                    <span>
+                                        长裤<br />
+                                        500g
+                                    </span>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0);">加拿大</a>
+                                    <i class="icon-4"></i>
+                                    <span>
+                                        连衣裙<br />
+                                        300g
+                                    </span>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0);">加拿大</a>
+                                    <i class="icon-5"></i>
+                                    <span>
+                                        鞋子<br />
+                                        1000g
+                                    </span>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0);">加拿大</a>
+                                    <i class="icon-6"></i>
+                                    <span>
+                                        长筒靴<br />
+                                        2000g
+                                    </span>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0);">加拿大</a>
+                                    <i class="icon-7"></i>
+                                    <span>
+                                        饰品<br />
+                                        50g
+                                    </span>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0);">加拿大</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);">加拿大</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);">加拿大</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);">加拿大</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);">加拿大</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);">加拿大</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);">加拿大</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);">加拿大</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);">加拿大</a>
+                                    <i class="icon-8"></i>
+                                    <span>
+                                        单肩包<br />
+                                        800g
+                                    </span>
                                 </li>
                             </ul>
+                            <p class="jui-desction color-red">
+                                温馨提示：以上信息仅供参考，具体请以实际商品“已到Panli”后的重量为准。
+                            </p>
                         </div>
-                    </div>
+                    </a>
+                </span>
+            </div>
+            <div class="estimates-form-lab">
+                <div class="estimates-lab-box">
+                    <span class="title">
+                        送货地区
+                    </span>
+                    <input type="text" readonly name="address" class="jui-text" id="address-input" >
                 </div>
-            </span>
-            <span class="fr help-postage-header-msg">
-                <span class="postage-msg-title">为什么Panli能提供超低运费？</span>
-                <div class="postage-msg-more">
-                    <i class="tip-before"></i>
-                    <i class="tip-after"></i>
-                    <p>作为海外华人代购业的领头羊，Panli 一直致力于向用户提供完善的服务，给用户完美的购物体验。</p>
-                    <p> 随着 Panli 的实力和影响力不断强大，诸多物流供应商都愿意与 Panli 保持长期稳定的合作，愿意为 Panli 提供更低的运费，让 Panli 用户得到更多的实惠。 </p>
-                    <p>Panli 在挑选物流供应商时不单单只是看价格，服务水平、公司实力、抗风险能力等均会做一定的审核筛选，要给 Panli 用户提供有保障的服务。 </p>
-                    <p>Panli 始终以为海外华人提供更好的服务为己任，用户的满意从始至终都是 Panli 坚持不懈的追求。</p>
-                </div>
-            </span>
+                
+            </div>
+            <div class="estimates-form-footer">
+                <a href="javascript:void(0);" class="submit-btn" id="btn" ju-ripplems>
+                    开始计算
+                </a>
+            </div>
         </div>
-        <div class="loading-box">
-            <img src="./build/imgs/loading.svg" alt="">
+        <div class="estimates-banner">
+            <img src="./build/imgs/banner.png" alt="">
         </div>
-        <div class="help-postage-table">
-            
-            <table class="company_table" border="0" align="center" cellspacing="0" cellpadding="0">
-                    <tr>
-                        <th><i class="help-icon-1"></i>运送方式</th>
-                        <th><i class="help-icon-2"></i>寄送周期</th>
-                        <th><i class="help-icon-3"></i>首重运费</th>
-                        <th><i class="help-icon-4"></i>续重运费</th>
-                        <th><i class="help-icon-5"></i>服务特色</th>
-                    </tr>
-                    <tr class="has-backcolor">
-                        <td> Panli专线</td>
-                        <td> 3-4</td>
-                        <td> <span class="red-color">119</span>元/500g</td>
-                        <td> <span class="red-color">37</span>元/500g</td>
-                        <td> 
-                            <span class="help-postage-serve-more">
-                                <div class="serve-title">
-                                    价格超低，速度中等<span class="red-color">...</span>
-                                </div>
-                                <div class="serve-more">
-                                    <i class="tip-before"></i>
-                                    <i class="tip-after"></i>
-                                    <p>免燃油附加费，免体积重量超档运费(体积限制类商品除外)</p> 
-                                    <h3>禁限物品</h3>
-                                    <p>食品/液体/粉末/香水/气体/光盘/仿牌/药品/保健品/电池/电子数码/胶状</p> 
-                                    <h3>体积限制</h3>
-                                    <p class="nomarginbot">
-                                        体积过大或形状不规则的商品(如长柄雨伞、
-                                        50cm高的毛绒玩具等)须按体积重量付费，
-                                        体积重量(kg)=长cm×宽cm×高cm/5000
-                                    </p>
-                                </div>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> Panli专线</td>
-                        <td> 3-4</td>
-                        <td> <span class="red-color">119</span>元/500g</td>
-                        <td> <span class="red-color">37</span>元/500g</td>
+    </div>
+    <div class="estimates-show-info">
+        <div class="estimates-show-data ">
+            <table class="data-table">
+                <thead>
+                <tr class="">
+                    <th class="first-td">运送方式</th>
+                    <th>商品总价（¥）</th>
+                    <th>运费（¥）</th>
+                    <th>报关费（¥）</th>
+                    <th>服务费（¥）</th>
+                    <th>总计（¥）</th>
+                    <th>预计运期</th>
+                </tr>
+                </thead>
+                <tbody class="res_list">
+                    <tr class="hai-bg">
                         <td>
-                            <span class="help-postage-serve-more">
-                                <div class="serve-title">
-                                    价格超低，速度中等<span class="red-color">...</span>
-                                </div>
-                                <div class="serve-more">
-                                    <i class="tip-before"></i>
-                                    <i class="tip-after"></i>
-                                    <p>免燃油附加费，免体积重量超档运费(体积限制类商品除外)</p> 
-                                    <h3>禁限物品</h3>
-                                    <p>食品/液体/粉末/香水/气体/光盘/仿牌/药品/保健品/电池/电子数码/胶状</p> 
-                                    <h3>体积限制</h3>
-                                    <p class="nomarginbot">
-                                        体积过大或形状不规则的商品(如长柄雨伞、
-                                        50cm高的毛绒玩具等)须按体积重量付费，
-                                        体积重量(kg)=长cm×宽cm×高cm/5000
+                            <span class="title">特惠专线</span>
+                            <div class="color-red border-bottom jui-tip-table-title">
+                                <span>限时包税</span>
+                                <div class="jui-tip-table-more">
+                                    <p>
+                                        若您的包裹被征税，Panli将补偿税款。<a href='http://www.panli.com/Special/DutyFree.html#how'  target='_blank' >详情</a>
                                     </p>
+                                    <span class="tip-before"></span>
+                                    <span class="tip-after"></span>
                                 </div>
-                            </span>
+                            </div>
                         </td>
+                        <td>1.00</td>
+                        <td>105.00</td>
+                        <td>98.00</td>
+                        <td>918.00</td>
+                        <td><span class="color-red">125.40</span></td>
+                        <td>5-10个工作日</td>
                     </tr>
-                    <tr class="has-backcolor">
-                        <td> Panli专线</td>
-                        <td> 3-4</td>
-                        <td> <span class="red-color">119</span>元/500g</td>
-                        <td> <span class="red-color">37</span>元/500g</td>
-                        <td>
-                            <span class="help-postage-serve-more">
-                                <div class="serve-title">
-                                    价格超低，速度中等<span class="red-color">...</span>
-                                </div>
-                                <div class="serve-more">
-                                    <i class="tip-before"></i>
-                                    <i class="tip-after"></i>
-                                    <p>免燃油附加费，免体积重量超档运费(体积限制类商品除外)</p> 
-                                    <h3>禁限物品</h3>
-                                    <p>食品/液体/粉末/香水/气体/光盘/仿牌/药品/保健品/电池/电子数码/胶状</p> 
-                                    <h3>体积限制</h3>
-                                    <p class="nomarginbot">
-                                        体积过大或形状不规则的商品(如长柄雨伞、
-                                        50cm高的毛绒玩具等)须按体积重量付费，
-                                        体积重量(kg)=长cm×宽cm×高cm/5000
-                                    </p>
-                                </div>
-                            </span>
-                        </td>
+                    <tr class="">
+                        <td><span class="title">特惠专线</span></td>
+                        <td>1.00</td>
+                        <td>105.00</td>
+                        <td>98.00</td>
+                        <td>918.00</td>
+                        <td><span class="color-red">125.40</span></td>
+                        <td>5-10个工作日</td>
                     </tr>
-                    <tr>
-                        <td> Panli专线</td>
-                        <td> 3-4</td>
-                        <td> <span class="red-color">119</span>元/500g</td>
-                        <td> <span class="red-color">37</span>元/500g</td>
-                        <td>
-                            <span class="help-postage-serve-more">
-                                <div class="serve-title">
-                                    价格超低，速度中等<span class="red-color">...</span>
-                                </div>
-                                <div class="serve-more">
-                                    <i class="tip-before"></i>
-                                    <i class="tip-after"></i>
-                                    <p>免燃油附加费，免体积重量超档运费(体积限制类商品除外)</p> 
-                                    <h3>禁限物品</h3>
-                                    <p>食品/液体/粉末/香水/气体/光盘/仿牌/药品/保健品/电池/电子数码/胶状</p> 
-                                    <h3>体积限制</h3>
-                                    <p class="nomarginbot">
-                                        体积过大或形状不规则的商品(如长柄雨伞、
-                                        50cm高的毛绒玩具等)须按体积重量付费，
-                                        体积重量(kg)=长cm×宽cm×高cm/5000
-                                    </p>
-                                </div>
-                            </span>
-                        </td>
+                    <tr class="hai-bg">
+                        <td><span class="title">特惠专线</span></td>
+                        <td>1.00</td>
+                        <td>105.00</td>
+                        <td>98.00</td>
+                        <td>918.00</td>
+                        <td><span class="color-red">125.40</span></td>
+                        <td>5-10个工作日</td>
                     </tr>
+                </tbody>
             </table>
+            <div class="loading-data">
+                <img src="http://sf.panli.com/FrontEnd/images20090801/Tools/Estimates/loadings.gif" alt="">
+            </div>
         </div>
-        <div class="help-postage-footer">
-            <span>
-                温馨提示：运送周期为预估时间，具体配送时间以海关清关速度及当地邮局效率为准。
-            </span>
+        <div class="estimates-show-msg">
+            <ul id="res_ul" style="display: block;">
+                <li>估算结果仅供参考，请以实际运费为准。运送周期为预估时间，具体配送时间以海关清关速度及当地邮局效率为准。</li>
+                <li>自提专线：仅适用于<a href="http://service.panli.com/Help/List/36.html" target="_blank">Panli自提服务</a>。</li>
+                <li>部分运送方式对液体、粉末或体积较大的商品存在运送限定。<a href="http://service.panli.com/Help/Detail/55.html" target="_blank">详情</a></li>
+                <li>当转运包裹到达 Panli 后，工作人员每处理1个转运包裹时，系统将自动收取￥10 的包裹服务费。<a href=" http://service.panli.com/Help/Detail/250.html" target="_blank">详情</a></li>
+                <li class="cityli">Panli会对包裹进行合理的避税，如果您的包裹被征税，您需自行交税并协助清关。<a href="http://service.panli.com/Help/Detail/39.html" target="_blank">详情</a></li>
+                <li class="cityli">Panli会对包裹进行合理的避税，如果您的包裹被征税，您需自行交税并协助清关。目前该地区的被税几率很小，但还受商品数量、包裹重量等因素影响。<a href="http://service.panli.com/Help/Detail/39.html" target="_blank">详情</a></li>
+            </ul>
         </div>
     </div>
 </div>
 <script src="./build/js/app.js"></script>
-<!--免邮商家 end-->
+<!--主题区域 end-->
     <div class="shortcut footer">
     <div class="w">
         <div class="service_l">

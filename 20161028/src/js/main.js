@@ -6,23 +6,7 @@
  */
 ;(function () {
 
-    PD(".floor-nav").on("click","a",function(){
-        var _t = PD(this),
-            _li = _t.parents("li"),
-            _index = _li.index();
-
-
-        floorGo(_index)
    
-        return false;
-
-    })
-
-    PD(function(){
-
-        helpPostage.init();
-
-    });
     
 
 

@@ -6,6 +6,7 @@
         "description":"",
         "version":"0.0.2",
         "author":"Julian",
+        "url":"http://www.panli.com/Tools/Estimates.aspx",
         "load": {
             "css": ["./20161028/src/scss/main.scss"],
             "js": ["./20161028/src/js/*.js"]
@@ -21,6 +22,7 @@
         "description":"",
         "version":"0.0.2",
         "author":"Julian",
+        "url":"http://www.panli.com/Help/Postage.aspx",
         "load": {
             "css": ["./20161020/src/scss/main.scss"],
             "js": ["./20161020/src/js/*.js"]
