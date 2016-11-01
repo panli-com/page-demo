@@ -1,0 +1,14 @@
+.banner-sp{
+    position: relative;
+    height: 208px;
+    background: url(../imgs/banner.png) no-repeat center top;
+    .btn-register{
+        position: absolute;
+        display: inline-block;
+        width: 160px;
+        height: 33px;
+        left: 77px;
+        top: 116px;
+        // background-color: red;
+    }
+}

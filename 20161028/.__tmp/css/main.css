@@ -535,6 +535,8 @@
     min-width: 120px; }
   .estimates-show-data td {
     border-top: 1px solid #DDD; }
+    .estimates-show-data td:hover .jui-tip-table-more {
+      display: block; }
   .estimates-show-data .hai-bg {
     background-color: #f8f8f8; }
   .estimates-show-data .title {
@@ -554,8 +556,6 @@
   position: relative;
   cursor: pointer;
   font-weight: 400; }
-  .jui-tip-table-title:hover .jui-tip-table-more {
-    display: block; }
 
 .jui-tip-table-more {
   display: none;

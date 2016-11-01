@@ -1,5 +1,21 @@
 {   
-    "start":"20161028",
+    "start":"20161101",
+    "20161101": {
+        "title": "Panli代购怎么样----Panli代购评价如何好不好，由您说了算",
+        "keywords":"",
+        "description":"",
+        "version":"0.0.2",
+        "author":"Julian",
+        "url":"http://www.panli.com/comments/",
+        "load": {
+            "css": ["./20161101/src/scss/main.scss"],
+            "js": ["./20161101/src/js/*.js"]
+        },
+        "build":{
+            "css":"app.css",
+            "js":"app.js"
+        }
+    },
     "20161028": {
         "title": "费用估算",
         "keywords":"",

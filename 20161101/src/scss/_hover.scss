@@ -1,0 +1,125 @@
+@keyframes jui-hang {
+  0% {
+
+    transform: translateY(4px);
+  }
+
+  50% {
+
+    transform: translateY(0px);
+  }
+
+  100% {
+
+    transform: translateY(4px);
+  }
+}
+
+@keyframes jui-hang-sink {
+  100% {
+    transform: translateY(4px);
+  }
+}
+
+.jui-hang {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+   transition:.3s;
+}
+.jui-hang:hover, .jui-hang:focus, .jui-hang:active {
+  transition:.3s;
+  animation-name: jui-hang-sink, jui-hang;
+  animation-duration: .3s, 1.5s;
+  animation-delay: 0s, .3s;
+  animation-timing-function: ease-out, ease-in-out;
+  animation-iteration-count: 1, infinite;
+  animation-fill-mode: forwards;
+  animation-direction: normal, alternate;
+}
+
+
+/* Float */
+.jui-float {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+  transition-timing-function: ease-out;
+}
+.jui-float:hover, .jui-float:focus, .jui-float:active {
+  transform: translateY(-4px);
+}
+
+/* Wobble Bottom */
+@keyframes jui-wobble-bottom {
+  16.65% {
+    transform: skew(-12deg);
+  }
+
+  33.3% {
+    transform: skew(10deg);
+  }
+
+  49.95% {
+    transform: skew(-6deg);
+  }
+
+  66.6% {
+    transform: skew(4deg);
+  }
+
+  83.25% {
+    transform: skew(-2deg);
+  }
+
+  100% {
+    transform: skew(0);
+  }
+}
+.jui-wobble-bottom {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transform-origin: 100% 0;
+}
+.jui-wobble-bottom:hover, .jui-wobble-bottom:focus, .jui-wobble-bottom:active {
+  animation-name: jui-wobble-bottom;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+
+
+/* Overline From Center */
+.jui-overline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  // transform: translateZ(0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;
+}
+.jui-overline-from-center:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  background: #ff6e6e;
+  height: 1px;
+  transition-property: left, right;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+.jui-overline-from-center:hover:after{
+  left: 0;
+  right: 0;
+}
