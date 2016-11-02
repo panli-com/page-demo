@@ -29,11 +29,11 @@
         padding: 0;
         text-align: center;
     }
-    .go-text,.more{ 
+    .paging-go-text,.paging-more{ 
         border: none;
         padding: 0 5px;
     }
-    .go-btn,.pag-next,.pag-pren,.pag-num{
+    .paging-go-btn,.paging-paging-next,.paging-prev,.paging-num{
         cursor: pointer;
         &:hover{
             background-color: #f1f1f1;

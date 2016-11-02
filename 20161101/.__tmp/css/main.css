@@ -430,10 +430,10 @@ clearfix:after {
   .paging-wrap .paging-input-box {
     padding: 0;
     text-align: center; }
-  .paging-wrap .go-text, .paging-wrap .more {
+  .paging-wrap .paging-go-text, .paging-wrap .paging-more {
     border: none;
     padding: 0 5px; }
-  .paging-wrap .go-btn, .paging-wrap .pag-next, .paging-wrap .pag-pren, .paging-wrap .pag-num {
+  .paging-wrap .paging-go-btn, .paging-wrap .paging-paging-next, .paging-wrap .paging-prev, .paging-wrap .paging-num {
     cursor: pointer; }
-    .paging-wrap .go-btn:hover, .paging-wrap .pag-next:hover, .paging-wrap .pag-pren:hover, .paging-wrap .pag-num:hover {
+    .paging-wrap .paging-go-btn:hover, .paging-wrap .paging-paging-next:hover, .paging-wrap .paging-prev:hover, .paging-wrap .paging-num:hover {
       background-color: #f1f1f1; }

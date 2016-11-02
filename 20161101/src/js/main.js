@@ -7,7 +7,16 @@
 ;(function () {
 
    
-    
+    $(function(){
+        var obj = {
+            count:2,
+            on:2,
+            pageSize:6
+        };
+      PanliPaging.init(obj);
+     
+
+    });
 
 
 })()
