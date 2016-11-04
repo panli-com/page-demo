@@ -49,7 +49,9 @@
     .comment-user{
         padding: 14px 0;
         width: 750px;
-
+        overflow: overlay; 
+        word-break:break-all;
+        word-wrap : break-word;
     }
     .panli-reply{
         position: relative;
@@ -65,6 +67,9 @@
     }
     .panli-reply-content{
         margin-left: 76px;
+        overflow: overlay; 
+        word-break:break-all; 
+        word-wrap : break-word;
     }
     .comment-from-type{
         position: absolute;

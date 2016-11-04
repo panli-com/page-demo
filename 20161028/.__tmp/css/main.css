@@ -375,11 +375,11 @@
     display: inline-block;
     border: 1px solid #dcdcdc; }
     .estimates-form-lab .estimates-lab-box.no-edit {
-      background-color: #ffe2e2;
-      border-color: #e3c6c6; }
+      background-color: #e3e3e3;
+      border-color: #dcdcdc; }
       .estimates-form-lab .estimates-lab-box.no-edit input {
-        background-color: #ffe2e2;
-        border-color: #e3c6c6; }
+        background-color: #e3e3e3;
+        border-color: #e3e3e3; }
     .estimates-form-lab .estimates-lab-box.error-data {
       border-color: #ff6e6e; }
   .estimates-form-lab .title {

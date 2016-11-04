@@ -77,11 +77,11 @@
         display: inline-block;
         border: 1px solid #dcdcdc;
         &.no-edit{
-            background-color: #ffe2e2;
-            border-color: #e3c6c6;
+            background-color: #e3e3e3;
+            border-color: #dcdcdc;
             input{
-                background-color: #ffe2e2; 
-                border-color: #e3c6c6;
+                background-color: #e3e3e3; 
+                border-color: #e3e3e3;
             }
         }
         &.error-data{

@@ -321,10 +321,10 @@ clearfix:after {
   .banner-sp .btn-register {
     position: absolute;
     display: inline-block;
-    width: 160px;
-    height: 33px;
-    left: 77px;
-    top: 116px; }
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 16px; }
 
 .comments-list-wrap {
   position: relative;
@@ -376,7 +376,10 @@ clearfix:after {
     color: #999; }
   .comments-list .comment-user {
     padding: 14px 0;
-    width: 750px; }
+    width: 750px;
+    overflow: overlay;
+    word-break: break-all;
+    word-wrap: break-word; }
   .comments-list .panli-reply {
     position: relative;
     padding: 14px 0;
@@ -388,7 +391,10 @@ clearfix:after {
     position: absolute;
     left: 0; }
   .comments-list .panli-reply-content {
-    margin-left: 76px; }
+    margin-left: 76px;
+    overflow: overlay;
+    word-break: break-all;
+    word-wrap: break-word; }
   .comments-list .comment-from-type {
     position: absolute;
     right: 0;
